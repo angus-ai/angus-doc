@@ -13,23 +13,6 @@ Using the Python SDK:
 
 .. literalinclude:: facedetection.py
 
-outputs
-
-.. code-block:: javascript
-
-  $ python facedetection.py
-    {
-      "input_size" : [480, 640],
-      "nb_faces" : 1,
-      "faces" : [
-                  {
-                    "roi" : [250, 142, 232, 232],
-                    "confidence" : 0.89
-                  }
-                ]
-    }
-
-
 
 Input
 -----
@@ -51,11 +34,11 @@ Events will be pushed to your client following that format:
       "faces" : [
                   {
                     "roi" : [345, 223, 34, 54],
-                    "confidence" : 0.89
+                    "roi_confidence" : 0.89
                   },
                   {
                     "roi" : [35, 323, 45, 34],
-                    "confidence" : 0.56
+                    "roi_confidence" : 0.56
                   }
                 ]
     }
@@ -64,4 +47,4 @@ Events will be pushed to your client following that format:
 * ``image_size`` : width and height of the input image in pixels (to be used as reference to ``roi`` output.
 * ``nb_faces`` : number of faces detected in the given image
 * ``roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected face.
-* ``confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
+* ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
