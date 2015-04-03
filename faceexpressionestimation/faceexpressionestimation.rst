@@ -1,7 +1,7 @@
 Face Expression Estimation
 ==========================
 
-Can my object see any human face? How many? Where?
+Are people in front looking happy or surprised?
 
 Code sample
 -----------

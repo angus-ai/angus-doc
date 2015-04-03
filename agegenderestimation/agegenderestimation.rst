@@ -1,7 +1,8 @@
 Age and Gender Estimation
 =========================
 
-Can my object see any human face? How many? Where?
+How old are people in front of my object?
+Are they male or female?
 
 Code sample
 -----------
