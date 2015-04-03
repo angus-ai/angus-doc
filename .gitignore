@@ -2,12 +2,14 @@
 __pycache__/
 *.py[cod]
 
+# build system
+Makefile
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
-site/
 env/
 build/
 develop-eggs/
@@ -52,7 +54,7 @@ coverage.xml
 *.log
 
 # Sphinx documentation
-docs/_build/
+_build/
 
 # PyBuilder
 target/
