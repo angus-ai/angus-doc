@@ -5,7 +5,7 @@ import angus.cloud
 
 conn = angus.connect()
 
-service = conn.services.get_service('sound_localization', version=1)
+service = conn.services.get_service('sound_detection', version=1)
 
 job = service.process({'sound': open("./sound.wav")})
 
