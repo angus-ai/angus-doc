@@ -42,7 +42,7 @@ Events will be pushed to your client following that format:
 
     {
       "input_size" : 8192,
-      "nb_sources" : 1,
+      "nb_sources" : 2,
       "sources" : [
                   {
                     "index" : 3454,
