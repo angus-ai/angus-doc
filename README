@@ -1,0 +1,14 @@
+Here is how to modify and build the doc locally
+-----------------------------------------------
+
+1. Install sphinx
+
+$ pip install sphinx sphinx-autobuild
+
+2. Install the theme from ReadTheDoc.org
+
+$ pip install sphinx_rtd_theme
+
+3. Build the doc locally
+
+$ make html
