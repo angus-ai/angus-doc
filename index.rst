@@ -11,4 +11,6 @@ API documentation
    :maxdepth: 2
 
    facedetection/facedetection
+   agegenderestimation/agegenderestimation
    gazeanalysis/gazeanalysis
+   faceexpressionestimation/faceexpressionestimation
