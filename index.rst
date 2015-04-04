@@ -9,6 +9,7 @@ Angus.ai API documentation
 .. toctree::
    :maxdepth: 2
 
+   motiondetection/motiondetection
    facedetection/facedetection
    agegenderestimation/agegenderestimation
    gazeanalysis/gazeanalysis
