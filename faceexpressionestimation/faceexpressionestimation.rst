@@ -6,7 +6,7 @@ Are people in front looking happy or surprised?
 Code sample
 -----------
 
-This sample assumes that you have an image file (where some faces are visible idealy!) ready on you client.
+This sample assumes that you have an image file (where some faces are visible ideally!) ready on your client.
 
 
 Using the Python SDK:
