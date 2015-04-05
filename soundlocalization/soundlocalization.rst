@@ -30,7 +30,8 @@ Using the Python SDK:
 Input
 -----
 * ``file_path`` : filename of a wav file with the following format : ``PCM 16bit, 48kHz, Stereo``.
-* ``mics_baseline`` : distance between the 2 microphones of the array in ``cm``.
+* ``baseline`` : distance between the 2 microphones of the array in ``meters``.
+* ``sensitivity`` : modifies the ability of the algorithms to locate quiet sounds. ``[0, 1]``. The higher the value is, the better the algorithm will locate quiet sounds, but the more it will be sensitive to background noise.
 
 Output
 ------
@@ -47,8 +48,7 @@ Events will be pushed to your client following that format:
                   {
                     "index" : 345,
                     "yaw" : 0.156,
-                    "confidence" : 0.03,
-                    "energy"   : 0.23
+                    "confidence" : 0.53,
                   }
                 ]
     }
@@ -57,4 +57,3 @@ Events will be pushed to your client following that format:
 * ``nb_sources`` : number of sound sources located.
 * ``yaw`` : angle of the sound source in radian as shown below:
 * ``confidence`` : an estimate of the probability that a real sound source is indeed located at the given ``yaw``.
-* ``energy`` : the energy of the sound measured in the given ``yaw`` direction.

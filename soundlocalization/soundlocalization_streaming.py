@@ -1,19 +1,19 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import Queue
 import StringIO
 import wave
 
 import angus.cloud
 import pyaudio
+import control
+import math
+
 
 CHUNK = 512
 FORMAT = pyaudio.paInt16
 CHANNELS = 2
 RATE = 48000
 RECORD_SECONDS = 2
-INDEX = 3  # USB Cam
+INDEX = 2 # USB Cam
 WAVE_OUTPUT_FILENAME = "output.wav"
 
 p = pyaudio.PyAudio()
@@ -26,7 +26,6 @@ print
 print
 
 conn = angus.connect()
-
 service = conn.services.get_service('sound_localization', version=1)
 
 stream_queue = Queue.Queue()
@@ -44,6 +43,7 @@ stream = p.open(format=FORMAT,
                 input_device_index=INDEX,
                 stream_callback=callback)
 
+count = 0
 
 print("* recording")
 stream.start_stream()
@@ -51,9 +51,15 @@ stream.start_stream()
 while(True):
     frames = []
 
-    for i in range(RATE / CHUNK / 2):
+    nb_buffer_available = stream_queue.qsize()
+
+    print "queue size " + str(nb_buffer_available)
+    for i in range(nb_buffer_available):
         data = stream_queue.get()
         frames.append(data)
+
+    if nb_buffer_available ==0:
+        continue
 
     wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
     wf.setnchannels(CHANNELS)
@@ -62,9 +68,10 @@ while(True):
     wf.writeframes(b''.join(frames))
     wf.close()
 
-    job = service.process({'sound': open(WAVE_OUTPUT_FILENAME)})
+    job = service.process({'sound': open(WAVE_OUTPUT_FILENAME), 'baseline':0.14, 'sensitivity':0.5})
 
-    print job.result
+    #print job.result
+    print job.result['loc']
 
 
 stream.stop_stream()
