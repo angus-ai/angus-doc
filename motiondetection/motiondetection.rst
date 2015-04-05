@@ -28,11 +28,19 @@ Events will be pushed to your client following that format:
 
 .. code-block:: javascript
 
+
     {
+
       "image_size" : [480, 640],
-      "mean_position" : [34, 54],
-      "mean_velocity" : [5, 10],
-      "confidence" : 45
+      "nb_targets": 1
+      "targets":
+                [
+                  {
+                    "mean_position" : [34, 54],
+                    "mean_velocity" : [5, 10],
+                    "confidence" : 45
+                  }
+                ]
     }
 
 
