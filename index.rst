@@ -14,5 +14,4 @@ Angus.ai API documentation
    agegenderestimation/agegenderestimation
    gazeanalysis/gazeanalysis
    faceexpressionestimation/faceexpressionestimation
-   sounddetection/sounddetection
    soundlocalization/soundlocalization
