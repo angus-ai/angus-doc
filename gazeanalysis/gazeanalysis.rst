@@ -7,7 +7,7 @@ What are people in front of my object looking at?
 Code sample
 -----------
 
-This sample assumes that you have an image file (where some faces are visible idealy!) ready on you client.
+This sample assumes that you have an image file (where some faces are visible ideally!) ready on you client.
 
 
 Using the Python SDK:
