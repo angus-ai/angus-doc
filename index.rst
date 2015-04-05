@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Angus.ai API documentation
-==========================
+Angus.ai API documentation (Beta)
+=================================
 
 .. toctree::
    :maxdepth: 2
