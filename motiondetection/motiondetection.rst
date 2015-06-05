@@ -31,7 +31,7 @@ Events will be pushed to your client following that format:
 
     {
 
-      "image_size" : [480, 640],
+      "input_size" : [480, 640],
       "nb_targets": 1
       "targets":
                 [
@@ -44,7 +44,7 @@ Events will be pushed to your client following that format:
     }
 
 
-* ``image_size`` : width and height of the input image in pixels.
+* ``input_size`` : width and height of the input image in pixels.
 * ``mean_position`` : ``[pt.x, pt.y]`` where ``pt`` is the center of gravity of the moving pixels in the image.
 * ``mean_velocity`` : ``[v.x, v.y]`` where ``v`` is the average velocity of the moving pixels in the image.
 * ``confidence`` : in ``[0,1]`` measures how significant is the motion in the image (is a function of the number of keypoints moving in the image).

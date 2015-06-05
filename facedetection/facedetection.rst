@@ -29,7 +29,7 @@ Events will be pushed to your client following that format:
 .. code-block:: javascript
 
     {
-      "image_size" : [480, 640],
+      "input_size" : [480, 640],
       "nb_faces" : 2,
       "faces" : [
                   {
@@ -44,7 +44,7 @@ Events will be pushed to your client following that format:
     }
 
 
-* ``image_size`` : width and height of the input image in pixels (to be used as reference to ``roi`` output.
+* ``input_size`` : width and height of the input image in pixels (to be used as reference to ``roi`` output.
 * ``nb_faces`` : number of faces detected in the given image
 * ``roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected face.
 * ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
