@@ -8,11 +8,11 @@ Installation
 
    $ pip install angus-sdk-python
 
-Initialisation
+Authentication
 ++++++++++++++
 
-For simplicity, python angus sdk comes with a script name ``angusme`` that
-enables store credentials in developer environment.
+The angus.ai python sdk comes with a script called ``angusme`` that is used to authenticate 
+the http requests sent to angus.ai server from a specific device.
 
 .. parsed-literal::
 
@@ -20,11 +20,11 @@ enables store credentials in developer environment.
     Please copy/paste your client_id: 7f5933d2-cd7c-11e4-9fe6-490467a5e114
     Please copy/paste your access_token: db19c01e-18e5-4fc2-8b81-7b3d1f44533b
 
-Get service
-+++++++++++
+Use your first angus.ai service
++++++++++++++++++++++++++++++++
 
-If you init your environment with ``angusme``, you can just call ``connect``
-to get a root resource on Angus.ai cloud.
+With your environment correctly setup using the script ``angusme`` as described above, 
+you can now call your first service. 
 
 .. code-block:: python
 
@@ -34,35 +34,34 @@ to get a root resource on Angus.ai cloud.
    
 Version parameter is optional, if not defined, sdk get the last version.
 
+
 Composite services
 ++++++++++++++++++
 
-SDK comes with a "composite" service helper to enable request many service at
-the same time with the same interface of a single service
+The SDK allows to call multiple services at the same time:
 
-To get the dummy service AND the face detection service, both in the first
-version:
+For example, to call the motion detection AND the face detection services at the same time, using version 1 for both:
 
 .. code-block:: python
 
-    > services = conn.services.get_services([('dummy', 1), ('face_detection', 1)])
+    > services = conn.services.get_services([('motion_detection', 1), ('face_detection', 1)])
     
-Version can be omitted for the last version:
+If version is omitted, last stable version of the service is used:
 
 .. code-block:: python
 
-    > services = conn.services.get_services(['dummy', 'face_detection'])
+    > services = conn.services.get_services(['motion_detection', 'face_detection'])
     
-And if you want ALL services available on the Angus.ai cloud:
+And if you want ALL services available on the Angus.ai to be called on the given input:
 
 .. code-block:: python
 
     > services = conn.services.get_services()
 
-Call service (create a job)
-+++++++++++++++++++++++++++
+Create a job on a service
++++++++++++++++++++++++++
 
-Even if cloud API are asynchronous by default, the SDK work synchronously for
+Even if our API are asynchronous by default, the SDK work synchronously for
 simplicity.
 
 .. code-block:: python
@@ -78,8 +77,9 @@ simplicity.
 Session for statefull services
 ++++++++++++++++++++++++++++++
 
-If you use a statefull service you must enable session before create jobs
-(use ``process``).
+Most angus.ai can be either use in a stateless (every given inputs are processed independently) or in a stateful way (previous calls are remembered and use to improve the accuracy of the output).
+
+By default all API behave in a stateless manner. To enable the stateful behavior, you need to call ``enable_session()`` before calling ``process``.
 
 .. code-block:: python
 
