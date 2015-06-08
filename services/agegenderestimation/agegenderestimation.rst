@@ -67,6 +67,6 @@ Events will be pushed to your client following that format:
 Session
 -------
 
-This service can also be called in a statefull manner, allowing overall better performances as previous calls are use to refine the result. 
+This service can also be called in a statefull manner, allowing overall better performances as previous calls are used to refine the results. 
 
 .. literalinclude:: agegenderestimation-session.py
