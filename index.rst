@@ -9,9 +9,9 @@ Angus.ai documentation (Beta)
 General
 +++++++
 
-
 .. toctree::
    :maxdepth: 2
+
    general/general
 
 SDKs
