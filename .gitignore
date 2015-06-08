@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # build system
-Makefile
+# Makefile
 
 # C extensions
 *.so
