@@ -20,6 +20,16 @@ Input
 
 The API takes still images as input.
 
+.. code-block:: javascript
+
+    {
+        "image": "attachment://image.png",
+        "state": {
+            "session_id": "714f0416-0de0-11e5-ab02-eca86bfe9d03"
+        }
+    }
+
+* ``image`` : image in png or jpg format posted in the message as multipart with name "image.png"
 
 Output
 ------
@@ -53,3 +63,11 @@ Events will be pushed to your client following that format:
 * ``age_confidence`` : an estimate of the probability that the outlined person is indeed of age ``age``.
 * ``gender`` : an estimation of the gender of the person outlined by ``roi``. Value is either ``"male"`` or ``"female"``.
 * ``gender_confidence`` : an estimate of the probability that the outlined person is indeed of gender ``gender``.
+
+Session
+-------
+
+This service can be statefull for now. It enable a better estimation images
+after images. Using python sdk:
+
+.. literalinclude:: agegenderestimation-session.py
