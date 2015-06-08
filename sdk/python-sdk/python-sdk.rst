@@ -32,7 +32,7 @@ you can now call your first service.
     > conn = angus.connect()
     > dummy_service = conn.services.get_service('dummy', version=1)
    
-Version parameter is optional, if not defined, sdk get the last version.
+Version parameter is optional, if not defined, the latest version of the servie is called.
 
 
 Composite services
