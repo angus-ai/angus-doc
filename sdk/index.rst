@@ -5,5 +5,5 @@ SDK
    :maxdepth: 2
 
    python-sdk/python-sdk
-   java-sdk/java-sdk
+   .. java-sdk/java-sdk
 

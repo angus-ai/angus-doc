@@ -11,5 +11,5 @@ Angus.ai documentation (Beta)
 
    sdk/index
    services/index
-   advanced/index
+   ..advanced/index
 
