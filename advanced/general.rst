@@ -2,8 +2,6 @@
 .. |client_id| replace:: 7f5933d2-cd7c-11e4-9fe6-490467a5e114
 .. |access_token| replace:: db19c01e-18e5-4fc2-8b81-7b3d1f44533b
 
-Cloud API
-+++++++++
 
 General
 -------
@@ -70,8 +68,8 @@ and a collections of jobs.
 For example, the service ``dummy`` can be access through
 https://gate.angus.ai/services/dummy/1 for version 1.
 Then, two resources are immediatly available:
- * https://gate.angus.ai/services/dummy/1/description
- * https://gate.angus.ai/services/dummy/1/jobs.
+* https://gate.angus.ai/services/dummy/1/description
+* https://gate.angus.ai/services/dummy/1/jobs.
 
 .. parsed-literal::
 

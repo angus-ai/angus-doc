@@ -6,36 +6,10 @@
 Angus.ai documentation (Beta)
 =============================
 
-General
-+++++++
-
 .. toctree::
    :maxdepth: 2
 
-   general/general
-
-SDKs
-++++
-
-.. toctree::
-   :maxdepth: 2
-
-   python-sdk/python-sdk
-   java-sdk/java-sdk
-
-
-Services
-++++++++
-
-.. toctree::
-   :maxdepth: 2
-
-   motiondetection/motiondetection
-   facedetection/facedetection
-   agegenderestimation/agegenderestimation
-   gazeanalysis/gazeanalysis
-   faceexpressionestimation/faceexpressionestimation
-   soundlocalization/soundlocalization
-
-
+   sdk/index
+   services/index
+   advanced/index
 
