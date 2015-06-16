@@ -1,13 +1,10 @@
 Motion Detection
 ================
 
-Is there anything moving in frontof my object? Where exactly?
+Is there anything moving in front of my object? Where exactly?
 
-Code sample
------------
-
-This sample assumes that you have an image file (where some faces are visible ideally!) ready on your client.
-
+Getting Started
+---------------
 
 Using the Python SDK:
 
