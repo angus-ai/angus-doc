@@ -1,15 +1,12 @@
 Face Detection
 ==============
 
-Can my object see any human face? How many? Where?
+Do I see human faces? How many? Where?
 
-Code sample
------------
+Getting Started
+---------------
 
-This sample assumes that you have an image file (where some faces are visible ideally!) ready on your client.
-
-
-Using the Python SDK:
+Using Angus python SDK:
 
 .. literalinclude:: facedetection.py
 
@@ -17,8 +14,17 @@ Using the Python SDK:
 Input
 -----
 
-The API takes still images as input.
+The API takes a stream of 2d still images as input, of format ``jpg`` or ``png``, without constraints on resolution.
 
+Note however that the bigger the resolution, the longer the API will take to process and give a result.
+
+The function ``process()`` takes a dictionary as input formatted as follows:
+
+.. code-block:: javascript
+
+    {'image' : file}
+
+* ``file``: a python ``File Object`` as returned for example by ``open()``.
 
 Output
 ------
