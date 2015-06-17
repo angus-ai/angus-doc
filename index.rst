@@ -9,7 +9,8 @@ Angus.ai documentation (Beta)
 .. toctree::
    :maxdepth: 2
 
-   sdk/index
+   getting-started/index
    services/index
+   sdk/index
    ..advanced/index
 

@@ -1,3 +1,5 @@
+.. _services-doc:
+
 Services
 ++++++++
 
