@@ -2,10 +2,9 @@ Getting Started with Python
 +++++++++++++++++++++++++++
 
 
-
-
 *Prerequisites*
 
+You must have registered `here <http://www.angus.ai/developers/>`_ and received your API credentials.
 
 1. Install the Angus SDK
 ====================
@@ -21,7 +20,7 @@ You might want to create a python virtual environnement with ``virtualenv`` and 
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by regestering here.
+You must configure your sdk with the keys you received by registering `here <http://www.angus.ai/developers/>`_.
 These keys are used to authenticate the requests you are about to send.
 
 In a terminal, type:
@@ -68,11 +67,19 @@ Some applications will require a processing on all the data coming from a sensor
 *Prerequisite*
 
 - you have a working web cam plugged into your PC
-- you have installed ``opencv2`` and ``opencv2 python bindings``
+- you have installed ``opencv2`` and ``opencv2`` python bindings.
+
+On Ubuntu, opencv2 comes pre-installed, you just need to add python bindings by running
+
+.. parsed-literal::
+
+   $ sudo apt-get install python-opencv
+
+Copy this code snippet in a file and run it.
+
 
 .. literalinclude:: stream_fromwebcam.py
 
-Copy this code snippet in a file, and run it.
 
 .. parsed-literal::
 
