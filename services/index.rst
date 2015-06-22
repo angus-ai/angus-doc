@@ -12,4 +12,5 @@ Services
    gazeanalysis/gazeanalysis
    faceexpressionestimation/faceexpressionestimation
    soundlocalization/soundlocalization
+   sounddetection/sounddetection
 
