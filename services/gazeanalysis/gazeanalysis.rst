@@ -4,11 +4,8 @@ Gaze Analysis
 What are people in front of my object looking at?
 
 
-Code sample
------------
-
-This sample assumes that you have an image file (where some faces are visible ideally!) ready on you client.
-
+Getting Started
+---------------
 
 Using the Python SDK:
 
@@ -18,8 +15,17 @@ Using the Python SDK:
 Input
 -----
 
-The API takes still images as input.
+The API takes a stream of 2d still images as input, of format ``jpg`` or ``png``, without constraints on resolution.
 
+Note however that the bigger the resolution, the longer the API will take to process and give a result.
+
+The function ``process()`` takes a dictionary as input formatted as follows:
+
+.. code-block:: javascript
+
+    {'image' : file}
+
+* ``file``: a python ``File Object`` as returned for example by ``open()``.
 
 Output
 ------
@@ -51,3 +57,15 @@ Events will be pushed to your client following that format:
 * ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
 * ``head_yaw``, ``head_pitch``, ``head_roll`` : head pose orientation in radian as follows:
 * ``gaze_yaw``, ``gaze_pitch`` : gaze (eyes) orientation in radian as follows:
+
+
+Code Sample
+-----------
+
+**requirements**: opencv2, opencv2 python bindings
+
+This code sample retrieves the stream of a web cam and display in a GUI the result of the ``face_detection`` service.
+
+
+.. literalinclude:: gazeanalysis_fromwebcam.py
+.. image:: screenshot_gazeanalysis.png
