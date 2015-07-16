@@ -54,3 +54,15 @@ Events will be pushed to your client following that format:
 * ``nb_faces`` : number of faces detected in the given image
 * ``roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected face.
 * ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
+
+
+Code Sample
+-----------
+
+**requirements**: opencv2, opencv2 python bindings
+
+This code sample retrieves the stream of a web cam and display in a GUI the result of the ``face_detection`` service.
+
+
+.. literalinclude:: facedetection_fromwebcam.py
+.. image:: screenshot_facedetection.png
