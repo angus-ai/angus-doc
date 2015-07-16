@@ -4,11 +4,8 @@ Age and Gender Estimation
 How old are people in front of my object?
 Are they male or female?
 
-Code sample
------------
-
-This sample assumes that you have an image file (where some faces are visible ideally!) ready on your client.
-
+Getting Started
+---------------
 
 Using the Python SDK:
 
@@ -18,18 +15,17 @@ Using the Python SDK:
 Input
 -----
 
-The API takes still images as input.
+The API takes a stream of 2d still images as input, of format ``jpg`` or ``png``, without constraints on resolution.
+
+Note however that the bigger the resolution, the longer the API will take to process and give a result.
+
+The function ``process()`` takes a dictionary as input formatted as follows:
 
 .. code-block:: javascript
 
-    {
-        "image": "attachment://image.png",
-        "state": {
-            "session_id": "714f0416-0de0-11e5-ab02-eca86bfe9d03"
-        }
-    }
+    {'image' : file}
 
-* ``image`` : image in png or jpg format posted in the message as multipart with name "image.png"
+* ``file``: a python ``File Object`` as returned for example by ``open()``.
 
 Output
 ------
@@ -64,9 +60,14 @@ Events will be pushed to your client following that format:
 * ``gender`` : an estimation of the gender of the person outlined by ``roi``. Value is either ``"male"`` or ``"female"``.
 * ``gender_confidence`` : an estimate of the probability that the outlined person is indeed of gender ``gender``.
 
-Session
--------
 
-This service can also be called in a statefull manner, allowing overall better performances as previous calls are used to refine the results. 
+Code Sample
+-----------
 
-.. literalinclude:: agegenderestimation-session.py
+**requirements**: opencv2, opencv2 python bindings
+
+This code sample retrieves the stream of a web cam and display in a GUI the result of the ``age_and_gender_estimation`` service.
+
+
+.. literalinclude:: agegenderestimation_fromwebcam.py
+.. image:: screenshot_agegender.png
