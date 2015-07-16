@@ -3,13 +3,10 @@ Face Expression Estimation
 
 Are people in front looking happy or surprised?
 
-Code sample
------------
+Getting Started
+---------------
 
-This sample assumes that you have an image file (where some faces are visible ideally!) ready on your client.
-
-
-Using the Python SDK:
+Using Angus Python SDK:
 
 .. literalinclude:: faceexpressionestimation.py
 
@@ -17,8 +14,17 @@ Using the Python SDK:
 Input
 -----
 
-The API takes still images as input.
+The API takes a stream of 2d still images as input, of format ``jpg`` or ``png``, without constraints on resolution.
 
+Note however that the bigger the resolution, the longer the API will take to process and give a result.
+
+The function ``process()`` takes a dictionary as input formatted as follows:
+
+.. code-block:: javascript
+
+    {'image' : file}
+
+* ``file``: a python ``File Object`` as returned for example by ``open()``.
 
 Output
 ------
@@ -50,3 +56,15 @@ Events will be pushed to your client following that format:
 * ``roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected face.
 * ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
 * ``neutral``, ``happiness``, ``surprise``, ``anger``, ``sadness`` : a float in ``[0, 1]`` measuring the intensity of the corresponding face expression.
+
+
+Code Sample
+-----------
+
+**requirements**: opencv2, opencv2 python bindings
+
+This code sample retrieves the stream of a web cam and display in a GUI the result of the ``face_expression_estimation`` service.
+
+
+.. literalinclude:: faceexpression_fromwebcam.py
+.. image:: screenshot_faceexpression.png
