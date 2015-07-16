@@ -65,3 +65,4 @@ This code sample retrieves the stream of a web cam and display in a GUI the resu
 
 
 .. literalinclude:: motiondetection_fromwebcam.py
+.. image:: screenshot_motiondetection.png
