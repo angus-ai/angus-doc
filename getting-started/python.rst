@@ -31,6 +31,12 @@ In a terminal, type:
     Please copy/paste your client_id: 7f5933d2-cd7c-11e4-9fe6-490467a5e114
     Please copy/paste your access_token: db19c01e-18e5-4fc2-8b81-7b3d1f44533b
 
+Note that on ``Windows`` system, the previous command might not work.
+In that case use this command instead (replace by your Python installation path):
+
+.. parsed-literal::
+
+   $ python C:\full\path\to\Python<version>\Scripts\angusme
 
 3. Send your first request
 ==========================
@@ -57,7 +63,7 @@ This python dictionnary contains a set of ``key: value`` describing what has bee
 
 The ``keys`` contained in result dictionaries depend on the service used and are documented in the services documentation, see :ref:`services-doc`.
 
-You have just sent your first request to Angus.ai, Congratulations! 
+You have just sent your first request to Angus.ai, Congratulations!
 
 3. Access your sensor stream
 ============================
@@ -95,7 +101,7 @@ Check that your web cam video stream is correctly displayed on your screen.
 We can now extend this code to have Angus process this stream.
 Like above, we will use the service ``age_and_gender_estimation`` but all the services taking images as inputs can be used.
 
-Note that we use the method ``enable_session()`` and ``disable_session()`` to let the service know that the successive images received are from the same stream. This allows overall better performances as previous calls are used to refine the results. 
+Note that we use the method ``enable_session()`` and ``disable_session()`` to let the service know that the successive images received are from the same stream. This allows overall better performances as previous calls are used to refine the results.
 
 Using this functions might delayed a bit the appearance and disappearance of detected targets. If this is an issue for your application, just remove these calls from your script. The service will process the successive images independently.
 
