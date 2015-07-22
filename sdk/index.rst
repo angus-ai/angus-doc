@@ -1,5 +1,5 @@
-SDK
-+++
+Advanced
+++++++++
 
 .. toctree::
    :maxdepth: 2
