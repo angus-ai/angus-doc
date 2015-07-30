@@ -36,7 +36,7 @@ In that case use this command instead (replace by your Python installation path)
 
 .. parsed-literal::
 
-   $ python C:\full\path\to\Python<version>\Scripts\angusme
+   $ python C:\\full\\path\\to\\Python<version>\\Scripts\\angusme
 
 3. Send your first request
 ==========================
