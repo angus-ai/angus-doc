@@ -10,7 +10,7 @@ Angus Java SDK need Java7 runtime.
 1. Download Angus SDK library
 =============================
 
-You can download the library from github: `here <https://github.com/angus-ai/angus-sdk-java/releases/download/0.0.1/angus-sdk-java-0.0.1-jar-with-dependencies.jar>`_.
+You can download the library from github: `here <https://github.com/angus-ai/angus-sdk-java/releases/download/0.0.2/angus-sdk-java-0.0.2-jar-with-dependencies.jar>`_.
 
 2. Configure your SDK
 =====================
@@ -22,7 +22,7 @@ In a terminal, type:
 
 .. parsed-literal::
 
-    $ java -jar angus-sdk-java-0.0.1-jar-with-dependencies.jar
+    $ java -jar angus-sdk-java-0.0.2-jar-with-dependencies.jar
     Please copy/paste your client_id: 7f5933d2-cd7c-11e4-9fe6-490467a5e114
     Please copy/paste your access_token: db19c01e-18e5-4fc2-8b81-7b3d1f44533b
     $
@@ -31,7 +31,7 @@ You could explore all options by typing:
 
 .. parsed-literal::
 
-    $ java -jar target/angus-sdk-java-0.0.1-jar-with-dependencies.jar --help
+    $ java -jar target/angus-sdk-java-0.0.2-jar-with-dependencies.jar --help
 
 3. Send your first request
 ==========================
@@ -74,12 +74,12 @@ replacing the image path into a file named "FaceDetect.java":
 Then run java compiler (``javac``) to get a ``.class`` file:
 
 .. parsed-literal::
-    $  javac -cp ./angus-sdk-java-0.0.1-jar-with-dependencies.jar FaceDetect.java
+    $  javac -cp ./angus-sdk-java-0.0.2-jar-with-dependencies.jar FaceDetect.java
 
 Then, you can run this program by typing:
 
 .. parsed-literal::
-    $ java -cp 'angus-sdk-java-0.0.1-jar-with-dependencies.jar:.' FaceDetect
+    $ java -cp 'angus-sdk-java-0.0.2-jar-with-dependencies.jar:.' FaceDetect
 
 
 This should display a result looking like this:
@@ -116,12 +116,12 @@ Compile it:
 
 .. parsed-literal::
 
-  $ javac -cp "angus-sdk-java-0.0.1-jar-with-dependencies.jar:webcam-capture-0.3.10.jar:." DisplayCamera.java
+  $ javac -cp "angus-sdk-java-0.0.2-jar-with-dependencies.jar:webcam-capture-0.3.10.jar:." DisplayCamera.java
 
 Check that your web cam video stream is correctly displayed on your screen:
 
 .. parsed-literal::
-  $ java -cp "angus-sdk-java-0.0.1-jar-with-dependencies.jar:webcam-capture-0.3.10.jar:libs/*:." DisplayCamera
+  $ java -cp "angus-sdk-java-0.0.2-jar-with-dependencies.jar:webcam-capture-0.3.10.jar:libs/*:." DisplayCamera
 
 .. image:: gwenn_onwebcam.png
 
