@@ -46,7 +46,7 @@ In Audacity, go to Edit > Preferences... > Quality, and set the Sampling setting
 
 Press ``record`` and pronounce several time each word you want to have recognized. If you want to have multiple people using the service, have the word pronounced by several people.
 
-Then extract each sample from the signal by using the appropriate selection + export procedure. In Audacity, use the ``Export Selected Audio...`` for each sample you want to extract.
+Then extract each sample from the signal by using the appropriate selection + export procedure. In Audacity, use the ``File > Export Selected Audio...`` for each sample you want to extract.
 
 .. image:: audacity.png
 
