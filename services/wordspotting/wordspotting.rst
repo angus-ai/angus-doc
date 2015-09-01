@@ -81,21 +81,10 @@ Events will be pushed to your client following that format:
 .. code-block:: javascript
 
     {
-      "utterance_length" : 1230,
-      "nbests" : [
-                  {
-                    "key" : "turn wifi on",
-                    "confidence" : 0.75
-                  },
-                  {
-                    "key" : "turn wifi off",
-                    "confidence"   : 0.10
-                  }
-                ]
+      "keyword" : confidence
     }
 
-* ``utterance_length`` : length of the utterance on which the provided result has been computed (in ``ms``).
-* ``key`` : the key identifying a given group of samples (as specified in the ``vocabulary`` input).
+* ``keyword`` : the key identifying a given group of samples (as specified in the ``vocabulary`` input).
 * ``confidence`` : an estimate of the probability that the corresponding vocabulary words were spotted in the utterance.
 
 
