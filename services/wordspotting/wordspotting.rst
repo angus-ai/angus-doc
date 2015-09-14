@@ -27,14 +27,14 @@ Speech Recognition (ASR) services can be splitted in 2 groups:
  * **examples**: Sphinx, Kaldi.
 
 
-Many of us want to talk to machines in real-life environments (``distance(speaker, mic)`` greater than 1m), 
+Many of us want to talk to machines in real-life environments (``distance(speaker, mic)`` greater than 1m),
 without going through the configuration of the great tool suites that are Sphinx and Kaldi or because we lack noise robust acoustical models in a given language.
 
-For this purpose, we have setup a **Grammar based ASR** service specifically designed to only spot specified words / groups of words in a complex speech input, a task known as **word spotting**. 
+For this purpose, we have setup a **Grammar based ASR** service specifically designed to only spot specified words / groups of words in a complex speech input, a task known as **word spotting**.
 
 The technology used in this service, different from most currently available ASR service, allow for a good noise and reverberation robustness but requires the vocabulary to be provided as sound samples (and not as bare strings).
 
-How to prepare samples? 
+How to prepare samples?
 -----------------------
 
 The more sample of word or sentence you provide, the better the service will perform.
