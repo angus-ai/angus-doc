@@ -9,6 +9,7 @@ Services
    agegenderestimation/agegenderestimation
    faceexpressionestimation/faceexpressionestimation
    facedetection/facedetection
+   facerecognition/facerecognition
    gazeanalysis/gazeanalysis
    motiondetection/motiondetection
    texttospeech/texttospeech
