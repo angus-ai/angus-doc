@@ -3,7 +3,7 @@ Face Recognition
 
 This service spots for a specified set of people in images or videos.
 
-To be able to recognize people, this service needs to be first provided with a few pictures of each person face.
+To be able to recognize people, this service needs to be first provided with a few pictures of each person's face.
 
 How to prepare face samples?
 ----------------------------
