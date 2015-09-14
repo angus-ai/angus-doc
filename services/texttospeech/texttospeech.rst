@@ -29,7 +29,7 @@ The function ``process()`` takes a dictionary formatted as follows:
     {'text' : "Hello guys",
      'lang' : "en-US"}
 
-* ``text``: a string containing the text to be syntesized.
+* ``text``: a string containing the text to be synthesized.
 * ``lang``: the code of the language to be used for synthesis. Languages currently available are:
 
   - English (US) : ``en-US``
@@ -42,7 +42,7 @@ The function ``process()`` takes a dictionary formatted as follows:
 Output
 ------
 
-Events will be pushed to your client following that format:
+Events will be pushed to your client following the below format:
 
 
 .. code-block:: javascript
@@ -53,7 +53,7 @@ Events will be pushed to your client following that format:
     }
 
 * ``status``: the http status code of the request.
-* ``sound`` : contains the synthesized sound file (.wav) as a compressed (zlib), base64 string. See the code sample below for an example of how to decode it in Python.
+* ``sound`` : contains the synthesized sound file (.wav) as a compressed (zlib), base64 string. Please refer to the code sample below of how to decode it in Python.
 
 
 Code Sample
