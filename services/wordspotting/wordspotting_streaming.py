@@ -10,7 +10,7 @@ import pyaudio
 from os import system
 import operator
 
-### Good performances off this script depend a lot on these parameters, 
+### Good performances off this script depend a lot on these parameters,
 ### do not hesitate to experiment with different settings
 CHUNK = 16384
 RATE = 44100
@@ -91,9 +91,9 @@ while(True):
 
     ### This step is only needed if your mic does not work at 16kHz
     convert(WAVE_OUTPUT_FILENAME, "test.wav")
-    
+
     job = service.process({'sound': open("test.wav"), 'sensitivity':0.7})
-    
+
     if job.result['Result'] != 'None':
         print job.result
 

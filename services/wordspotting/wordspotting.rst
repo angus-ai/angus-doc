@@ -3,7 +3,14 @@ Word Spotting (Beta)
 
 This service spots specified words (or group of words) in a complex speech input.
 
-Supported languages : all.
+Languages currently supported:
+
+- English (US)
+- English (GB)
+- German
+- Spanish (ES)
+- French
+- Italian
 
 How does this compare with other ASR services ?
 -----------------------------------------------
@@ -64,13 +71,22 @@ Input
 .. code-block:: javascript
 
    {'sound' : file,
-    'vocabulary' : {"word1": [sample_1, sample_2], "word2" : [sample_1, sample_2]}
-    'sensitivity' : 0.3}
+    'vocabulary' : {"word1": [sample_1, sample_2], "word2" : [sample_1, sample_2]},
+    'sensitivity' : 0.3,
+    'lang' : "en_US"}
 
 
 * ``sound`` : a python ``File Object`` as returned for example by ``open()`` describing a wav file with the following format : ``PCM 16bit, Mono``, without constraints on sample rate.
 * ``vocabulary`` : a dictionary containing samples of the words that need to be spotted. Samples need to be provided to the service first with the function ``blobs.create()`` as shown in the example above. The more samples the better, but starting with only 1 sample per word is OK.
 * ``sensitivity`` : modifies the ability of the algorithms to detect quiet sounds. ``[0, 1]``. The higher the value is, the better the algorithm will detect quiet sounds, but the more it will be sensitive to background noise.
+* ``lang``: the code of the language to be used for recognition. Languages currently available are:
+
+  - English (US) : ``en-US``
+  - English (GB) : ``en-GB``
+  - German       : ``de-DE``
+  - Spanish (ES) : ``es-ES``
+  - French       : ``fr-FR``
+  - Italian      : ``it-IT``
 
 Output
 ------
