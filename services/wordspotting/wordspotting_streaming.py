@@ -92,7 +92,7 @@ while(True):
     ### This step is only needed if your mic does not work at 16kHz
     convert(WAVE_OUTPUT_FILENAME, "test.wav")
 
-    job = service.process({'sound': open("test.wav"), 'sensitivity':0.7})
+    job = service.process({'sound': open("test.wav"), 'sensitivity': 0.7, 'lang': "fr-FR"})
 
     if job.result['Result'] != 'None':
         print job.result

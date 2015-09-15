@@ -19,7 +19,7 @@ vocabulary = {'turn wifi on': [w1_s1, w1_s2, w1_s3], 'turn wifi off': [w2_s1, w2
 
 service.enable_session({'vocabulary': vocabulary})
 
-job = service.process({'sound': open("./sound.wav"), 'sensitivity':0.7})
+job = service.process({'sound': open("./sound.wav"), 'sensitivity': 0.7, 'lang': "en-US"})
 
 service.disable_session()
 
