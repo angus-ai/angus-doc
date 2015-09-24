@@ -1,45 +1,14 @@
-Word Spotting (Beta)
-====================
+Word Spotting (version 1)
+=========================
 
-This service spots specified words (or group of words) in a complex speech input.
+These services spots specified words (or group of words) in a complex speech input.
 
-Languages currently supported:
+**Warning** : this service is available in all languages but will tend to work only with speakers the service will have been trained for.
+If you prefer a service that does not require to be trained, look at :ref:`wordspotting_v2`.
 
-- English (US)
-- English (GB)
-- German
-- Spanish (ES)
-- French
-- Italian
-
-How does this compare with other ASR services ?
------------------------------------------------
-
-Good question!
-
-Speech Recognition (ASR) services can be splitted in 2 groups:
-
-* **speech to text**: translate every word contained in a speech signal (in a given language).
-
- * **pros**: understand everything
- * **cons**: poor reliability under noisy condition (without specific hardware)
- * **use case**: SMS dictation, or vocal interfaces (SIRI) when ``distance(speaker, mic)`` is small (< 1m)
- * **examples**: Google Speech API, Nuance STT API.
-
-* **grammar based ASR**: recognize the exact words & sentences that you specified and will ignore everything else.
-
- * **pros**: reliable in noisy environment (with the right acoustical model).
- * **cons**: recognition limited to the specified grammar and noise ready acoustical model may be hard to find (especially for non-english languages).
- * **use case**: command & control of various devices (e.g. GPS)
- * **examples**: Sphinx, Kaldi.
+To train the service, just record and provide a few voice samples for each words (or group of words) that you want to be spotted (as described below).
 
 
-Many of us want to talk to machines in real-life environments (``distance(speaker, mic)`` greater than 1m),
-without going through the configuration of the great tool suites that are Sphinx and Kaldi or because we lack noise robust acoustical models in a given language.
-
-For this purpose, we have setup a **Grammar based ASR** service specifically designed to only spot specified words / groups of words in a complex speech input, a task known as **word spotting**.
-
-The technology used in this service, different from most currently available ASR service, allow for a good noise and reverberation robustness but requires the vocabulary to be provided as sound samples (and not as bare strings).
 
 How to prepare samples?
 -----------------------
@@ -72,21 +41,12 @@ Input
 
    {'sound' : file,
     'vocabulary' : {"word1": [sample_1, sample_2], "word2" : [sample_1, sample_2]},
-    'sensitivity' : 0.3,
-    'lang' : "en_US"}
+    'sensitivity' : 0.3}
 
 
 * ``sound`` : a python ``File Object`` as returned for example by ``open()`` describing a wav file with the following format : ``PCM 16bit, Mono``, without constraints on sample rate.
 * ``vocabulary`` : a dictionary containing samples of the words that need to be spotted. Samples need to be provided to the service first with the function ``blobs.create()`` as shown in the example above. The more samples the better, but starting with only 1 sample per word is OK.
 * ``sensitivity`` : modifies the ability of the algorithms to detect quiet sounds. ``[0, 1]``. The higher the value is, the better the algorithm will detect quiet sounds, but the more it will be sensitive to background noise.
-* ``lang``: the code of the language to be used for recognition. Languages currently available are:
-
-  - English (US) : ``en-US``
-  - English (GB) : ``en-GB``
-  - German       : ``de-DE``
-  - Spanish (ES) : ``es-ES``
-  - French       : ``fr-FR``
-  - Italian      : ``it-IT``
 
 Output
 ------

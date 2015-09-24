@@ -15,5 +15,5 @@ Services
    texttospeech/texttospeech
    sounddetection/sounddetection
    soundlocalization/soundlocalization
-   wordspotting/wordspotting
+   wordspotting/index
 

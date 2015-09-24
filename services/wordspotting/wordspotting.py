@@ -17,10 +17,6 @@ w2_s3 = conn.blobs.create(open("/path/to/word2/sample3.wav"))
 
 vocabulary = {'turn wifi on': [w1_s1, w1_s2, w1_s3], 'turn wifi off': [w2_s1, w2_s2, w2_s3]}
 
-service.enable_session({'vocabulary': vocabulary})
-
-job = service.process({'sound': open("./sound.wav"), 'sensitivity': 0.7, 'lang': "en-US"})
-
-service.disable_session()
+job = service.process({'sound': open("./sound.wav"), 'sensitivity': 0.7, 'vocabulary': vocabulary})
 
 print job.result
