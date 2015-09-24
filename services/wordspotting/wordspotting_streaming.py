@@ -26,13 +26,24 @@ WAVE_OUTPUT_FILENAME = "output.wav"
 p = pyaudio.PyAudio()
 
 conn = angus.connect()
-service = conn.services.get_service('word_spotting')
+service = conn.services.get_service('word_spotting', version=1)
+
+PATH = "/path/to/samples/"
+
+### French filenames, sorry!
+### Here, resources are created on Angus.ai server from your samples
+w1_s1 = conn.blobs.create(open(PATH + "allumelesalon.wav"))
+w1_s2 = conn.blobs.create(open(PATH + "allumelesalon2.wav"))
+w1_s3 = conn.blobs.create(open(PATH + "allumelesalon3.wav"))
+w1_s4 = conn.blobs.create(open(PATH + "allumelesalon4.wav"))
+
+w2_s1 = conn.blobs.create(open(PATH + "eteintlewifi.wav"))
+w2_s2 = conn.blobs.create(open(PATH + "eteintlewifi2.wav"))
+w2_s3 = conn.blobs.create(open(PATH + "eteintlewifi3.wav"))
+w2_s4 = conn.blobs.create(open(PATH + "eteintlewifi4.wav"))
 
 ### Specifying the vocabulary at session opening
-vocabulary = [{"words" : "turn on the lights"},
-              {"words" : "stop"},
-              {"words" : "louder please"}]
-
+vocabulary = {'allume le salon': [w1_s1, w1_s2, w1_s3, w1_s4], 'eteint le wifi': [w2_s1, w2_s2, w2_s3, w2_s4]}
 service.enable_session({"vocabulary" : vocabulary})
 
 stream_queue = Queue.Queue()
@@ -81,7 +92,7 @@ while(True):
     ### This step is only needed if your mic does not work at 16kHz
     convert(WAVE_OUTPUT_FILENAME, "test.wav")
 
-    job = service.process({'sound': open("test.wav"), 'sensitivity': 0.7, 'lang': "en-US"})
+    job = service.process({'sound': open("test.wav"), 'sensitivity': 0.7, 'lang': "fr-FR"})
 
     if job.result['Result'] != 'None':
         print job.result
