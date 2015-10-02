@@ -21,12 +21,13 @@ The control flow is as follows:
  2. If nobody is there, run a small tagline as "come on"
  3. When a face is detected, find the identity of the person
  4. Play all messages for this person (if any)
- 5. When no message lefts, propose to leave a new message
+ 5. When no message left, propose to leave a new message
  6. Record the message until "stop" is said
- 7. Ask confirmation
- 8. Ask the recipient
+ 7. Ask for confirmation
+ 8. Ask for the recipient's name
  9. Store the identity, the recipient and the date
  10. Say goodbye
+ 11. Go back to 1 and repeat.
 
 Hardware
 --------
