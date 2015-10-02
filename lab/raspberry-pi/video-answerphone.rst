@@ -1,10 +1,23 @@
-Handless answerphone
-====================
+The coffee machine team assistant
+=================================
 
-Here, we will describe step by step how to build a answerphone
-handless and video based. The control flow is as follows:
+In this tutorial we will look into how turn a Raspberry Pi, a web cam and a speaker into a coffee machine assistant.
 
- 1. The device wait to see a new person in front 
+The concept
+-----------
+
+That concept might be a little obscure!
+
+We were thinking about a funny smart device that a team could use collectively.
+Then we thought that it would be great if we someone going to the coffee machine could leave a private message (work related or not) to another member of the team who would come to the coffee machine later. Of course, such a function could be filled up with an app running on a tablet. But we wanted something more 'futuristic'
+where no login nor typing on a touch screen is required (cause you are holding your coffee, right!).
+
+What we will build together here is exactly that: a hands free
+smart answering machine for team building!
+
+The control flow is as follows:
+
+ 1. The device wait to see a new person in front
  2. If nobody is there, run a small tagline as "come on"
  3. When a face is detected, find the identity of the person
  4. Play all messages for this person (if any)
@@ -14,5 +27,16 @@ handless and video based. The control flow is as follows:
  8. Ask the recipient
  9. Store the identity, the recipient and the date
  10. Say goodbye
+
+Hardware
+--------
+
+The hardware indicated below is only a suggestion, it is possible to build you assistant using different options (as long as you have a video/audio input and en audio output).
+
+
+* Raspberry Pi Model B/B+/2
+* 4GB SD Card
+* USB web cam (with a microphone)
+* Powered speakers with a 3.5mm jack input
 
 
