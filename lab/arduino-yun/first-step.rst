@@ -1,33 +1,33 @@
 Hello Yun
 =========
 
-This is a small tutorial to use Angus.ai on Arduino Yun.
-We will plug a webcam and use face detection to print
-"Hello you" when people face it.
-
+This is a small tutorial about how to use Angus.ai on Arduino Yun. We
+will plug a webcam and use face detection in order to print “Hello
+you” when people are front of the device.
 
 What is and why arduino Yun ?
 -----------------------------
 
 .. _Yun: https://www.arduino.cc/en/Guide/ArduinoYun
 
-Arduino Yun_ is the mixture between a CPU (Atheros AR9331) with an OS
-(OpenWRT) and a microcontroller (Atmel ATmega32U4). This is a very
-interresting platform for Internet Of Thing projects because you can
-control:
+What is and why arduino Yun ?
+Arduino Yun is the mixture between a CPU (Atheros AR9331) with an OS
+(OpenWRT) and a microcontroller (Atmel ATmega32U4). It is a very
+interresting platform for the Internet Of Thing projects because you
+can control:
  * your electronic/real-time/analogic/thing parts with
-   microcontroller 
+   the microcontroller
  * and the communication wifi/ethernet/Internet/web parts with
-   the atheros processor. 
-It's the best of both world !
-
+   the atheros processor.
+It's the best of both world ! All integrated in one board and
+dedicated libraries.
 
 Introduction
 ------------
 
 The documentation https://www.arduino.cc/en/Guide/ArduinoYun is very
 well done, then we invite you to follow the getting started before
-come back here to test angus.
+coming back here to test angus.
 
 After configuring the wifi (or ethernet) to put your Yun_ in you local
 area network, you can login with ssh from you computer:
@@ -36,7 +36,7 @@ area network, you can login with ssh from you computer:
 
     > ssh root@arduino.local
 
-You are in ! The available disk storage (8MB) is very low, then you
+The available disk storage (8MB) is very low, then you
 must expand the disk to work without problem.
 
 .. code-block:: bash
@@ -52,7 +52,7 @@ must expand the disk to work without problem.
 
 Please use these `instructions
 <https://www.arduino.cc/en/Tutorial/ExpandingYunDiskSpace>`_ to do
-that. After put a new micro-sd card with partitions, it must look like
+that. After putting a new micro-sd card with partitions, it must look like
 this:
 
 .. code-block:: bash
@@ -73,7 +73,7 @@ Installation
 Binary packages
 +++++++++++++++
 
-We now install required binary packages from distribution:
+We now install required binary packages from the distribution:
 
 .. code-block:: bash
 
@@ -101,7 +101,8 @@ problem, we will download it. Move into the mounted disk
     > gzip virtualenv-13.1.2.tar.gz
     > tar xvf virtualenv-13.1.2.tar
 
-You can use virtualenv immediatly to create a development environement and jump into it:
+You can use virtualenv immediately to create a development environment
+and jump into it:
 
 .. code-block:: bash
 
@@ -110,7 +111,7 @@ You can use virtualenv immediatly to create a development environement and jump 
     > cd ..
     > source devenv/bin/activate
 
-Then, you can easily install angus with its depdencencies
+Then, you can easily install angus with its dependencies:
 
 .. code-block:: bash
 
@@ -128,7 +129,7 @@ plug it on the usb port.
 The script
 ----------
 
-In the getting started of Angus, we use opencv to grab the
+In the getting started of Angus, we use opencv to grab images from the
 camera. OpenCV is not available on the Yun_ distribution.
 But you can take a picture with the tools ``fswebcam``. Thanks to
 Stefano Guglielmetti with its "`You cant touch this
@@ -161,9 +162,3 @@ The minimalist script is now straightforward:
 
         if job.result["nb_faces"] > 0:
              print("Hello yun")
-
-
-
-
-
-
