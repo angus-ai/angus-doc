@@ -41,3 +41,36 @@ The hardware indicated below is only a suggestion, it is possible to build you a
 * Powered speakers with a 3.5mm jack input
 
 
+
+
+Sound out Issue
+---------------
+
+When you use PyAudio to play sound directly on the audio output
+controlled by the bcm2835, you could have some difficult to
+get a clean sound. Check this `thread
+<https://github.com/raspberrypi/linux/issues/994>`_ for example.
+
+We have succeeded to fix this issue on our Raspberry Pi by defining a
+new alasa output thanks to a local configuration file ``.asoundrc``
+(check the `doc
+<http://www.alsa-project.org/main/index.php/Asoundrc>`_ for more
+information) put in your
+home directory or a global setting in ``/etc/asound.conf``:
+
+.. code-block:: bash
+
+    pcm.convert {
+         type plug;
+         slave {
+               pcm default;
+               rate 48000;
+         }
+    }
+
+This piece of code creates a new output device that resamples the input
+to fit to 48Khz and send the sound to the standard output (by default
+the bcm2835 audio jack output).
+
+Now you can use this new device to play sound and prevent bad quality.
+
