@@ -13,5 +13,7 @@ Angus.ai documentation (Beta)
    getting-started/java
    services/index
    sdk/index
+   lab/index
    ..advanced/index
+
 
