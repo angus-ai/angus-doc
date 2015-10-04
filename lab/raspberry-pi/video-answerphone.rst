@@ -99,8 +99,6 @@ Usage
 FAQ
 ---
 
-Licence
--------
  * Sound issues:
 
 	When using PyAudio to play sound directly on the audio output
@@ -128,4 +126,7 @@ Licence
 	This piece of code creates a new output device that resamples to 48Khz before sending the signal to the standard output (by default
 	the bcm2835 audio jack output).
 
+Licence
+-------
 
+The codes provided in this project are under an Apache v2.0 license.
