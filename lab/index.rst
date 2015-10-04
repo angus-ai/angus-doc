@@ -1,7 +1,7 @@
 .. _lab-doc:
 
-Angus.ai lab
-++++++++++++
+Lab
++++
 
 .. toctree::
    :maxdepth: 2
