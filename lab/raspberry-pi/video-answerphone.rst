@@ -1,19 +1,16 @@
-The coffee machine team assistant
-=================================
+Smart message box
+=================
 
-In this tutorial we will look into how turn a Raspberry Pi, a web cam and a speaker into a coffee machine assistant.
+In this tutorial we will look into how turn a Raspberry Pi, a web cam and a speaker into a smart message box.
 
 The concept
 -----------
 
 That concept might be a little obscure!
 
-We were thinking about a funny smart device that a team could use collectively.
-Then we thought that it would be great if we someone going to the coffee machine could leave a private message (work related or not) to another member of the team who would come to the coffee machine later. Of course, such a function could be filled up with an app running on a tablet. But we wanted something more 'futuristic'
+We were thinking about a funny smart device that a team / a family / flatmates could use collectively.
+Then we thought that it would be great if we someone going to the coffee machine could leave a private message (work related or not) to another member of the team who would come to the coffee machine later. Of course, such a function could be filled up with an app running on a tablet. But we wanted something more fun
 where no login nor typing on a touch screen is required (cause you are holding your coffee, right!).
-
-What we will build together here is exactly that: a hands free
-smart answering machine for team building!
 
 The control flow is as follows:
 
@@ -39,6 +36,73 @@ The hardware indicated below is only a suggestion, it is possible to build you a
 * 4GB SD Card
 * USB web cam (with a microphone)
 * Powered speakers with a 3.5mm jack input
+
+Installation
+------------
+
+OpenCV
+++++++
+
+OpenCV will be used to retrieve and format the video stream captured by your web cam.
+Please follow the steps detailed on opencv installation `guides`_.
+
+Note that on most operating systems, opencv libraries are available as binaries through package managers.
+On Ubuntu, typing this command is enough to have OpenCV installed::
+
+	sudo apt-get install python-opencv
+
+.. _guides: http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html
+
+
+PyAudio
++++++++
+
+PyAudio will be used to retrieve audio buffer recorded by your web cam.
+As for OpenCV, you can either follow the instructions found `here`_ or look into your operating system package manager.
+
+On Ubuntu, typing this command is enough to have PyAudio installed::
+
+	sudo apt-get install python-pyaudio
+
+.. _here: https://people.csail.mit.edu/hubert/pyaudio/
+
+Angus SDK
++++++++++
+
+We will use Angus API to provide voice and users recognition.
+Please refers to these `steps`_ to install the python SDK.
+
+.. _steps: http://angus-doc.readthedocs.org/en/latest/getting-started/python.html#install-the-angus-sdk
+
+
+Code
+++++
+
+Retrieve the code of this project on github::
+
+  git clone https://github.com/angus-ai/angus-smartmessagebox.git
+
+
+
+Configuration
+-------------
+
+Camera and Mic
+++++++++++++++
+
+Face Recognition
+++++++++++++++++
+
+Usage
+-----
+
+FAQ
+---
+
+Licence
+-------
+
+
 
 
 
