@@ -129,4 +129,4 @@ FAQ
 Licence
 -------
 
-The codes provided in this project are under an Apache v2.0 license.
+The codes provided in this project are under an `Apache v2.0 license <http://www.apache.org/licenses/LICENSE-2.0>`_.

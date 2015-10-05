@@ -162,3 +162,8 @@ The minimalist script is now straightforward:
 
         if job.result["nb_faces"] > 0:
              print("Hello yun")
+
+Licence
+-------
+
+The codes provided in this project are under an `Apache v2.0 license <http://www.apache.org/licenses/LICENSE-2.0>`_.
