@@ -75,26 +75,62 @@ Please refers to these `steps`_ to install the python SDK.
 .. _steps: http://angus-doc.readthedocs.org/en/latest/getting-started/python.html#install-the-angus-sdk
 
 
-Code
-++++
+Main program
+------------
 
-Retrieve the code of this project on github::
+Get the script
+++++++++++++++
+
+Retrieve the code of this project on `github <https://github.com/angus-ai/angus-smartmessagebox.git>`_::
 
   git clone https://github.com/angus-ai/angus-smartmessagebox.git
 
+All the code was commented.
 
+Prepare face directory
+++++++++++++++++++++++
 
-Configuration
--------------
+The main program looking for a subdirectory "ids" to create the
+directory for the message box. Please create a new subsubdirectory for
+each person you want include in the system. And for each, put inside
+at least one picture (jpg or png) of the face. For example we uploaded
+in the repository our 3 faces::
 
-Camera and Mic
-++++++++++++++
+    ids/
+    ├── Aurélien
+    │   └── face.jpg
+    ├── Gwennael
+    │   └── face.jpg
+    └── Sylvain
+        └── face.jpg
 
-Face Recognition
-++++++++++++++++
 
 Usage
------
++++++
+
+For run the script just::
+
+    python main.py
+
+After this, the program invite you to select the input and output
+devices::
+
+    2 : HDA Intel PCH: ALC283 Analog (hw:1,0)
+    3 : HD Pro Webcam C920: USB Audio (hw:2,0)
+    5 : pulse
+    6 : default
+    Select your input: 3
+    0 : HDA Intel HDMI: 0 (hw:0,3)
+    1 : HDA Intel HDMI: 1 (hw:0,7)
+    4 : hdmi
+    5 : pulse
+    6 : default
+    Select your output: 6
+
+You can give the input and output device indices on command line::
+
+    python main.py 3 6
+
 
 FAQ
 ---
@@ -102,8 +138,8 @@ FAQ
  * Sound issues:
 
 	When using PyAudio to play sound directly on the audio output
-	controlled by the bcm2835, you may have some difficulties to
-	get a clean sound. Check this `thread
+	controlled by the bcm2835 on raspberry-pi, you may have some
+	difficulties to get a clean sound. Check this `thread
 	<https://github.com/raspberrypi/linux/issues/994>`_ for example.
 
 	You can fix this issue by defining a
@@ -125,6 +161,8 @@ FAQ
 
 	This piece of code creates a new output device that resamples to 48Khz before sending the signal to the standard output (by default
 	the bcm2835 audio jack output).
+	You just have to select "convert" at program startup in output
+	selection.
 
 Licence
 -------
