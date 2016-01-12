@@ -11,6 +11,7 @@ import numpy as np
 import pyaudio
 from os import system
 import operator
+import json
 
 ### Good performances off this script depend a lot on these parameters,
 ### do not hesitate to experiment with different settings
@@ -103,8 +104,9 @@ while(True):
     job = service.process(
         {'sound': StringIO.StringIO(buff.getvalue()), 'sensitivity': 0.7})
 
-    if job.result['Result'] != 'None':
-        print job.result
+    if "nbests" in job.result:
+        print json.dumps(job.result, indent=4)
+
 
 
 stream.stop_stream()

@@ -91,9 +91,8 @@ while(True):
     job = service.process(
         {'sound': StringIO.StringIO(buff.getvalue()), 'sensitivity': 0.7, 'lang': "en-US"})
 
-    if job.result['Result'] != 'None':
-        print job.result
-
+    if "nbests" in job.result:
+        print json.dumps(job.result, indent=4)
 
 stream.stop_stream()
 stream.close()
