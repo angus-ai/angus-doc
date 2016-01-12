@@ -24,7 +24,7 @@ The function ``process()`` takes a dictionary as input formatted as follows:
 
     {'image' : file}
 
-* ``image``: a python ``File Object`` as returned for example by ``open()``.
+* ``image``: a python ``File Object`` as returned for example by ``open()`` or a ``StringIO`` buffer.
 
 Output
 ------

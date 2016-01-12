@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-import cv2
+import StringIO
+
 import angus
+import cv2
+import numpy as np
 
 if __name__ == '__main__':    
     ### Web cam index might be different from 0 on your setup.
@@ -22,9 +25,10 @@ if __name__ == '__main__':
         if not frame == None:
 
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            cv2.imwrite("/tmp/image.png", gray)
+            ret, buff = cv2.imencode(".png", gray)
+            buff = StringIO.StringIO(np.array(buff).tostring())
 
-            job = service.process({"image": open("/tmp/image.png")})
+            job = service.process({"image": buff})
             res = job.result
 
             if res['nb_faces'] > 0:

@@ -1,7 +1,9 @@
 #!/usr/bin/env python
+import StringIO
 
-import cv2
 import angus
+import cv2
+import numpy as np
 
 if __name__ == '__main__':
     ### Retrieve web cam video stream
@@ -21,9 +23,10 @@ if __name__ == '__main__':
         ret, frame = cap.read()
         if not frame == None:
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            cv2.imwrite("image.png", gray)
+            ret, buff = cv2.imencode(".png", gray)
+            buff = StringIO.StringIO(np.array(buff).tostring())
 
-            job = service.process({"image": open("image.png")})
+            job = service.process({"image": buff})
             res = job.result
 
             if res['nb_targets'] > 0:

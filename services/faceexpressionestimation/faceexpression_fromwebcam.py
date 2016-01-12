@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import StringIO
 
 import sys
 import math as m
@@ -26,10 +27,10 @@ if __name__ == '__main__':
         if(frame != None):
             ### angus.ai computer vision services require gray images right now.
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            cv2.imwrite("image.png", gray)
+            ret, buff = cv2.imencode(".png", gray)
+            buff = StringIO.StringIO(np.array(buff).tostring())
 
-            ### jpg, png images are currently supported        
-            job = service.process({"image": open('image.png')})
+            job = service.process({"image": buff})
             res = job.result
 
             print "---------- Raw answer from Angus.ai -----------" 

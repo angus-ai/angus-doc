@@ -48,7 +48,7 @@ The function ``process()`` takes a dictionary as input formatted as follows:
      'album' : {"people1": [sample_1, sample_2], "people2" : [sample_1, sample_2]}
     }
 
-* ``image``: a python ``File Object`` as returned for example by ``open()``.
+* ``image``: a python ``File Object`` as returned for example by ``open()`` or a ``StringIO`` buffer.
 * ``album`` : a dictionary containing samples of the faces that need to be spotted. Samples need first to be provided to the service using the function ``blobs.create()`` as per the example above. The more samples the better, although 1 sample per people is enough.
 
 Output
