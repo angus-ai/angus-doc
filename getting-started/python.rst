@@ -7,7 +7,7 @@ Getting Started with Python
 You must have registered `here <http://www.angus.ai/developers/>`_ and received your API credentials.
 
 1. Install the Angus SDK
-====================
+========================
 
 Open a terminal and install the angus python sdk.
 
@@ -106,7 +106,7 @@ Note that we use the method ``enable_session()`` and ``disable_session()`` to le
 Using this functions might delayed a bit the appearance and disappearance of detected targets. If this is an issue for your application, just remove these calls from your script. The service will process the successive images independently.
 
 .. literalinclude:: agegenderestimation_fromwebcam.py
-   :emphasize-lines: 16-18,24-28,47
+   :emphasize-lines: 19-21,27-32,51
 
 
 You should see your age/gender estimation displayed on your screen:
