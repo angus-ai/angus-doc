@@ -22,7 +22,8 @@ Input
     'sensitivity' : 0.3}
 
 
-* ``sound`` : a python ``File Object`` as returned for example by ``open()`` describing a wav file with the following format : ``PCM 16bit, Mono``, without constraints on sample rate.
+* ``sound`` : a python ``File Object`` as returned for example by
+  ``open()`` or a ``StringIO`` buffer describing a wav file with the following format : ``PCM 16bit, Mono``, without constraints on sample rate.
 * ``sensitivity`` : modifies the ability of the algorithms to detect quiet sounds. ``[0, 1]``. The higher the value is, the better the algorithm will detect quiet sounds, but the more it will be sensitive to background noise.
 
 Output

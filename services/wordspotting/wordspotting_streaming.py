@@ -3,9 +3,11 @@
 
 import Queue
 import StringIO
+import numpy
 import wave
 import time
 import angus
+import numpy as np
 import pyaudio
 from os import system
 import operator
@@ -21,7 +23,6 @@ CHANNELS = 1
 
 ### Mix index will differ depending on your system
 INDEX = 0
-WAVE_OUTPUT_FILENAME = "output.wav"
 
 p = pyaudio.PyAudio()
 
@@ -63,8 +64,15 @@ stream = p.open(format=FORMAT,
 
 stream.start_stream()
 
-def convert(filename, filename2):
-    system("sox %s -r 16000 %s" % (filename, filename2))
+
+def convert(buff_in, rate_in, rate_out):
+    # Resample buffer with numpy linear interpolation
+    buff_in = np.frombuffer(buff_in, dtype=np.int16)
+    srcx = np.arange(0, buff_in.size, 1)
+    tgtx = np.arange(0, buff_in.size, float(rate_in) / float(rate_out))
+    buff_out = np.interp(tgtx, srcx, buff_in).astype(np.int16)
+    return buff_out.tostring()
+
 
 while(True):
 
@@ -81,18 +89,19 @@ while(True):
         stream_queue.queue.clear()
 
     data = stream_queue.get()
+    data = convert(data, RATE, 16000)
 
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+    buff = StringIO.StringIO()
+
+    wf = wave.open(buff, 'wb')
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(p.get_sample_size(FORMAT))
-    wf.setframerate(RATE)
+    wf.setframerate(16000)
     wf.writeframes(data)
     wf.close()
 
-    ### This step is only needed if your mic does not work at 16kHz
-    convert(WAVE_OUTPUT_FILENAME, "test.wav")
-
-    job = service.process({'sound': open("test.wav"), 'sensitivity': 0.7})
+    job = service.process(
+        {'sound': StringIO.StringIO(buff.getvalue()), 'sensitivity': 0.7})
 
     if job.result['Result'] != 'None':
         print job.result

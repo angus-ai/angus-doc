@@ -38,7 +38,7 @@ Input
     'lang' : "en_US"}
 
 
-* ``sound`` : a python ``File Object`` as returned for example by ``open()`` describing a wav file with the following format : ``PCM 16bit, Mono, 16KHz``.
+* ``sound`` : a python ``File Object`` as returned for example by ``open()`` or a ``StringIO`` buffer describing a wav file with the following format : ``PCM 16bit, Mono, 16KHz``.
 * ``vocabulary`` : a data structure containing information about the words that need to be spotted.
 
  * ``words``: the group of words that need to be spotted written in the language specified when calling the service.

@@ -17,8 +17,6 @@ RECORD_SECONDS = 2
 ### Index will differ depending on your system
 INDEX = 4  # USB Cam
 
-WAVE_OUTPUT_FILENAME = "output.wav"
-
 p = pyaudio.PyAudio()
 
 conn = angus.connect()
@@ -53,14 +51,17 @@ while(True):
 
     data = stream_queue.get()
 
-    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+    buff = StringIO.StringIO()
+
+    wf = wave.open(buff, 'wb')
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(p.get_sample_size(FORMAT))
     wf.setframerate(RATE)
     wf.writeframes(data)
     wf.close()
 
-    job = service.process({'sound': open(WAVE_OUTPUT_FILENAME), 'baseline':0.14, 'sensitivity':0.7})
+    job = service.process(
+        {'sound': StringIO.StringIO(buff.getvalue()), 'baseline': 0.14, 'sensitivity': 0.7})
     print job.result
 
 

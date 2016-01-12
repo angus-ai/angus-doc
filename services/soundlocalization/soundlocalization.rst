@@ -22,7 +22,7 @@ Input
     'sensitivity' : 0.3}
 
 
-* ``sound`` : a python ``File Object`` as returned for example by ``open()`` describing a wav file with the following format: ``PCM 16bit, 48kHz, Stereo``.
+* ``sound`` : a python ``File Object`` as returned for example by ``open()`` or a ``StringIO`` buffer describing a wav file with the following format: ``PCM 16bit, 48kHz, Stereo``.
 * ``baseline`` : distance between the 2 microphones of the array in ``meters``.
 * ``sensitivity`` : modifies the ability of the algorithms to locate quiet sounds. ``[0, 1]``. The higher the value is, the better the algorithm will locate quiet sounds, but the more it will be sensitive to background noise.
 
