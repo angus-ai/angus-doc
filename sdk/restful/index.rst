@@ -25,15 +25,15 @@ Encryption and Authentication
 
 All request to a angus.ai gateway must be done through `Basic
 Authentication <https://en.wikipedia.org/wiki/Basic_access_authentication>`_
-and https protocol (http over ssl). You must get back
-your credentials here: http://www.angus.ai/developers/.
+and https protocol (http over ssl).
+You must signup at http://www.angus.ai/developers/ to get your credentials
 
-If your credentials are:
+Then, you get back a client identificator and an access token, for example:
 
 * client id: |client_id|
 * access token: |access_token|
 
-you can make a **GET** request to the resource
+You can make a **GET** request to the resource
 https://gate.angus.ai/services to get the available service list
 provides by the server. Curl accepts the option ``-u`` that computes
 the value for the ``Authorization`` HTTP header.
@@ -78,10 +78,10 @@ Resources
 
 Angus.ai provides a "resource oriented" API. Each asset is represented as a
 resource available at an URL. Currently, most of Angus.ai resources
-have only a json representation,
+have only a JSON representation,
 that means when you get a resource (with HTTP **GET**) from Angus.ai
 you can only specify the value ``application/json`` for the HTTP Header ``Accept``.
-Then the response body is a json object (dictionary)
+Then the response body is a JSON object (dictionary)
 
 We can request the list of available services again:
 
@@ -182,8 +182,8 @@ an endpoint on a "jobs" resource.
 In the next section we will see how to use this resource to request
 new compute to the Angus.ai cloud.
 
-Jobs
-----
+Jobs (compute)
+--------------
 
 Job is a specific resource, it enables calling some service in a
 RESTful way.
@@ -192,7 +192,7 @@ can create a new job just by using a **POST** operation on the
 collection resource.
 To make a valid request you must conform to some constraints:
 
-* the body of the request must be a json message conform to the
+* the body of the request must be a JSON message conform to the
   documentation of the service (for dummy service please see `HERE
   <here>`_)
 * you must specify the Content-Type header of the request to
@@ -247,7 +247,7 @@ define.
    }
 
 The response status is 202 for HTTP status code **ACCEPTED**, and the
-reply url enables get back the result in future.
+reply url enables get back the result in future. 
 
 .. code-block:: console
 
@@ -293,8 +293,8 @@ You must create a multipart request to send binary file to the
 cloud:
 
 * the name of the binary part must follow the pattern ``attchment://<name_of_the_resource``
-* the name of the json body part must be ``meta`̀
-* use the name `̀attchment://<name_of_the_resource`` in json body part to refer to the resource
+* the name of the JSON body part must be ``meta`̀
+* use the name `̀attchment://<name_of_the_resource`` in JSON body part to refer to the resource
 
 For example, the service face_detection requests an
 image. You can upload it as atachment to the request as follow:
@@ -357,7 +357,7 @@ Session / State
 Even if Angus.ai API is RESTful and then the services aim to be stateless,
 some service are statefull for them first version.
 Anyway, the state must be keep by the client and attach with each request in a
-``state`` json parameter. For the statefull services, then states are just a
+``state`` JSON parameter. For the statefull services, then states are just a
 session_id in the format **uuid1** generated client side.
 
 .. code-block:: console
