@@ -6,5 +6,3 @@ Advanced
 
    restful/index
    python-sdk/python-sdk
-   .. java-sdk/java-sdk
-

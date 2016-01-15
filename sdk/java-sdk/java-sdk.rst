@@ -1,5 +1,0 @@
-Java SDK
-========
-
-
-Bla bla

@@ -10,7 +10,6 @@ Angus.ai documentation (Beta)
    :maxdepth: 2
 
    getting-started/python
-   getting-started/java
    services/index
    sdk/index
    lab/index
