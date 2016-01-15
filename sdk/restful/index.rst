@@ -17,73 +17,52 @@ Angus.ai provides a RESTful API for its services. That implies:
 * A linked resources approach
 
 In the rest of this documentation, we will use command line curl to
-interact with Angus.ai gateway and present you each of these feature
+interact with Angus.ai gateway and present you each of these features
 one by one.
 
 Encryption and Authentication
 -----------------------------
 
-All request to a angus.ai gateway must be done through `Basic
+All requests to an angus.ai gateway must be done through `Basic
 Authentication <https://en.wikipedia.org/wiki/Basic_access_authentication>`_
 and https protocol (http over ssl).
 You must signup at http://www.angus.ai/developers/ to get your credentials
 
-Then, you get back a client identificator and an access token, for example:
+These credentials are the equivalent of login/password but is for a device.
+For example, for your first requests, you can use the free access:
 
 * client id: |client_id|
 * access token: |access_token|
 
-You can make a **GET** request to the resource
-https://gate.angus.ai/services to get the available service list
-provides by the server. Curl accepts the option ``-u`` that computes
-the value for the ``Authorization`` HTTP header.
+To check your credentials you can make a simple **GET** request on
+service list resource https://gate.angus.ai/services (we will see the
+content of this resource in `Service directory`_). Curl accepts the
+option ``-u`` that computes the value for the ``Authorization`` HTTP
+header in order to conform to Basic Authentication protocol.
 
 .. code-block:: console
 
    > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+   > -s -o /dev/null -w "%{http_code}" \
    > https://gate.angus.ai/services
-   {
-      "url": "https://gate.angus.ai/services",
-      "services": {
-         "face_expression_estimation": {
-            "url": "/services/face_expression_estimation"
-         },
-         "dummy": {
-            "url": "/services/dummy"
-         },
-         "gaze_analysis": {
-            "url": "/services/gaze_analysis"
-         },
-         "motion_detection": {
-            "url": "/services/motion_detection"
-         },
-         "age_and_gender_estimation": {
-            "url": "/services/age_and_gender_estimation"
-         },
-         "sound_localization": {
-            "url": "/services/sound_localization"
-         },
-         "face_detection": {
-            "url": "/services/face_detection"}
-         }
-    }
+   200
 
-Ok, you just made your first call to Angus.ai cloud and get the
-response. All the communication was encrypted (because we use https
-protocol) and you are authenticated thanks to your credentials put in
-Basic Authentication HTTP header.
+You just made your first call to Angus.ai cloud and got the
+response code ``200``. All communications was encrypted (because we
+use https protocol) and you are authenticated thanks to your credentials.
 
 Resources
 ---------
 
 Angus.ai provides a "resource oriented" API. Each asset is represented as a
-resource available at an URL. Currently, most of Angus.ai resources
+resource with at least one URL. Currently, most of Angus.ai resources
 have only a JSON representation,
-that means when you get a resource (with HTTP **GET**) from Angus.ai
-you can only specify the value ``application/json`` for the HTTP Header ``Accept``.
-Then the response body is a JSON object (dictionary)
+that means when you get a resource (with **GET**) from Angus.ai,
+you can only specify the value ``application/json`` for the HTTP header ``Accept``.
+The response body is a JSON object.
 
-We can request the list of available services again:
+With the last resource (service list), we can display the response
+content by removing extra options from curl command line:
 
 .. code-block:: console
 
@@ -102,8 +81,8 @@ We can request the list of available services again:
          }
     }
 
-The response is in JSON format, it is an object (or dictionary), the
-content is not important right now, we will describe in the next
+The response is a `JSON <https://en.wikipedia.org/wiki/JSON>`_ object,
+the content is not important right now, we will describe it in the next
 section.
 
 
@@ -117,8 +96,8 @@ with their URLs.
 
 But you must have an entry point to start the navigation. The entry
 point for services is https://gate.angus.ai/services, this resource
-describes a service directory, by requesting it, you get a list of
-available services provide by the cloud.
+describes a service directory. By requesting it, you get back a list
+of available services provide by the targeted cloud.
 
 .. code-block:: console
    
@@ -150,7 +129,7 @@ available services provide by the cloud.
       }
     }
 
-By this request you discover the service ``dummy``. As all other asset
+Thanks to this request you discover the service ``dummy``. As all other asset
 of the cloud, a service is a resource, let's get it:
 
 .. code-block:: console
@@ -163,8 +142,7 @@ of the cloud, a service is a resource, let's get it:
       }
    }
 
-By this request we are informed that there are only one version. We
-can continue and get it:
+This response informs us that there are only one version. Let's continue and get it:
 
 .. code-block:: console
   
@@ -178,7 +156,7 @@ can continue and get it:
    }
 
 We start at the entry endpoint of service directory and finaly get
-an endpoint on a "jobs" resource.
+an endpoint on a "jobs" resource. 
 In the next section we will see how to use this resource to request
 new compute to the Angus.ai cloud.
 
@@ -187,14 +165,13 @@ Jobs (compute)
 
 Job is a specific resource, it enables calling some service in a
 RESTful way.
-The previous "jobs" resource is a collection of job resource, then you
+The previous "jobs" resource is a collection of job resources, then you
 can create a new job just by using a **POST** operation on the
 collection resource.
 To make a valid request you must conform to some constraints:
 
 * the body of the request must be a JSON message conform to the
-  documentation of the service (for dummy service please see `HERE
-  <here>`_)
+  documentation of the service
 * you must specify the Content-Type header of the request to
   application/json
 * you must specify the type of creation: synchronous or asynchronous
@@ -217,7 +194,7 @@ With curl the new command is as follow.
 The response contains an absolute url on the resource (the job), the status,
 here 201 (**CREATED**), because a synchronous call was requested.
 
-You can get back the resource with the new given url.
+You can get back the resource with the new replied url.
 
 .. code-block:: console
 
@@ -246,8 +223,8 @@ define.
       "status": 202,
    }
 
-The response status is 202 for HTTP status code **ACCEPTED**, and the
-reply url enables get back the result in future. 
+The response status is ``202`` for HTTP status code **ACCEPTED**, and the
+replied url allows to get back the result in future. 
 
 .. code-block:: console
 
@@ -292,9 +269,9 @@ Make a request with an attached binary file
 You must create a multipart request to send binary file to the
 cloud:
 
-* the name of the binary part must follow the pattern ``attchment://<name_of_the_resource``
-* the name of the JSON body part must be ``meta`̀
-* use the name `̀attchment://<name_of_the_resource`` in JSON body part to refer to the resource
+* the name of the binary part must follow the pattern ``attchment://<name_of_the_resource>``
+* the name of the JSON body part must be ``meta``
+* use the name ``attchment://<name_of_the_resource`` in JSON body part to refer to the resource
 
 For example, the service face_detection requests an
 image. You can upload it as atachment to the request as follow:
@@ -335,8 +312,7 @@ attaching it to the request. Blob storage request a message with a
    }
 
 The response contains the url of the new blob resource. You can use it
-as in all service by adressing it by using the "resource" protocol in
-your request message for new job
+in all service in your request message for new job:
 
 .. code-block:: console
 
