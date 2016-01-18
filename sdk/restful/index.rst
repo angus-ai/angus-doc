@@ -280,7 +280,7 @@ You need to create a multipart request to send binary file to angus.ai as follow
 
 * the name and type of the binary part are specified with: ``attachment://<name_of_the_resource>``
 * the JSON body part is prefixed with ``meta``
-* the JSON body part refers to the attachement ``attchment://<name_of_the_resource``
+* the JSON body part refers to the attachement ``attachment://<name_of_the_resource``
 
 For example, the service ``face_detection`` must be provided an
 image as input. You can upload it as an attachment as follows:
