@@ -6,6 +6,7 @@ Services
 .. toctree::
    :maxdepth: 2
 
+   dummy/dummy
    agegenderestimation/agegenderestimation
    faceexpressionestimation/faceexpressionestimation
    facedetection/facedetection
