@@ -56,7 +56,8 @@ use https protocol) and you were authenticated thanks to your credentials.
 Resources
 ---------
 
-Angus.ai provides a "resource oriented" API. Each asset is represented as a
+Angus.ai provides a "resource oriented" API. Each image, piece of
+sound, document and other assets are represented as a
 resource with at least one URL. Currently, most angus.ai resources
 only have a JSON representation.
 
@@ -134,8 +135,8 @@ of available services provided by angus.ai.
         }
       }
 
-This request reveals for example a service named ``dummy``. As all other assets
-of angus.ai cloud, a service is a resource, so let's ``get`` it:
+This request reveals for example a service named ``dummy``.
+A service is a resource too, so let's ``get`` it:
 
 .. code-block:: console
 
