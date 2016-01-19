@@ -157,9 +157,9 @@ The response shows that there is only one version of the dummy service. Let's co
      https://gate.angus.ai/services/dummy/1
 
    > {
-        "url": "https://gate.angus.ai/sevices/dummy/1",
+        "url": "https://gate.angus.ai/services/dummy/1",
         "version": 1,
-        "description": "A simple echo service",
+        "description": "\nA simple dummy service. You can send {\"echo\": \"Hello world\"} to get back the\nmessage \"Hello world\" as result. Moreover, the dummy service enables statefull\nfeatures",
         "jobs": "https://gate.angus.ai/services/dummy/1/jobs",
      }
 
@@ -350,18 +350,26 @@ In that case, the state is kept by the client and attached with each request in 
 ``state`` JSON parameter. For the statefull services, states are currently represented as
 ``session_id`` generated on the client side.
 
+In followed example, we generate a uuid session id with the ``uuidgen``
+linux tool and we loop 4 times over the same image that contains a
+face and send it to the face detection service. 
+
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -H "Content-Type: application/json" \
-     -d '{ "echo": "Hello world!", "async": false, "state": {"session_id": "714f0416-0de0-11e5-ab02-eca86bfe9d03"}}' \
-     https://gate.angus.ai/services/dummy/1/jobs
+   > export SESSION=`uuidgen`
+   > for i in `seq 1 4`; do
+   >   curl -su 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+   >        -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
+   >        -F 'meta={"async" : false, "image": "attachment://bar", "state": { "session_id": "'$SESSION'"}};type=application/json' \
+   >        https://gate.angus.ai/services/face_detection/1/jobs | python -m json.tool | grep "nb_faces"
+   > done;
+       "nb_faces": 0,
+       "nb_faces": 0,
+       "nb_faces": 0,
+       "nb_faces": 1,
 
-   > {
-        "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
-        "state": {
-           "session_id": "714f0416-0de0-11e5-ab02-eca86bfe9d03"
-        },
-        "status": 201,
-        "echo": "Hello world!"
-     }
+When a session is
+requested, the service try to track faces in sucessive images but
+returns no result at first time. Then, we can notice, the three first
+calls have 0 face result but the fourth one (for the same image) find
+a face. That validates the session id parameter is taken into account.
