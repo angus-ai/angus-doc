@@ -65,7 +65,7 @@ The ``keys`` contained in result dictionaries depend on the service used and are
 
 You have just sent your first request to Angus.ai, Congratulations!
 
-3. Access your sensor stream
+4. Access your sensor stream
 ============================
 
 Some applications will require a processing on all the data coming from a sensor (e.g. a web cam).
@@ -95,7 +95,7 @@ Check that your web cam video stream is correctly displayed on your screen.
 
 .. image:: gwenn_onwebcam.png
 
-4. Send this stream to Angus
+5. Send this stream to Angus
 ============================
 
 We can now extend this code to have Angus process this stream.
@@ -113,9 +113,7 @@ You should see your age/gender estimation displayed on your screen:
 
 .. image:: gwenn_onwebcam_agegender.png
 
-5. Congratulations!
+6. Congratulations!
 ===================
 
 You have designed your first app using Angus.ai : an age and gender estimator. Congratulations!
-
-
