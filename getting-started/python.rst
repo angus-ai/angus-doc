@@ -4,7 +4,7 @@ Getting Started with Python
 
 *Prerequisites*
 
-You must have registered `here <http://www.angus.ai/developers/>`_ and received your API credentials.
+You must have registered `here <http://www.angus.ai/request-credentials/>`_ and received your API credentials.
 
 1. Install the Angus SDK
 ========================
@@ -20,7 +20,7 @@ You might want to create a python virtual environnement with ``virtualenv`` and 
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by registering `here <http://www.angus.ai/developers/>`_.
+You must configure your sdk with the keys you received by registering `here <http://www.angus.ai/request-credentials/>`_.
 These keys are used to authenticate the requests you are about to send.
 
 In a terminal, type:

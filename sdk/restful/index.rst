@@ -26,7 +26,7 @@ All requests to an angus.ai gateway needs to be done through `Basic
 Authentication <https://en.wikipedia.org/wiki/Basic_access_authentication>`_
 and https protocol (http over ssl).
 
-As a user, you need to signup first at http://www.angus.ai/developers/ to get your credentials.
+As a user, you need to signup first at http://www.angus.ai/request-credentials/ to get your credentials.
 
 These credentials are an equivalent of a login/password but for a device.
 
