@@ -1,6 +1,6 @@
 {
- "access_token": "49fddc59-4621-47b9-af07-e97215fb12d2",
- "default_root": "http://10.1.31.4",
- "ca_path": "/home/gwennaelgate/.angusdk/certificate.pem",
- "client_id": "d092ddc6-0a11-11e5-a96e-2338b3cd44a3"
+ "access_token": "<password>",
+ "default_root": "http://localhost:80",
+ "ca_path": "/home/.../.angusdk/certificate.pem",
+ "client_id": "admin"
 }

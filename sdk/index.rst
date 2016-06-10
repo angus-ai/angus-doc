@@ -7,3 +7,4 @@ Advanced
    restful/index
    python-sdk/python-sdk
    optimisation/index
+   ../angusbox/index

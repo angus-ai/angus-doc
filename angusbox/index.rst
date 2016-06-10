@@ -1,5 +1,5 @@
-How to setup an Angus box (on premise)
-**************************************
+How to setup an Angus Box
+*************************
 
 This tutorial will guide you through the process of installing and running your ``Angus box`` on your PC/Server.
 
@@ -19,9 +19,9 @@ The PC/Server where to install the ``Angus box`` should meet the following minim
 
 To deploy and run your ``Angus box``, you need to install Docker first.
 
-The procedure depends on your Linux distribution, please refer to the appropriate section in the `Docker documentation <https://docs.docker.com/installation/>`_.
+The procedure depends on your operating system, please refer to the appropriate section in the `Docker documentation <https://docs.docker.com/installation/>`_.
 
-The procedure should look like this (Ubuntu 15.04LTS):
+On a Unix based operating system, the procedure should look like this (Ubuntu 15.04LTS):
 
 .. code-block:: python
 
@@ -34,6 +34,8 @@ To check that ``Docker`` is correctly installed:
 .. code-block:: python
 
    $ sudo docker run hello-world
+
+For Windows, follow the procedure here: `<https://docs.docker.com/engine/installation/windows/>`_.
 
 |
 |
@@ -59,16 +61,18 @@ To load your ``Angus box``, type in a terminal (the commands below launch backgr
 
 .. code-block:: python
 
-   sudo docker load < /path/to/angus.box.prod.tgz
+   docker load -i /path/to/angus.box.prod.tgz
 
 Start the box
 -------------
 
 .. code-block:: python
 
-   ID = $(sudo docker run -d -p 0.0.0.0:80:80 -t angus.box:prod)
+   ID = $(docker run -e "ANGUS_PASSWORD=<password>" -d -p 443:443 -p 80:80 angus.box:prod)
 
-You can check that the image is running with ``sudo docker ps`` (listing the running Docker images).
+Choose the <password> you wish and store it, as it will be needed below.
+
+You can check that the image is running with ``docker ps`` (listing the running Docker containers).
 
 Please note that the last command will have your ``Angus box`` listen to external requests received by the host PC on port 80.
 
@@ -82,7 +86,7 @@ The ``Angus box`` can be stopped at any time by typing:
 
 .. code-block:: python
 
-   sudo docker stop $ID
+   docker stop $ID
 
 
 Unload the box
@@ -92,9 +96,9 @@ You can totally remove the ``Angus box`` from your system by typing:
 
 .. code-block:: python
 
-   sudo docker rmi angus.box:prod
+   docker rmi angus.box:prod
 
-You can check that the ``Angus box`` is not loaded anymore with ``sudo docker images`` (listing the loaded Docker images).
+You can check that the ``Angus box`` is not loaded anymore with ``docker images`` (listing the loaded Docker images).
 
 |
 |
@@ -123,7 +127,7 @@ By default, your SDK is configured to send its requests to the servers hosted by
 
 To redirect these requests to your newly installed ``Angus box``, open the configuration file located at ``/home/<your_username>/.angusdk/config.json``, and replace ``https://gate.angus.ai`` by ``http://<Server IP>``.
 
-The modified file should look like this:
+The modified file should look like this (replace "<password>" by the password you chose above):
 
 .. include:: config.json
    :literal:
@@ -138,7 +142,7 @@ The result should look like:
 
 .. code-block:: python
 
-   $ Server: http://10.1.31.4
+   $ Server: http://localhost:80
    $ Status: OK
 
 
