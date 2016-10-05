@@ -17,4 +17,4 @@ Services
    sounddetection/sounddetection
    soundlocalization/soundlocalization
    wordspotting/index
-
+   qrcode/index
