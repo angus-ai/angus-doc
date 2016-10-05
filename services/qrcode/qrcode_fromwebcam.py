@@ -20,7 +20,7 @@ if __name__ == '__main__':
     service = conn.services.get_service("qrcode_decoder", version=1)
     service.enable_session()
 
-    while(cap.isOpened()):
+    while cap.isOpened():
         ret, frame = cap.read()
         if frame is None:
             break
