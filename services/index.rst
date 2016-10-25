@@ -6,6 +6,7 @@ Services
 .. toctree::
    :maxdepth: 2
 
+   sceneanalysis/sceneanalysis
    dummy/dummy
    agegenderestimation/agegenderestimation
    faceexpressionestimation/faceexpressionestimation
