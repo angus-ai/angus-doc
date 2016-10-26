@@ -4,10 +4,8 @@ Scene analysis (Beta)
 
 Someone has just entered the room ? Who is he ? What is he doing ?
 
-
 Getting Started
 ---------------
-
 
 Using the Python SDK:
 
@@ -16,10 +14,8 @@ Using the Python SDK:
 Input
 -----
 
-
 The API takes a stream of 2d still images as input, of format "jpg" or "png", without constraints on resolution.
 However, 640p x 480p tends to be a good trade-off for both precision/recall and latencies.
-
 
 Note also that the bigger the resolution, the longer the API will take to process and give a result.
 The function ``process()`` takes a dictionary as input formatted as follows:
@@ -77,11 +73,9 @@ Here is the list of the different presets that are available :
 
 
 Output
-----------
-
+------
 
 Events will be pushed to your client following that format. Note that if nothing happened, the events list will be empty, but the timestamp will still be updated.
-
 
 
 
@@ -89,26 +83,62 @@ Events will be pushed to your client following that format. Note that if nothing
 
 
     {
-      "timestamp" : "2016:10:24 18:56:23.000018",
+      "timestamp" : "UTC-2016-10-24 18:56:23.000018+4",
       "events" : [
                   {
-                    "id" : "16fd2706-8baf-433b-82eb-8c7fada847da",
-                    "type" : 'appearance',
+                    "entity_id" : "16fd2706-8baf-433b-82eb-8c7fada847da",
+                    "entity_type" : 'human',
+                    "type" : 'age_estimated',
                     "confidence" : 0.96
                   }
-                  {
-                    "id" : "16fd2706-8baf-433b-82eb-8c7fada847da",
-                    "type" : 'age',
-                    "data" : 25,
-                    "confidence" : 0.91
-                  }
-                ]
+                ],
+      "entities" : {"16fd2706-8baf-433b-82eb-8c7fada847da": {
+                                                                'face_roi': [339, 264, 232, 232],
+                                                                'face_roi_confidence': 0.7132946138717671,
+                                                                'full_body_roi': [59.43999999999994,
+                                                                                  14.599999999999909,
+                                                                                  791.1200000000001,
+                                                                                  1798.0],
+                                                                'full_body_roi_confidence': 0.7132946138717671,
+
+                                                                'age': 25,
+                                                                'age_confidence': 0.34,
+
+                                                                'gender': "male",
+                                                                'gender_confidence': 0.9999379577720902,
+
+                                                                'emotion_anger': 0.04,
+                                                                'emotion_surprise': 0.06563202096657506,
+                                                                'emotion_sadness': 0.142974245872324,
+                                                                'emotion_neutral': 0.5381274632225086,
+                                                                'emotion_happiness': 0.2116314775603314,
+                                                                'emotion_smiling_degree': 0.42685544831147126,
+                                                                'emotion_confidence': 0.37659382447418466,
+
+                                                                'face_eye_left': [414, 346],
+                                                                'face_eye_right': [499, 339],
+                                                                'face_mouth': [456, 401],
+                                                                'face_nose': [456, 401],
+                                                                'face_confidence': 0.37659382447418466,
+
+                                                                'gaze_confidence': 0.37659382447418466,
+                                                                'gaze_pitch': 0.023609825318146704,
+                                                                'gaze_yaw': 0.14999280047675256,
+
+                                                                'head_pitch': -0.0544808106511141,
+                                                                'head_roll': -0.056476524426443575,
+                                                                'head_yaw': -0.17511312320692696,
+                                                                'head_confidence': 0.37659382447418466,
+
+                                                                'displacement': [0.06296296296296296, -0.10555555555555556]
+                                                            }
+                }
     }
 
 
-* ``id`` : id of the human related to the event.
+* ``entity_id`` : id of the human related to the event.
+* ``entity_type`` : type of the entity, only "human" are currently supported
 * ``type`` : type of the event, a list of event types can be found below.
-* ``data`` : some event types can have a corresponding data.
 * ``confidence`` : a value between 0 and 1 which reflects the probability that the event has really occurred in the scene.
 
 
@@ -117,11 +147,11 @@ The list of the possible events :
 
 * ``'appearance'`` : a new human has just been detected.
 * ``'disappearance'`` : a known human has just disappeared.
-* ``'age`` : the age of the corresponding human has just been estimated, (expect 1 or 2 events of this type for each human)
-* ``'gender`` : gender estimation of the corresponding human. (expect 1 or 2 events of this type for each human)
-* ``'trajectory'`` : average trajectory estimation, the direction is expressed in degree (0 to 360°) with 0° as up, 90° as right, 180° as down and 270° as left.
-* ``focus`` : if a human look in a specific direction for a significant time, this event is triggered with the pitch and yaw of the gaze registered in the data.
-* ``'emotion'`` : if a remarkable emotion peak is detected, the event is triggered with the related emotion type registered in the data.
+* ``'age_estimated`` : the age of the corresponding human has just been estimated, (expect 1 or 2 events of this type for each human)
+* ``'gender_estimated`` : gender estimation of the corresponding human. (expect 1 or 2 events of this type for each human)
+* ``focus_locked`` : if a human look in a specific direction for a significant time, this event is triggered with the pitch and yaw of the gaze registered in the data.
+* ``focus_unlocked`` : if a human look in a specific direction for a significant time, this event is triggered with the pitch and yaw of the gaze registered in the data.
+* ``emotion_detected`` : if a remarkable emotion peak is detected, the event is triggered with the related emotion type registered in the data.
 
 
 

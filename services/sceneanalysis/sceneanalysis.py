@@ -13,11 +13,11 @@ while True:
                            'sensitivity': {
                                             'appearance': 0.2,
                                             'disappearance': 0.5,
-                                            'age': 0.2,
-                                            'gender': 0.2,
-                                            'trajectory': 0.2,
-                                            'focus': 0.2,
-                                            'emotion': 0.2,
+                                            'age_estimated': 0.2,
+                                            'gender_estimated': 0.2,
+                                            'focus_locked': 0.2,
+                                            'focus_unlocked': 0.2,
+                                            'emotion_detected': 0.2,
                                           }
                           })
 print job.result
