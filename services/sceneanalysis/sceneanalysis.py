@@ -8,7 +8,7 @@ service.enable_session()
 
 while True:
     job = service.process({'image': open('./image.jpg'),
-                           'timestamp' : "2016:10:24 18:56:23.000011",
+                           'timestamp' : "2016-10-26T16:21:01.136287+00:00",
                            'camera_position': 'ceiling',
                            'sensitivity': {
                                             'appearance': 0.2,
