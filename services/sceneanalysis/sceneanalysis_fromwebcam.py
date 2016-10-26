@@ -6,7 +6,6 @@ import cv2
 import numpy as np
 import datetime
 import pytz
-import pprint
 
 if __name__ == '__main__':
     ### Web cam index might be different from 0 on your setup.
@@ -37,7 +36,7 @@ if __name__ == '__main__':
             t = datetime.datetime.now(pytz.utc)
             job = service.process({'image': buff,
                                    'timestamp' : str(t),
-                                   'camera_position': 'ceiling',
+                                   'camera_position': 'facing',
                                    'sensitivity': {
                                                     'appearance': 0.7,
                                                     'disappearance': 0.7,
