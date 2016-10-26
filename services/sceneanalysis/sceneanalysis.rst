@@ -2,8 +2,6 @@ Scene analysis (Beta)
 =====================
 
 
-Someone has just entered the room ? Who is he ? What is he doing ?
-
 Getting Started
 ---------------
 
@@ -26,18 +24,16 @@ The function ``process()`` takes a dictionary as input formatted as follows:
 
     {
       'image' : binary file
-      'timestamp' : "2016:10:24 18:56:23.000011"
+      'timestamp' : "2016-10-26T16:21:01.136287+00:00"
       'camera_position' : 'ceiling' or 'facing'
       'sensitivity' : {'[event_name]' : 0.24}
     }
 
 
 * ``image``: a python ``File Object`` returned for example by ``open()`` or a ``StringIO`` buffer.
-* ``timestamp``: a string formated as follows "YYYY:MM:DD HH:MM:SS.MICROS".
+* ``timestamp``: a string formated using the iso 8601 date format.
 * ``camera_position``: a preset is a list of parameters set in advance. This list of parameters is used to calibrate the API based on the camera position.
 * ``sensitivity``: an optional dictionary that sets the sensitivity of the system regarding each events. For instance, If you feel that the events "appearance" is triggered too often, you can decrease its value.
-
-
 
 
 Here is the list of the different presets that are available :
@@ -62,16 +58,6 @@ Here is the list of the different presets that are available :
   The 'ceiling' preset should be used in this situation
 
 
-
-
-
-
-
-
-
-
-
-
 Output
 ------
 
@@ -83,7 +69,7 @@ Events will be pushed to your client following that format. Note that if nothing
 
 
     {
-      "timestamp" : "UTC-2016-10-24 18:56:23.000018+4",
+      "timestamp" : "2016-10-26T16:21:01.136287+00:00",
       "events" : [
                   {
                     "entity_id" : "16fd2706-8baf-433b-82eb-8c7fada847da",
@@ -92,54 +78,73 @@ Events will be pushed to your client following that format. Note that if nothing
                     "confidence" : 0.96
                   }
                 ],
-      "entities" : {"16fd2706-8baf-433b-82eb-8c7fada847da": {
-                                                                'face_roi': [339, 264, 232, 232],
-                                                                'face_roi_confidence': 0.7132946138717671,
-                                                                'full_body_roi': [59.43999999999994,
-                                                                                  14.599999999999909,
-                                                                                  791.1200000000001,
-                                                                                  1798.0],
-                                                                'full_body_roi_confidence': 0.7132946138717671,
+      "entities" : {"16fd2706-8baf-433b-82eb-8c7fada847da":
+                             {
+                              'face_roi': [339, 264, 232, 232],
+                              'face_roi_confidence': 0.71,
+                              'full_body_roi': [59,
+                                                14,
+                                                791,
+                                                1798],
+                              'full_body_roi_confidence': 0.71,
 
-                                                                'age': 25,
-                                                                'age_confidence': 0.34,
+                              'age': 25,
+                              'age_confidence': 0.34,
 
-                                                                'gender': "male",
-                                                                'gender_confidence': 0.9999379577720902,
+                              'gender': "male",
+                              'gender_confidence': 0.99,
 
-                                                                'emotion_anger': 0.04,
-                                                                'emotion_surprise': 0.06563202096657506,
-                                                                'emotion_sadness': 0.142974245872324,
-                                                                'emotion_neutral': 0.5381274632225086,
-                                                                'emotion_happiness': 0.2116314775603314,
-                                                                'emotion_smiling_degree': 0.42685544831147126,
-                                                                'emotion_confidence': 0.37659382447418466,
+                              'emotion_anger': 0.04,
+                              'emotion_surprise': 0.06,
+                              'emotion_sadness': 0.14,
+                              'emotion_neutral': 0.53,
+                              'emotion_happiness': 0.21,
+                              'emotion_smiling_degree': 0.42,
+                              'emotion_confidence': 0.37,
 
-                                                                'face_eye_left': [414, 346],
-                                                                'face_eye_right': [499, 339],
-                                                                'face_mouth': [456, 401],
-                                                                'face_nose': [456, 401],
-                                                                'face_confidence': 0.37659382447418466,
+                              'face_eye_left': [414, 346],
+                              'face_eye_right': [499, 339],
+                              'face_mouth': [456, 401],
+                              'face_nose': [456, 401],
+                              'face_confidence': 0.37,
 
-                                                                'gaze_confidence': 0.37659382447418466,
-                                                                'gaze_pitch': 0.023609825318146704,
-                                                                'gaze_yaw': 0.14999280047675256,
+                              'gaze_confidence': 0.37,
+                              'gaze_pitch': 0.02,
+                              'gaze_yaw': 0.14,
 
-                                                                'head_pitch': -0.0544808106511141,
-                                                                'head_roll': -0.056476524426443575,
-                                                                'head_yaw': -0.17511312320692696,
-                                                                'head_confidence': 0.37659382447418466,
+                              'head_pitch': -0.0544,
+                              'head_roll': -0.0564,
+                              'head_yaw': -0.1751,
+                              'head_confidence': 0.3765,
 
-                                                                'displacement': [0.06296296296296296, -0.10555555555555556]
-                                                            }
+                              'displacement': [0.0629, -0.1055]
+                             }
                 }
     }
 
 
+* ``timestamp``: a string formated using the iso 8601 date format.
 * ``entity_id`` : id of the human related to the event.
-* ``entity_type`` : type of the entity, only "human" are currently supported
+* ``entity_type`` : type of the entity, only "human" is currently supported
 * ``type`` : type of the event, a list of event types can be found below.
 * ``confidence`` : a value between 0 and 1 which reflects the probability that the event has really occurred in the scene.
+
+* ``face_roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected face.
+* ``face_roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
+* ``full_body_roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected human body.
+* ``full_body_roi_confidence`` : an estimate of the probability that a real human body is indeed located at the given ``roi``.
+
+* ``age`` : an age estimate (in years) of the person outlined by ``roi``.
+* ``age_confidence`` : an estimate of the probability that the outlined person is indeed of age ``age``.
+* ``gender`` : an estimation of the gender of the person outlined by ``roi``. Value is either ``"male"`` or ``"female"``.
+* ``gender_confidence`` : an estimate of the probability that the outlined person is indeed of gender ``gender``.
+
+* ``emotion_neutral``, ``emotion_happiness``, ``emotion_surprise``, ``emotion_anger``, ``emotion_sadness`` : a float in ``[0, 1]`` measuring the intensity of the corresponding face expression.
+* ``face_eye_left``, ``face_eye_right``, ``face_mouth``, ``face_nose`` : the coordinate of the detected eyes, nose and mouth in pixels.
+* ``head_yaw``, ``head_pitch``, ``head_roll`` : head pose orientation in radian
+* ``gaze_yaw``, ``gaze_pitch`` : gaze (eyes) orientation in radian
+* ``displacement`` : a vector (in pixels) measuring the difference between the current location and the initial location of the human.
+
 
 
 The list of the possible events :
@@ -150,7 +155,6 @@ The list of the possible events :
 * ``'age_estimated`` : the age of the corresponding human has just been estimated, (expect 1 or 2 events of this type for each human)
 * ``'gender_estimated`` : gender estimation of the corresponding human. (expect 1 or 2 events of this type for each human)
 * ``focus_locked`` : if a human look in a specific direction for a significant time, this event is triggered with the pitch and yaw of the gaze registered in the data.
-* ``focus_unlocked`` : if a human look in a specific direction for a significant time, this event is triggered with the pitch and yaw of the gaze registered in the data.
 * ``emotion_detected`` : if a remarkable emotion peak is detected, the event is triggered with the related emotion type registered in the data.
 
 
