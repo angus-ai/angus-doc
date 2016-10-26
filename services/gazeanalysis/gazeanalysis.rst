@@ -55,8 +55,8 @@ Events will be pushed to your client following that format:
 * ``nb_faces`` : number of faces detected in the given image
 * ``roi`` : contains ``[pt.x, pt.y, width, height]`` where pt is the upper left point of the rectangle outlining the detected face.
 * ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
-* ``head_yaw``, ``head_pitch``, ``head_roll`` : head pose orientation in radian as follows:
-* ``gaze_yaw``, ``gaze_pitch`` : gaze (eyes) orientation in radian as follows:
+* ``head_yaw``, ``head_pitch``, ``head_roll`` : head pose orientation in radian.
+* ``gaze_yaw``, ``gaze_pitch`` : gaze (eyes) orientation in radian.
 
 
 Code Sample
