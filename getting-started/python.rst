@@ -28,8 +28,8 @@ In a terminal, type:
 .. parsed-literal::
 
     $ angusme
-    Please copy/paste your client_id: 7f5933d2-cd7c-11e4-9fe6-490467a5e114
-    Please copy/paste your access_token: db19c01e-18e5-4fc2-8b81-7b3d1f44533b
+    Please copy/paste your client_id: ********-****-****-****-************
+    Please copy/paste your access_token: ********-****-****-****-************
 
 Note that on ``Windows`` system, the previous command might not work.
 In that case use this command instead (replace by your Python installation path):

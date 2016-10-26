@@ -23,8 +23,8 @@ In a terminal, type:
 .. parsed-literal::
 
     $ java -jar angus-sdk-java-0.0.2-jar-with-dependencies.jar
-    Please copy/paste your client_id: 7f5933d2-cd7c-11e4-9fe6-490467a5e114
-    Please copy/paste your access_token: db19c01e-18e5-4fc2-8b81-7b3d1f44533b
+    Please copy/paste your client_id: ********-****-****-****-************
+    Please copy/paste your access_token: ********-****-****-****-************
     $
 
 You could explore all options by typing:
