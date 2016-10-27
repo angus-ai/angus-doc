@@ -26,10 +26,15 @@ The function ``process()`` takes a dictionary as input formatted as follows:
       "image" : binary file,
       "timestamp" : "2016-10-26T16:21:01.136287+00:00",
       "camera_position" : "ceiling" or "facing",
-      "sensitivity" : { 
-                          "event_name" : 0.24,
-                          "event_name" : 0.48
-                      }
+      "sensitivity": {
+                        "appearance": 0.7,
+                        "disappearance": 0.7,
+                        "age_estimated": 0.4,
+                        "gender_estimated": 0.5,
+                        "focus_locked": 0.9,
+                        "emotion_detected": 0.4,
+                        "direction_estimated" : 0.8
+                     }
     }
 
 
