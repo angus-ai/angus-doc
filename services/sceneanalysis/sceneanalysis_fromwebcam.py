@@ -28,9 +28,9 @@ if __name__ == "__main__":
     service.enable_session()
 
     while cap.isOpened():
-        
+
         ret, frame = cap.read()
-        
+
         if ret == True:
 
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -48,16 +48,18 @@ if __name__ == "__main__":
                                                     "gender_estimated": 0.5,
                                                     "focus_locked": 0.9,
                                                     "emotion_detected": 0.4,
-                                                    "direction_estimated" : 0.8
+                                                    "direction_estimated": 0.8
                                                 }
                                   })
             res = job.result
+
 
             # This parses the events
             if "events" in res:
                 if res["events"] != []:
                     for event in res["events"]:
-                        print "New Event : " + event["type"]
+                        print event["type"], "|",  \
+                        event["key"], res["entities"][event["entity_id"]][event["key"]]
             elif "error" in res:
                 print res["error"]
 
