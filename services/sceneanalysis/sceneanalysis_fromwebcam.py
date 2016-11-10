@@ -60,16 +60,14 @@ if __name__ == "__main__":
                     for event in res["events"]:
                         print event["type"], "|",  \
                         event["key"], res["entities"][event["entity_id"]][event["key"]]
+                # This parses the entities data
+                for key, val in res["entities"].iteritems():
+                    roi = val["face_roi"]
+                    cv2.rectangle(frame, (int(roi[0]), int(roi[1])),
+                                  (int(roi[0] + roi[2]), int(roi[1] + roi[3])),
+                                  (0, 255, 0), 2)
             elif "error" in res:
                 print res["error"]
-
-            # This parses the entities data
-            for key, val in res["entities"].iteritems():
-                roi = val["face_roi"]
-                cv2.rectangle(frame, (int(roi[0]), int(roi[1])),
-                              (int(roi[0] + roi[2]), int(roi[1] + roi[3])),
-                              (0, 255, 0), 2)
-
 
             cv2.imshow("original", frame)
             if cv2.waitKey(1) & 0xFF == 27:
