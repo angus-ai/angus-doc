@@ -6,6 +6,8 @@ Services
 .. toctree::
    :maxdepth: 2
 
+   sceneanalysis/sceneanalysis
+   upperbodydetection/upperbodydetection
    agegenderestimation/agegenderestimation
    faceexpressionestimation/faceexpressionestimation
    facedetection/facedetection
@@ -18,4 +20,3 @@ Services
    wordspotting/index
    qrcode/index
    dummy/dummy
-   sceneanalysis/sceneanalysis
