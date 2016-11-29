@@ -1,54 +1,58 @@
-#!/usr/bin/env python
-import StringIO
-
-import angus
 import cv2
 import numpy as np
+import StringIO
+import angus
 
-if __name__ == '__main__':    
-    ### Web cam index might be different from 0 on your setup.
-    stream_index = 0 
-    cap = cv2.VideoCapture(stream_index)
+def main(stream_index):
+    camera = cv2.VideoCapture(stream_index)
+    camera.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 640)
+    camera.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 480)
+    camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
 
-    if not cap.isOpened():
-        print "Cannot open stream of index " + str(stream_index)
+    if not camera.isOpened():
+        print("Cannot open stream of index {}".format(stream_index))
         exit(1)
 
-    print "Video stream is of resolution " + str(cap.get(3)) + " x " + str(cap.get(4))
+    print("Video stream is of resolution {} x {}".format(camera.get(3), camera.get(4)))
 
     conn = angus.connect()
     service = conn.services.get_service("age_and_gender_estimation", version=1)
     service.enable_session()
 
-    while(cap.isOpened()):
-        ret, frame = cap.read()
-        if not frame == None:
+    while camera.isOpened():
+        ret, frame = camera.read()
 
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            ret, buff = cv2.imencode(".png", gray)
-            buff = StringIO.StringIO(np.array(buff).tostring())
+        if not ret:
+            break
 
-            job = service.process({"image": buff})
-            res = job.result
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        ret, buff = cv2.imencode(".jpg", gray,  [cv2.IMWRITE_JPEG_QUALITY, 80])
+        buff = StringIO.StringIO(np.array(buff).tostring())
 
-            if res['nb_faces'] > 0:
-                for i in range(0,res['nb_faces']):
-                    roi = res['faces'][i]['roi']
-                    cv2.rectangle(frame, (int(roi[0]), int(roi[1])), 
-                                         (int(roi[0] + roi[2]), int(roi[1] + roi[3])), 
-                                         (0,255,0))
-                    age = res['faces'][i]['age']
-                    gender = res['faces'][i]['gender']
-                    cv2.putText(frame, "(age, gender) = (" + '%.1f'%age + ", " + str(gender) + ")", 
-                                (int(roi[0]), int(roi[1])), cv2.FONT_HERSHEY_SIMPLEX, 
-                                0.8, (255, 255, 255))
+        job = service.process({"image": buff})
+        res = job.result
 
+        for face in res['faces']:
+            x, y, dx, dy = face['roi']
+            age = face['age']
+            gender = face['gender']
 
-            cv2.imshow('original', frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+            cv2.rectangle(frame, (x, y), (x+dx, y+dy), (0,255,0))
+            cv2.putText(frame, "(age, gender) = ({:.1f}, {})".format(age, gender),
+                        (x, y), cv2.FONT_HERSHEY_SIMPLEX,
+                        0.8, (255, 255, 255))
+
+        cv2.imshow('original', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
     service.disable_session()
 
-    cap.release()
+    camera.release()
     cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    ### Web cam index might be different from 0 on your setup.
+    ### To grab a given video file instead of the host computer cam, try:
+    ### main("/path/to/myvideo.avi")
+    main(0)
