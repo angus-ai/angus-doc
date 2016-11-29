@@ -27,9 +27,9 @@ In a terminal, type:
 
 .. parsed-literal::
 
-    $ angusme
-    Please copy/paste your client_id: ********-****-****-****-************
-    Please copy/paste your access_token: ********-****-****-****-************
+   $ angusme
+   Please copy/paste your client_id: ********-****-****-****-************
+   Please copy/paste your access_token: ********-****-****-****-************
 
 Note that on ``Windows`` system, the previous command might not work.
 In that case use this command instead (replace by your Python installation path):
@@ -48,10 +48,11 @@ Pick a ``jpg`` or ``png`` image file showing at least one human face and open a 
 .. code-block:: python
 
         > import angus
+	> from pprint import pprint
         > conn = angus.connect()
         > service = conn.services.get_service('age_and_gender_estimation', version=1)
         > job = service.process({'image': open("path/to/your/image.png")})
-        > print job.result
+        > pprint(job.result)
 
 This should display a result looking like this:
 
@@ -106,7 +107,7 @@ Note that we use the method ``enable_session()`` and ``disable_session()`` to le
 Using this functions might delayed a bit the appearance and disappearance of detected targets. If this is an issue for your application, just remove these calls from your script. The service will process the successive images independently.
 
 .. literalinclude:: agegenderestimation_fromwebcam.py
-   :emphasize-lines: 19-21,27-32,51
+   :emphasize-lines: 19-21,29-34,50
 
 
 You should see your age/gender estimation displayed on your screen:
