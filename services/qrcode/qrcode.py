@@ -1,8 +1,8 @@
-#!/usr/bin/env python
-
 import angus
+from pprint import pprint
 
 conn = angus.connect()
 service = conn.services.get_service('qrcode_decoder', version=1)
 job = service.process({'image': open('./qrcode.jpg')})
-print job.result
+
+pprint(job.result)
