@@ -1,12 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import angus.cloud
+import angus
+from pprint import pprint
 
 conn = angus.connect()
-
 service = conn.services.get_service('sound_detection', version=1)
-
 job = service.process({'sound': open("./sound.wav"), 'sensitivity':0.7})
 
-print job.result
+pprint(job.result)
