@@ -7,7 +7,7 @@ service = conn.services.get_service("scene_analysis", version=1)
 service.enable_session()
 
 while True:
-    job = service.process({"image": open("./image.jpg"),
+    job = service.process({"image": open("./image.jpg", 'rb'),
                            "timestamp" : "2016-10-26T16:21:01.136287+00:00",
                            "camera_position": "ceiling",
                            "sensitivity": {

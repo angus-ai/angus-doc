@@ -29,15 +29,15 @@ PATH = "/path/to/samples/"
 
 ### French filenames, sorry!
 ### Here, resources are created on Angus.ai server from your samples
-w1_s1 = conn.blobs.create(open(PATH + "allumelesalon.wav"))
-w1_s2 = conn.blobs.create(open(PATH + "allumelesalon2.wav"))
-w1_s3 = conn.blobs.create(open(PATH + "allumelesalon3.wav"))
-w1_s4 = conn.blobs.create(open(PATH + "allumelesalon4.wav"))
+w1_s1 = conn.blobs.create(open(PATH + "allumelesalon.wav", 'rb'))
+w1_s2 = conn.blobs.create(open(PATH + "allumelesalon2.wav", 'rb'))
+w1_s3 = conn.blobs.create(open(PATH + "allumelesalon3.wav", 'rb'))
+w1_s4 = conn.blobs.create(open(PATH + "allumelesalon4.wav", 'rb'))
 
-w2_s1 = conn.blobs.create(open(PATH + "eteintlewifi.wav"))
-w2_s2 = conn.blobs.create(open(PATH + "eteintlewifi2.wav"))
-w2_s3 = conn.blobs.create(open(PATH + "eteintlewifi3.wav"))
-w2_s4 = conn.blobs.create(open(PATH + "eteintlewifi4.wav"))
+w2_s1 = conn.blobs.create(open(PATH + "eteintlewifi.wav", 'rb'))
+w2_s2 = conn.blobs.create(open(PATH + "eteintlewifi2.wav", 'rb'))
+w2_s3 = conn.blobs.create(open(PATH + "eteintlewifi3.wav", 'rb'))
+w2_s4 = conn.blobs.create(open(PATH + "eteintlewifi4.wav", 'rb'))
 
 ### Specifying the vocabulary at session opening
 vocabulary = {'allume le salon': [w1_s1, w1_s2, w1_s3, w1_s4], 'eteint le wifi': [w2_s1, w2_s2, w2_s3, w2_s4]}

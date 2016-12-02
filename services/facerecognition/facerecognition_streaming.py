@@ -23,9 +23,9 @@ def main(stream_index):
     ### Choose here the appropriate pictures.
     ### Pictures given as samples for the album should only contain 1 visible face.
     ### You can provide the API with more than 1 photo for a given person.
-    w1_s1 = conn.blobs.create(open("./images/gwenn.jpg"))
-    w2_s1 = conn.blobs.create(open("./images/aurelien.jpg"))
-    w3_s1 = conn.blobs.create(open("./images/sylvain.jpg"))
+    w1_s1 = conn.blobs.create(open("./images/gwenn.jpg", 'rb'))
+    w2_s1 = conn.blobs.create(open("./images/aurelien.jpg", 'rb'))
+    w3_s1 = conn.blobs.create(open("./images/sylvain.jpg", 'rb'))
 
     album = {'gwenn': [w1_s1], 'aurelien': [w2_s1], 'sylvain': [w3_s1]}
 
