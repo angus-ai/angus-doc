@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import angus
 from pprint import pprint
 

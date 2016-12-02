@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import angus.cloud
 from pprint import pprint
 

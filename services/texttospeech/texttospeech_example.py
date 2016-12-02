@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import angus
 import base64
 import zlib

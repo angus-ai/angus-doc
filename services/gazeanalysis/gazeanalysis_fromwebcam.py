@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import StringIO
 import math as m
 import cv2
