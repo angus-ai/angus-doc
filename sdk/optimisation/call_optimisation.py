@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-#!/usr/bin/env python
-
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -27,7 +24,7 @@ import cv2
 import numpy as np
 import angus
 import StringIO
-import json
+from pprint import pprint
 
 # Threshold 1: how many gray level diff is needed for a pixel "change": 0-255
 t1 = 10
@@ -67,10 +64,10 @@ while True:
   if np.sum(view)/255 > t2:
     # Display last sent image
     cv2.imshow(win_sent, img2)
-    ret, buff = cv2.imencode(".jpg", img2)
+    ret, buff = cv2.imencode(".jpg", gray, [cv2.IMWRITE_JPEG_QUALITY, 80])
     buff = StringIO.StringIO(np.array(buff).tostring())
     job = serv.process({"image": buff})
-    print(json.dumps(job.result, indent=4))
+    pprint(job.result)
 
   # Read the next image
   img1 = img2
