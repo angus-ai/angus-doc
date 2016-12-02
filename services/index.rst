@@ -16,6 +16,7 @@ Services
    motiondetection/motiondetection
    texttospeech/texttospeech
    sounddetection/sounddetection
+   voicedetection/voicedetection
    soundlocalization/soundlocalization
 ..   wordspotting/index
    qrcode/index

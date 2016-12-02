@@ -1,3 +1,5 @@
+.. _sound-detection-ref:
+
 Sound Detection
 ===============
 
