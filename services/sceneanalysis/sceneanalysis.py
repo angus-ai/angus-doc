@@ -1,5 +1,5 @@
-#!/usr/bin/env python
 import angus
+from pprint import pprint
 
 conn = angus.connect()
 service = conn.services.get_service("scene_analysis", version=1)
@@ -20,7 +20,7 @@ while True:
                                             "direction_estimated" : 0.8
                                           }
                           })
-print job.result
+    pprint(job.result)
 
 
 service.disable_session()
