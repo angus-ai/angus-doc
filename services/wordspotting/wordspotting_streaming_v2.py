@@ -1,16 +1,11 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import Queue
 import StringIO
 import wave
 import time
-import angus
 import numpy as np
 import pyaudio
-from os import system
-import operator
-import json
+from pprint import pprint
+import angus
 
 ### Good performances off this script depend a lot on these parameters,
 ### do not hesitate to experiment with different settings
@@ -62,11 +57,11 @@ def convert(buff_in, rate_in, rate_out):
     buff_out = np.interp(tgtx, srcx, buff_in).astype(np.int16)
     return buff_out.tostring()
 
-while(True):
+while True:
 
     nb_buffer_available = stream_queue.qsize()
     if nb_buffer_available > 0:
-        print "nb buffer available" + str(nb_buffer_available)
+        print("nb buffer available {}".format(nb_buffer_available))
 
     if nb_buffer_available == 0:
         time.sleep(0.01)
@@ -92,7 +87,7 @@ while(True):
         {'sound': StringIO.StringIO(buff.getvalue()), 'sensitivity': 0.7, 'lang': "en-US"})
 
     if "nbests" in job.result:
-        print json.dumps(job.result, indent=4)
+        pprint(job.result)
 
 stream.stop_stream()
 stream.close()

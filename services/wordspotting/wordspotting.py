@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import angus.cloud
+from pprint import pprint
+import angus
 
 conn = angus.connect()
 
@@ -19,4 +17,4 @@ vocabulary = {'turn wifi on': [w1_s1, w1_s2, w1_s3], 'turn wifi off': [w2_s1, w2
 
 job = service.process({'sound': open("./sound.wav"), 'sensitivity': 0.7, 'vocabulary': vocabulary})
 
-print job.result
+pprint(job.result)
