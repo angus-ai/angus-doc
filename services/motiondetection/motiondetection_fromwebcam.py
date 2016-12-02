@@ -1,12 +1,13 @@
 import StringIO
-
-import angus
 import cv2
 import numpy as np
+import angus
 
-if __name__ == '__main__':
-    ### Retrieve web cam video stream
-    camera = cv2.VideoCapture(0)
+def main(stream_index):
+    camera = cv2.VideoCapture(stream_index)
+    camera.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 640)
+    camera.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 480)
+    camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
 
     if not camera.isOpened():
         print("Cannot open stream of index {}".format(stream_index))
@@ -32,8 +33,8 @@ if __name__ == '__main__':
         res = job.result
 
         for target in res['targets']:
-            x, y = target['mean_position']
-            vx, vy = target['mean_velocity']
+            x, y = map(int, target['mean_position'])
+            vx, vy = map(int, target['mean_velocity'])
 
             cv2.circle(frame, (x, y), 5, (255,255,255))
             cv2.line(frame, (x, y), (x + vx, y + vy), (255,255,255))
@@ -46,3 +47,9 @@ if __name__ == '__main__':
 
     camera.release()
     cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    ### Web cam index might be different from 0 on your setup.
+    ### To grab a given video file instead of the host computer cam, try:
+    ### main("/path/to/myvideo.avi")
+    main(0)
