@@ -17,6 +17,6 @@ Services
    texttospeech/texttospeech
    sounddetection/sounddetection
    soundlocalization/soundlocalization
-   wordspotting/index
+..   wordspotting/index
    qrcode/index
    dummy/dummy
