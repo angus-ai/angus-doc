@@ -107,7 +107,7 @@ Note that we use the method ``enable_session()`` and ``disable_session()`` to le
 Using this functions might delayed a bit the appearance and disappearance of detected targets. If this is an issue for your application, just remove these calls from your script. The service will process the successive images independently.
 
 .. literalinclude:: agegenderestimation_fromwebcam.py
-   :emphasize-lines: 19-21,29-34,50
+   :emphasize-lines: 21-23,31-36,52
 
 
 You should see your age/gender estimation displayed on your screen:
