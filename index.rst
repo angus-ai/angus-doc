@@ -14,3 +14,4 @@ Angus.ai documentation (Beta)
    services/index
    sdk/index
    lab/index
+   FAQ/index

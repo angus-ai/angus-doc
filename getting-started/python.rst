@@ -1,21 +1,20 @@
 Getting Started with Python
 +++++++++++++++++++++++++++
 
-
-*Prerequisites*
-
 You must have registered `here <http://www.angus.ai/request-credentials/>`_ and received your API credentials.
+
+The SDK is Python3 compatible but the documentation code snippets are Python2.
+
+You might want to create a python virtual environnement with **virtualenv** in order to install sdk in there. Please refere to the following `python guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
 
 1. Install the Angus SDK
 ========================
 
-Open a terminal and install the angus python sdk.
-
-You might want to create a python virtual environnement with ``virtualenv`` and install the sdk in there.
+Open a terminal and install the angus python sdk with pip. If you do not use **virtualenv** you may need to be root, administrator or super user depending on your platform (use sudo on linux platform).
 
 .. parsed-literal::
 
-        $ sudo pip install angus-sdk-python
+        $ pip install angus-sdk-python
 
 2. Configure your SDK
 =====================
@@ -28,15 +27,11 @@ In a terminal, type:
 .. parsed-literal::
 
    $ angusme
+   Please choose your gateway (current: https://gate.angus.ai): 
    Please copy/paste your client_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
    Please copy/paste your access_token: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
-Note that on ``Windows`` system, the previous command might not work.
-In that case use this command instead (replace by your Python installation path):
-
-.. code-block:: none
-   
-   $ python C:\\full\\path\\to\\Python<version>\\Scripts\\angusme
+On **Windows** system, if angusme does not work, please refer to the :ref:`faq` for more details.
 
 3. Send your first request
 ==========================
@@ -69,21 +64,20 @@ You have just sent your first request to Angus.ai, Congratulations!
 4. Access your sensor stream
 ============================
 
-Some applications will require a processing on all the data coming from a sensor (e.g. a web cam).
+Some applications will require a processing on all the data coming from a sensor (e.g. a webcam).
 
 *Prerequisite*
 
-- you have a working web cam plugged into your PC
-- you have installed ``opencv2`` and ``opencv2`` python bindings.
-
-On Ubuntu, opencv2 comes pre-installed, you just need to add python bindings by running
+- you have a working webcam plugged into your PC
+- you have installed **OpenCV2** and **OpenCV2** python bindings. Please refer to `OpenCV documentation <http://opencv.org/>`_ to proceed, or check :ref:`faq` chapter.
+  
+On Debian-like platform, **OpenCV2** comes pre-installed, you just need to run
 
 .. parsed-literal::
 
    $ sudo apt-get install python-opencv
 
-Copy this code snippet in a file and run it.
-
+Then, copy this code snippet in a file and run it.
 
 .. literalinclude:: stream_fromwebcam.py
 
