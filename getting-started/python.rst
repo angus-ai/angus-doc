@@ -28,14 +28,14 @@ In a terminal, type:
 .. parsed-literal::
 
    $ angusme
-   Please copy/paste your client_id: ********-****-****-****-************
-   Please copy/paste your access_token: ********-****-****-****-************
+   Please copy/paste your client_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+   Please copy/paste your access_token: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 Note that on ``Windows`` system, the previous command might not work.
 In that case use this command instead (replace by your Python installation path):
 
-.. parsed-literal::
-
+.. code-block:: none
+   
    $ python C:\\full\\path\\to\\Python<version>\\Scripts\\angusme
 
 3. Send your first request
