@@ -84,4 +84,11 @@ Copy ``<opencv_directory>\buid\python\2.7\[x86|x64]\cv2.pyd`` in ``C:\Python27\L
 
 Now you can run all python snippets of the documentation.
 
+Where can I contact you for technical help ?
+++++++++++++++++++++++++++++++++++++++++++++
+
+You can get help on public forum https://groups.google.com/a/angus.ai/d/forum/support with online interface
+or by posting email at support@angus.ai.
+
+
 
