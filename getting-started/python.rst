@@ -1,11 +1,11 @@
 Getting Started with Python
 +++++++++++++++++++++++++++
 
-You must have registered `here <http://www.angus.ai/request-credentials/>`_ and received your API credentials.
+You must have registered `here <https://console.angus.ai/register>`_ to generate your API credentials.
 
-The SDK is Python3 compatible but the documentation code snippets are Python2.
+The SDK is Python3 compatible but the documentation code snippets are only Python2 compatible.
 
-You might want to create a python virtual environnement with **virtualenv** in order to install sdk in there. Please refere to the following `python guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
+You might want to create a python virtual environnement with **virtualenv** in order to install the sdk in there. Please refer to the following `virtualenv guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
 
 1. Install the Angus SDK
 ========================
@@ -19,17 +19,25 @@ Open a terminal and install the angus python sdk with pip. If you do not use **v
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by registering `here <http://www.angus.ai/request-credentials/>`_.
+You must configure your sdk with the keys you received by creating a stream here `here <https://console.angus.ai/>`_.
 These keys are used to authenticate the requests you are about to send.
+
+Your API credentials can be retrieved by clicking on "Show details" on your console interface as shown below:
+
+.. figure:: console_cred.png
+  :align: center
 
 In a terminal, type:
 
 .. parsed-literal::
 
    $ angusme
-   Please choose your gateway (current: https://gate.angus.ai): 
+   Please choose your gateway (current: https://gate.angus.ai):
    Please copy/paste your client_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
    Please copy/paste your access_token: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+
+Fill in the "client_id" prompt with the "login" given on the interface and
+the "access_token" prompt with the "password" given on the interface.
 
 On **Windows** system, if angusme does not work, please refer to the :ref:`faq` for more details.
 

@@ -4,7 +4,7 @@ Getting Started with Java
 
 *Prerequisites*
 
-You must have registered `here <http://www.angus.ai/request-credentials/>`_ and received your API credentials.
+You must have registered `here <https://console.angus.ai/register>`_ to generate your API credentials.
 Angus Java SDK need Java7 runtime.
 
 1. Download Angus SDK library
@@ -15,8 +15,13 @@ You can download the library from github: `here <https://github.com/angus-ai/ang
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by registering `here <http://www.angus.ai/request-credentials/>`_.
+You must configure your sdk with the keys you received by creating a stream here `here <https://console.angus.ai/>`_.
 These keys are used to authenticate the requests you are about to send.
+
+Your API credentials can be retrieved by clicking on "Show details" on your console interface as shown below:
+
+.. figure:: console_cred.png
+  :align: center
 
 In a terminal, type:
 
@@ -26,6 +31,9 @@ In a terminal, type:
     Please copy/paste your client_id: ********-****-****-****-************
     Please copy/paste your access_token: ********-****-****-****-************
     $
+
+Fill in the "client_id" prompt with the "login" given on the interface and
+the "access_token" prompt with the "password" given on the interface.
 
 You could explore all options by typing:
 
