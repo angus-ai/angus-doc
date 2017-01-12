@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import StringIO
-import math as m
+from math import cos, sin
 import cv2
 import numpy as np
 import angus
@@ -36,21 +36,38 @@ def main(stream_index):
 
         for face in res['faces']:
             x, y, dx, dy = map(int, face['roi'])
-            cv2.rectangle(frame, (x, y), (x+dx, y+dy), (0,255,0))
+
+            nose = face['nose']
+            nose = (nose[0], nose[1])
+
+            eyel = face['eye_left']
+            eyel = (eyel[0], eyel[1])
+            eyer = face['eye_right']
+            eyer = (eyer[0], eyer[1])
 
             psi = face['head_roll']
             theta = - face['head_yaw']
             phi = face['head_pitch']
 
-            cx = int(x + 0.5*dx)
-            cy = int(y + 0.5*dy)
-
+            ### head orientation
             length = 150
-            ### See here for details : https://en.wikipedia.org/wiki/Rotation_formalisms_in_three_dimensions
-            xvec = int(length*(m.sin(phi)*m.sin(psi) - m.cos(phi)*m.sin(theta)*m.cos(psi)))
-            yvec = int(- length*(m.sin(phi)*m.cos(psi) - m.cos(phi)*m.sin(theta)*m.sin(psi)))
+            xvec = int(length*(sin(phi)*sin(psi) - cos(phi)*sin(theta)*cos(psi)))
+            yvec = int(- length*(sin(phi)*cos(psi) - cos(phi)*sin(theta)*sin(psi)))
+            cv2.line(frame, nose, (nose[0]+xvec, nose[1]+yvec), (0, 140, 255), 3)
 
-            cv2.line(frame, (cx, cy), (cx+xvec, cy+yvec), (255, 0, 0), 3)
+            psi = 0
+            theta = - face['gaze_yaw']
+            phi = face['gaze_pitch']
+
+            ### gaze orientation
+            length = 150
+            xvec = int(length*(sin(phi)*sin(psi) - cos(phi)*sin(theta)*cos(psi)))
+            yvec = int(- length*(sin(phi)*cos(psi) - cos(phi)*sin(theta)*sin(psi)))
+            cv2.line(frame, eyel, (eyel[0]+xvec, eyel[1]+yvec), (0, 140, 0), 3)
+
+            xvec = int(length*(sin(phi)*sin(psi) - cos(phi)*sin(theta)*cos(psi)))
+            yvec = int(- length*(sin(phi)*cos(psi) - cos(phi)*sin(theta)*sin(psi)))
+            cv2.line(frame, eyer, (eyer[0]+xvec, eyer[1]+yvec), (0, 140, 0), 3)
 
 
         cv2.imshow('original', frame)

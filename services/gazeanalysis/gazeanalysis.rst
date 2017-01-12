@@ -42,6 +42,9 @@ Events will be pushed to your client following that format:
                   {
                     "roi" : [250, 142, 232, 232],
                     "roi_confidence" : 0.89,
+                    "eye_left" : [123, 253],
+                    "eye_right" : [345, 253],
+                    "nose" : [200, 320],
                     "head_yaw" : 0.03,
                     "head_pitch"   : 0.23,
                     "head_roll"  : 0.14,
@@ -57,7 +60,7 @@ Events will be pushed to your client following that format:
 * ``roi_confidence`` : an estimate of the probability that a real face is indeed located at the given ``roi``.
 * ``head_yaw``, ``head_pitch``, ``head_roll`` : head pose orientation in radian.
 * ``gaze_yaw``, ``gaze_pitch`` : gaze (eyes) orientation in radian.
-
+* ``eye_left``, ``eye_right``, ``nose`` : the coordinate of the eyes and noze in the given image.
 
 Code Sample
 -----------
