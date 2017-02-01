@@ -1,7 +1,7 @@
 .. angus.ai FAQ
 
 .. _faq:
-   
+
 FAQ
 ===
 
@@ -24,7 +24,7 @@ How install OpenCV2 and python bindings on debian-like systems ?
 Please, use:
 
 .. code-block:: none
-   
+
    $ apt-get install python-opencv
 
 How install OpenCV2 on other systems ?
@@ -63,7 +63,7 @@ please replace it in the following instructions.
 In a Command Prompt go to python ``\Scripts`` directory:
 
 .. code-block:: none
-   
+
    $ cd C:\Python27\Scripts
 
 Install numpy and angus python sdk:
@@ -75,11 +75,11 @@ Install numpy and angus python sdk:
 Configure angus:
 
 .. code-block:: none
-		
+
    $ cd C:\Python27
    $ python Scripts\angusme
 
-To install opencv, download opencv for windows from http://opencv.org/, execute (or unzip) it.   
+To install opencv, download opencv for windows from http://opencv.org/, execute (or unzip) it.
 Copy ``<opencv_directory>\buid\python\2.7\[x86|x64]\cv2.pyd`` in ``C:\Python27\Lib``.
 
 Now you can run all python snippets of the documentation.
@@ -91,4 +91,12 @@ You can get help on public forum https://groups.google.com/a/angus.ai/d/forum/su
 or by posting email at support@angus.ai.
 
 
+Message "Input does not appear to be valid...." on Windows
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+The old code snippet in getting started does not force the binary
+file mode. Please use:
+
+.. code-block:: python
+
+   open("/path/to/your/image.png", "rb")

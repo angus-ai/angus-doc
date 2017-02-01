@@ -54,7 +54,7 @@ Pick a ``jpg`` or ``png`` image file showing at least one human face and open a 
 	> from pprint import pprint
         > conn = angus.connect()
         > service = conn.services.get_service('age_and_gender_estimation', version=1)
-        > job = service.process({'image': open("path/to/your/image.png")})
+        > job = service.process({'image': open("path/to/your/image.png", "rb")})
         > pprint(job.result)
 
 This should display a result looking like this:
@@ -78,7 +78,7 @@ Some applications will require a processing on all the data coming from a sensor
 
 - you have a working webcam plugged into your PC
 - you have installed **OpenCV2** and **OpenCV2** python bindings. Please refer to `OpenCV documentation <http://opencv.org/>`_ to proceed, or check :ref:`faq` chapter.
-  
+
 On Debian-like platform, **OpenCV2** comes pre-installed, you just need to run
 
 .. parsed-literal::
