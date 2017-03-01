@@ -1,5 +1,5 @@
-Sound Localization
-==================
+Sound Localization (Beta)
+=========================
 
 Where is the sound coming from?
 
