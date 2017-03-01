@@ -1,5 +1,5 @@
-Scene analysis (Beta)
-=====================
+Scene analysis
+==============
 
 
 Getting Started
