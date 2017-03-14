@@ -148,7 +148,6 @@ Events will be pushed to your client following that format. Note that if nothing
 * ``head`` : head pose orientation (yaw, pitch and roll) in radian
 * ``gaze`` : gaze orientation (yaw, pitch) in radian
 * ``direction`` : an indication of the average direction of the person. Value is either ``"unknown"``, ``"up"``, ``"right"``, ``"left"`` or ``"down"``.
-* ``velocity`` : speed of the detected person, a list of two float values for the x and y axes in pixel/second
 
 The list of the possible events :
 
