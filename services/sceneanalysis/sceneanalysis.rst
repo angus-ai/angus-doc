@@ -102,6 +102,7 @@ Events will be pushed to your client following that format. Note that if nothing
 
                               "emotion_anger": 0.04,
                               "emotion_surprise": 0.06,
+                              "emotion_unknown": 0.00,
                               "emotion_sadness": 0.14,
                               "emotion_neutral": 0.53,
                               "emotion_happiness": 0.21,
@@ -142,13 +143,12 @@ Events will be pushed to your client following that format. Note that if nothing
 * ``gender`` : an estimation of the gender of the person outlined by ``roi``. Value is either ``"male"`` or ``"female"``.
 * ``gender_confidence`` : an estimate of the probability that the outlined person is indeed of gender ``gender``.
 
-* ``emotion_neutral``, ``emotion_happiness``, ``emotion_surprise``, ``emotion_anger``, ``emotion_sadness`` : a float in ``[0, 1]`` measuring the intensity of the corresponding face expression.
+* ``emotion_neutral``, ``emotion_happiness``, ``emotion_surprise``, ``emotion_anger``, ``emotion_sadness``, ``emotion_unknown`` : a float in ``[0, 1]`` measuring the intensity of the corresponding face expression.
 * ``face_eye``, ``face_mouth``, ``face_nose`` : the coordinate of the detected eyes, nose and mouth in pixels.
 * ``head`` : head pose orientation (yaw, pitch and roll) in radian
 * ``gaze`` : gaze orientation (yaw, pitch) in radian
 * ``direction`` : an indication of the average direction of the person. Value is either ``"unknown"``, ``"up"``, ``"right"``, ``"left"`` or ``"down"``.
-
-
+* ``velocity`` : estimated speed of the person
 
 The list of the possible events :
 
