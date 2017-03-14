@@ -144,11 +144,11 @@ Events will be pushed to your client following that format. Note that if nothing
 * ``gender_confidence`` : an estimate of the probability that the outlined person is indeed of gender ``gender``.
 
 * ``emotion_neutral``, ``emotion_happiness``, ``emotion_surprise``, ``emotion_anger``, ``emotion_sadness``, ``emotion_unknown`` : a float in ``[0, 1]`` measuring the intensity of the corresponding face expression.
-* ``face_eye``, ``face_mouth``, ``face_nose`` : the coordinate of the detected eyes, nose and mouth in pixels.
+* ``face_eye``, ``face_mouth``, ``face_nose`` : the coordinate of the detected eyes, nose and mouth in pixels. a list of of two floats 
 * ``head`` : head pose orientation (yaw, pitch and roll) in radian
 * ``gaze`` : gaze orientation (yaw, pitch) in radian
 * ``direction`` : an indication of the average direction of the person. Value is either ``"unknown"``, ``"up"``, ``"right"``, ``"left"`` or ``"down"``.
-* ``velocity`` : estimated speed of the person
+* ``velocity`` : speed of the detected person, a list of two float values for the x and y axes in pixel/second
 
 The list of the possible events :
 
