@@ -155,7 +155,7 @@ The list of the possible events :
 * ``"appearance"`` : a new human has just been detected.
 * ``"disappearance"`` : a known human has just disappeared.
 * ``"age_estimated"`` : the age of the corresponding human has just been estimated, (expect 1 or 2 events of this type for each human)
-* ``"gender_estimated"`` : gender estimation of the corresponding human. (expect 1 or 2 events of this type for each human)
+* ``"gender_estimated"`` : gender estimation of the corresponding human. (expect 1 or 2 events of this type for each human), the value can be male, female, or unknown if the confidence is under a threshold
 * ``"focus_locked"`` : if a human look in a specific direction for a significant time, this event is triggered with the pitch and yaw of the gaze registered in the data.
 * ``"emotion_detected"`` : if a remarkable emotion peak is detected, the event is triggered with the related emotion type registered in the data.
 * ``"direction_estimated"`` : if the human stays enough time in order to determine his average direction.
