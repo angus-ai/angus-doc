@@ -19,7 +19,7 @@ Open a terminal and install the angus python sdk with pip. If you do not use **v
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by creating a stream here `here <https://console.angus.ai/>`_.
+You must configure your sdk with the keys you received by creating a stream `here <https://console.angus.ai/>`_.
 These keys are used to authenticate the requests you are about to send.
 
 Your API credentials can be retrieved by clicking on "Show details" on your console interface as shown below:
@@ -41,38 +41,27 @@ the "access_token" prompt with the "password" given on the interface.
 
 On **Windows** system, if angusme does not work, please refer to the :ref:`faq` for more details.
 
-3. Send your first request
-==========================
-
-Your are now ready to use the sdk to send your first request.
-
-Pick a ``jpg`` or ``png`` image file showing at least one human face and open a python console (by typing the command ``python`` in a terminal).
-
-.. code-block:: python
-
-        > import angus
-	> from pprint import pprint
-        > conn = angus.connect()
-        > service = conn.services.get_service('age_and_gender_estimation', version=1)
-        > job = service.process({'image': open("path/to/your/image.png", "rb")})
-        > pprint(job.result)
-
-This should display a result looking like this:
+You can check this setup went well by typing the following command and checking that our server sees you:
 
 .. parsed-literal::
 
-        {u'url': u'https://gate.angus.ai/services/age_and_gender_estimation/1/jobs/8e260a0e-14ec-11e5-9d37-fd0e94abcba1', u'status': 201, u'input_size': [576, 768], u'faces': [{u'roi': [249, 141, 234, 234], u'gender': u'male', u'age_confidence': 0.5, u'gender_confidence': 0.8280000686645508, u'roi_confidence': 0.7880000472068787, u'age': 50.0}], u'nb_faces': 1}
+   $ angusme -t
+   Server: https://gate.angus.ai
+   Status: OK
 
-This python dictionnary contains a set of ``key: value`` describing what has been seen in that image by the service you just called. This result can then be easily parsed by your application.
+If this command gives you an error, check that you enter the right "client_id" and "acccess_token".
+You can do this by re-typing "angusme" in a command prompt.
 
-The ``keys`` contained in result dictionaries depend on the service used and are documented in the services documentation, see :ref:`services-doc`.
+If you need help, contact us here : contact@angus.ai !
 
-You have just sent your first request to Angus.ai, Congratulations!
-
-4. Access your sensor stream
+3. Access your sensor stream
 ============================
 
-Some applications will require a processing on all the data coming from a sensor (e.g. a webcam).
+Angus.ai API is specifically designed to process a video stream. This section will show you a way to access the stream of a webcam plugged to your computer by using OpenCV2.
+
+Note that the following code sample can be adapted to process a video file instead.
+
+Note also that OpenCV2 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream. If you need assistance, please contact us at contact@angus.ai
 
 *Prerequisite*
 
@@ -85,7 +74,7 @@ On Debian-like platform, **OpenCV2** comes pre-installed, you just need to run
 
    $ sudo apt-get install python-opencv
 
-Then, copy this code snippet in a file and run it.
+Then copy this code snippet in a file and run it.
 
 .. literalinclude:: stream_fromwebcam.py
 
@@ -98,25 +87,30 @@ Check that your web cam video stream is correctly displayed on your screen.
 
 .. image:: gwenn_onwebcam.png
 
-5. Send this stream to Angus
-============================
+4. Send this stream to Angus scene analysis API
+===============================================
 
 We can now extend this code to have Angus process this stream.
-Like above, we will use the service ``age_and_gender_estimation`` but all the services taking images as inputs can be used.
 
 Note that we use the method ``enable_session()`` and ``disable_session()`` to let the service know that the successive images received are from the same stream. This allows overall better performances as previous calls are used to refine the results.
 
-Using this functions might delayed a bit the appearance and disappearance of detected targets. If this is an issue for your application, just remove these calls from your script. The service will process the successive images independently.
-
-.. literalinclude:: agegenderestimation_fromwebcam.py
-   :emphasize-lines: 21-23,31-36,52
+.. literalinclude:: sceneanalysis_fromwebcam.py
+   :emphasize-lines: 5-10,24-26,38-70,76
 
 
-You should see your age/gender estimation displayed on your screen:
+You should see two green vectors showing what your are looking displayed on your screen:
 
-.. image:: gwenn_onwebcam_agegender.png
+.. image:: gwenn_onwebcam_sceneanalysis.png
 
 6. Congratulations!
 ===================
 
-You have designed your first app using Angus.ai : an age and gender estimator. Congratulations!
+You have made your first call to Angus.ai. The API is not limited to gaze estimation but can be used to infer age, emotion, counting people in field of view, etc...
+
+What to do next?
+
+* have a look at the full API documentation here : :ref:`scene_analysis`
+* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`_
+* or contact us at contact@angus.ai for any help or inquiry !
+
+Congratulations!
