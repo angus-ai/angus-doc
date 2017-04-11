@@ -11,6 +11,7 @@ Angus.ai documentation
 
    getting-started/python
    getting-started/java
+   sceneanalysis/sceneanalysis
    services/index
    sdk/index
    lab/index

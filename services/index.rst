@@ -1,12 +1,11 @@
 .. _services-doc:
 
-Services
-++++++++
+Composite Services
+++++++++++++++++++
 
 .. toctree::
    :maxdepth: 2
 
-   sceneanalysis/sceneanalysis
    upperbodydetection/upperbodydetection
    agegenderestimation/agegenderestimation
    faceexpressionestimation/faceexpressionestimation
@@ -18,6 +17,6 @@ Services
    sounddetection/sounddetection
    voicedetection/voicedetection
    soundlocalization/soundlocalization
-..   wordspotting/index
    qrcode/index
    dummy/dummy
+..   wordspotting/index
