@@ -1,6 +1,10 @@
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.TimeZone;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -19,14 +23,14 @@ import ai.angus.sdk.impl.File;
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamResolution;
 
-public class StreamAgeAndGender {
+public class StreamSceneAnalysis {
 
     public static void main(String[] args) throws IOException, ProcessException {
         ConfigurationImpl conf = new ConfigurationImpl();
 
         Root root = conf.connect();
         Service service = root.getServices().getService(
-                "age_and_gender_estimation", 1);
+                "scene_analysis", 1);
 
         // get default webcam and open it
         Webcam webcam = Webcam.getDefault();
@@ -41,6 +45,10 @@ public class StreamAgeAndGender {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        TimeZone tz = TimeZone.getTimeZone("UTC");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX");
+        df.setTimeZone(tz);
+
         service.enableSession();
         while (true) {
             // get image
@@ -49,11 +57,13 @@ public class StreamAgeAndGender {
             ImageIO.write(image, "PNG", new java.io.File("/tmp/tmp.png"));
             JSONObject params = new JSONObject();
             params.put("image", new File("/tmp/tmp.png"));
+            params.put("timestamp", df.format(new Date()));
             Job job = service.process(params);
             System.out.println(job.getResult().toJSONString());
 
             ImageIcon icon = new ImageIcon(image);
             lbl.setIcon(icon);
         }
+        service.disableSession();
     }
 }
