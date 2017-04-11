@@ -4,18 +4,18 @@ Getting Started with Java
 
 *Prerequisites*
 
-You must have registered `here <https://console.angus.ai/register>`_ to generate your API credentials.
+You must have registered `here <https://console.angus.ai/register>`__ to generate your API credentials.
 Angus Java SDK need Java7 runtime.
 
 1. Download Angus SDK library
 =============================
 
-You can download the library from github: `here <https://github.com/angus-ai/angus-sdk-java/releases/download/0.0.2/angus-sdk-java-0.0.2-jar-with-dependencies.jar>`_.
+You can download the library from github: `here <https://github.com/angus-ai/angus-sdk-java/releases/download/0.0.2/angus-sdk-java-0.0.2-jar-with-dependencies.jar>`__.
 
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by creating a stream here `here <https://console.angus.ai/>`_.
+You must configure your sdk with the keys you received by creating a stream here `here <https://console.angus.ai/>`__.
 These keys are used to authenticate the requests you are about to send.
 
 Your API credentials can be retrieved by clicking on "Show details" on your console interface as shown below:
@@ -56,7 +56,7 @@ Note also that `webcam-capture <https://github.com/sarxos/webcam-capture>`_ is n
 
 We use here `webcam-capture <https://github.com/sarxos/webcam-capture>`_ to get the camera images.
 
-Get the zip files with dependencies `here <https://github.com/sarxos/webcam-capture/releases/download/webcam-capture-parent-0.3.10/webcam-capture-0.3.10-dist.zip>`_ and unzip it.
+Get the zip files with dependencies `here <https://github.com/sarxos/webcam-capture/releases/download/webcam-capture-parent-0.3.10/webcam-capture-0.3.10-dist.zip>`__ and unzip it.
 
 Copy this code snippet in a file named `DisplayCamera.java`.
 
@@ -96,8 +96,8 @@ You have made your first call to Angus.ai. The API can be used to infer age, emo
 
 What to do next?
 
-* have a look at the full API documentation here : :ref:`scene_analysis`
-* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`_
+* have a look at the full API documentation here : :ref:`scene_analysis`.
+* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`__.
 * or contact us at contact@angus.ai for any help or inquiry !
 
 Congratulations!

@@ -1,7 +1,7 @@
 Getting Started with Python
 +++++++++++++++++++++++++++
 
-You must have registered `here <https://console.angus.ai/register>`_ to generate your API credentials.
+You must have registered `here <https://console.angus.ai/register>`__ to generate your API credentials.
 
 The SDK is Python3 compatible but the documentation code snippets are only Python2 compatible.
 
@@ -19,7 +19,7 @@ Open a terminal and install the angus python sdk with pip. If you do not use **v
 2. Configure your SDK
 =====================
 
-You must configure your sdk with the keys you received by creating a stream `here <https://console.angus.ai/>`_.
+You must configure your sdk with the keys you received by creating a stream `here <https://console.angus.ai/>`__.
 These keys are used to authenticate the requests you are about to send.
 
 Your API credentials can be retrieved by clicking on "Show details" on your console interface as shown below:
@@ -109,8 +109,8 @@ You have made your first call to Angus.ai. The API is not limited to gaze estima
 
 What to do next?
 
-* have a look at the full API documentation here : :ref:`scene_analysis`
-* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`_
+* have a look at the full API documentation here : :ref:`scene_analysis`.
+* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`__.
 * or contact us at contact@angus.ai for any help or inquiry !
 
 Congratulations!
