@@ -19,7 +19,8 @@ while True:
                                             "focus_locked": 0.9,
                                             "emotion_detected": 0.4,
                                             "direction_estimated" : 0.8
-                                          }
+                                          },
+                           "store": False
                           })
     pprint(job.result)
 

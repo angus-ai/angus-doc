@@ -47,7 +47,8 @@ The function ``process()`` takes a dictionary as input formatted as follows:
                         "focus_locked": 0.9,
                         "emotion_detected": 0.4,
                         "direction_estimated" : 0.8
-                     }
+                     },
+      "store": False
     }
 
 
@@ -55,7 +56,7 @@ The function ``process()`` takes a dictionary as input formatted as follows:
 * ``timestamp``: a string formated using the iso 8601 UTC date format.
 * ``camera_position``: a preset is a list of parameters set in advance. This list of parameters is used to calibrate the API based on the camera position.
 * ``sensitivity``: an optional dictionary that sets the sensitivity (between 0 and 1) of the system regarding each events. For instance, If you feel that the events "appearance" is triggered too often, you can decrease its value.
-
+* ``store``: store process results (not video data) for analytics dashboard (Beta)
 
 Here is the list of the different presets that are available :
 
