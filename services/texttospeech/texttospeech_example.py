@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import angus
+import angus.client
 import base64
 import zlib
 import subprocess
@@ -10,7 +10,7 @@ def decode_output(sound, filename):
 	with open(filename, "wb") as f:
 	    f.write(sound)
 
-conn = angus.connect()
+conn = angus.client.connect()
 service = conn.services.get_service('text_to_speech', version=1)
 
 job = service.process({'text': "Hi guys, how are you today?", 'lang' : "en-US"})

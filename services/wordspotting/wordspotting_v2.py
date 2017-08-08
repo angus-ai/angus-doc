@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import angus.cloud
+import angus.client.cloud
 from pprint import pprint
 
-conn = angus.connect()
+conn = angus.client.connect()
 service = conn.services.get_service('word_spotting', version=2)
 vocabulary = [{"words" : "bonjour"},
               {"words" : "eteint le salon"},

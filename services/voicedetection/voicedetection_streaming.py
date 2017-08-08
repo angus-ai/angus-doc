@@ -3,7 +3,7 @@ import Queue
 import StringIO
 import wave
 import time
-import angus
+import angus.client
 import pyaudio
 import sys
 import numpy as np
@@ -50,7 +50,7 @@ def main(stream_index):
 
 
     # Angus
-    conn = angus.connect()
+    conn = angus.client.connect()
     service = conn.services.get_service('voice_detection', version=1)
     service.enable_session()
 

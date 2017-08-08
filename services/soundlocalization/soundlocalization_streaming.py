@@ -7,7 +7,7 @@ import sys
 from pprint import pprint
 import pyaudio
 import numpy as np
-import angus
+import angus.client
 
 CHUNK = 8192
 PYAUDIO_FORMAT = pyaudio.paInt16
@@ -56,7 +56,7 @@ def main(stream_index):
     rate = int(conf['defaultSampleRate'])
 
     # Angus
-    conn = angus.connect()
+    conn = angus.client.connect()
     service = conn.services.get_service('sound_localization', version=1)
     service.enable_session()
 

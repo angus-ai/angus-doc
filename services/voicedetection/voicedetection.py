@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-import angus.cloud
+import angus.client.cloud
 
-conn = angus.connect()
+conn = angus.client.connect()
 
 service = conn.services.get_service('voice_detection', version=1)
 

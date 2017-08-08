@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import StringIO
 
-import angus
+import angus.client
 import cv2
 import numpy as np
 import datetime
@@ -19,7 +19,7 @@ def main(stream_index):
 
     print("Input stream is of resolution: {} x {}".format(camera.get(3), camera.get(4)))
 
-    conn = angus.connect()
+    conn = angus.client.connect()
     service = conn.services.get_service("scene_analysis", version=1)
     service.enable_session()
 

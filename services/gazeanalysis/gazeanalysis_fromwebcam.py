@@ -3,7 +3,7 @@ import StringIO
 from math import cos, sin
 import cv2
 import numpy as np
-import angus
+import angus.client
 
 def main(stream_index):
     camera = cv2.VideoCapture(0)
@@ -17,7 +17,7 @@ def main(stream_index):
 
     print("Input stream is of resolution: {} x {}".format(camera.get(3), camera.get(4)))
 
-    conn = angus.connect()
+    conn = angus.client.connect()
     service = conn.services.get_service('gaze_analysis', 1)
     service.enable_session()
 

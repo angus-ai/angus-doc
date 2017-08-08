@@ -23,7 +23,7 @@
 
 import cv2
 import numpy as np
-import angus
+import angus.client
 import StringIO
 from pprint import pprint
 
@@ -48,7 +48,7 @@ img1 = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
 img2 = cv2.cvtColor(cam.read()[1], cv2.COLOR_RGB2GRAY)
 
 # Connect to Angus.ai
-conn = angus.connect()
+conn = angus.client.connect()
 serv = conn.services.get_service("age_and_gender_estimation")
 
 # Main loop

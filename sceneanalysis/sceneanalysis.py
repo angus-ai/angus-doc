@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import angus
+import angus.client
 from pprint import pprint
 
-conn = angus.connect()
+conn = angus.client.connect()
 service = conn.services.get_service("scene_analysis", version=1)
 
 service.enable_session()

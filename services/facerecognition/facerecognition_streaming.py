@@ -3,7 +3,7 @@ import StringIO
 import cv2
 import numpy as np
 
-import angus
+import angus.client
 
 
 def main(stream_index):
@@ -18,7 +18,7 @@ def main(stream_index):
 
     print("Input stream is of resolution: {} x {}".format(camera.get(3), camera.get(4)))
 
-    conn = angus.connect()
+    conn = angus.client.connect()
     service = conn.services.get_service("face_recognition", version=1)
 
     ### Choose here the appropriate pictures.

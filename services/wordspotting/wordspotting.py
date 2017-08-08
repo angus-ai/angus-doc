@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from pprint import pprint
-import angus
+import angus.client
 
-conn = angus.connect()
+conn = angus.client.connect()
 
 service = conn.services.get_service('word_spotting', version=1)
 

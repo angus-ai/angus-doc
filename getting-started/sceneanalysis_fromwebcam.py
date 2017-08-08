@@ -7,7 +7,7 @@ import StringIO
 import datetime
 import pytz
 from math import cos, sin
-import angus
+import angus.client
 
 def main(stream_index):
     camera = cv2.VideoCapture(stream_index)
@@ -21,7 +21,7 @@ def main(stream_index):
 
     print("Video stream is of resolution {} x {}".format(camera.get(3), camera.get(4)))
 
-    conn = angus.connect()
+    conn = angus.client.connect()
     service = conn.services.get_service("scene_analysis", version=1)
     service.enable_session()
 

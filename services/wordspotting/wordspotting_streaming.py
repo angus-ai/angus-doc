@@ -7,7 +7,7 @@ import sys
 from pprint import pprint
 import pyaudio
 import numpy as np
-import angus
+import angus.client
 
 ### Good performances off this script depend a lot on these parameters,
 ### do not hesitate to experiment with different settings
@@ -23,7 +23,7 @@ INDEX = 0
 
 p = pyaudio.PyAudio()
 
-conn = angus.connect()
+conn = angus.client.connect()
 service = conn.services.get_service('word_spotting', version=1)
 
 PATH = "/path/to/samples/"
