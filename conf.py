@@ -48,13 +48,14 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'angus.ai'
-copyright = u'2015, Gwennael Gate, Aurelien Moreau, Sylvain Girard'
+copyright = u'2015-2017, Gwennael Gate, Aurelien Moreau'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
+
 #version = 'latest'
 # The full version, including alpha/beta/rc tags.
 #release = 'latest'
@@ -207,7 +208,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'angusai.tex', u'angus.ai Documentation',
-   u'Gwennael Gate, Aurelien Moreau, Sylvain Girard', 'manual'),
+   u'Gwennael Gate, Aurelien Moreau', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -237,7 +238,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'angusai', u'angus.ai Documentation',
-     [u'Gwennael Gate, Aurelien Moreau, Sylvain Girard'], 1)
+     [u'Gwennael Gate, Aurelien Moreau'], 1)
 ]
 
 # If true, show URL addresses after external links.
