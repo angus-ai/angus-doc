@@ -8,3 +8,8 @@ $ pip install -r requirements.txt
 2. Rune sphinx-versioning
 
 $ sphinx-versioning build . build/html/
+
+
+How to upload on aws ?
+
+$ aws s3 sync --acl public-read . s3://doc.angus.ai/
