@@ -111,7 +111,7 @@ Service
 
         This is a collection of Job resources.
 
-    .. py:method:: process(parameters=None, async=False, session=None, callback=None)
+    .. py:method:: process(parameters=None, async=False, session=None)
     
         Shortcut to create an element in jobs collection. `async` option is 
         added to `parameters`, it suggests to the cloud to run the job creation
@@ -119,8 +119,14 @@ Service
         result status (201 for created, or 202 if the request is accepted but the
         resource is not created).
         A `Session` object can be used to store the state in client side.
-        Finaly, function can be defined in `callback` to be triggered when job is 
-        finished. 
+        This method returns a :py:class:`~angus.rest.Job` object.
+
+    .. py:method:: process_async(parameters=None, async=False, session=None)
+
+        Shortcut to create asynchronously an element in jobs collection and
+        immediately render the focus to the user. This method returns a
+        `Future <http://pythonhosted.org/futures/#future-objects>`_ object. The `parameters`, `async` and `session`
+        params are the same as the `process` method above.
         
     .. py:method:: get_description()
     
