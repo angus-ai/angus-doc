@@ -14,5 +14,6 @@ Angus.ai documentation
    sceneanalysis/sceneanalysis
    services/index
    sdk/index
+   data-api/index
    lab/index
    FAQ/index
