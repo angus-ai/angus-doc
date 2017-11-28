@@ -14,7 +14,7 @@ The metrics
       { "value": 0 }
 
   * **Description**: Count of people who passed (not necessarily stopping or
-    looking) in front of the camera during the specified time duration.
+    looking) in front of the camera during at least 1 second.
 
 2. Interested
 -------------
