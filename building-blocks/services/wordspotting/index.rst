@@ -1,5 +1,3 @@
-.. _services-doc:
-
 Word Spotting
 +++++++++++++
 
@@ -24,5 +22,3 @@ start with ``version 2`` as it is easier get started (no training required).
 
    wordspotting_v2
    wordspotting
-
-

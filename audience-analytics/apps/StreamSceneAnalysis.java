@@ -58,6 +58,7 @@ public class StreamSceneAnalysis {
             JSONObject params = new JSONObject();
             params.put("image", new File("/tmp/tmp.png"));
             params.put("timestamp", df.format(new Date()));
+            params.put("store", "True");
             Job job = service.process(params);
             System.out.println(job.getResult().toJSONString());
 

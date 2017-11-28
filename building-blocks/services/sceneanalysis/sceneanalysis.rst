@@ -1,7 +1,7 @@
 .. _scene_analysis:
 
-Scene Analysis API
-==================
+Scene Analysis
+==============
 
 This is Angus.ai main API that is meant to help you leverage your video streams by extracting:
 
@@ -47,8 +47,7 @@ The function ``process()`` takes a dictionary as input formatted as follows:
                         "focus_locked": 0.9,
                         "emotion_detected": 0.4,
                         "direction_estimated" : 0.8
-                     },
-      "store": False
+                     },      
     }
 
 

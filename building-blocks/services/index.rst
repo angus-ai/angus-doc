@@ -1,11 +1,12 @@
 .. _services-doc:
 
-Composite Services
-++++++++++++++++++
+Blocks
+++++++
 
 .. toctree::
    :maxdepth: 2
 
+   sceneanalysis/sceneanalysis
    upperbodydetection/upperbodydetection
    agegenderestimation/agegenderestimation
    faceexpressionestimation/faceexpressionestimation

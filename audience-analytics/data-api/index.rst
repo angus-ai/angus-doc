@@ -1,6 +1,6 @@
 .. _data-api:
 
-Data retrieval API
+Retrieve your data
 ++++++++++++++++++
 
 .. toctree::

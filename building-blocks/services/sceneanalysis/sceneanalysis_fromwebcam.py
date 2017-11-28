@@ -45,7 +45,6 @@ def main(stream_index):
                                    "emotion_detected": 0.4,
                                    "direction_estimated": 0.8
                                },
-                               "store": False
         })
         res = job.result
 

@@ -1,5 +1,5 @@
-Getting Started with Java
-+++++++++++++++++++++++++
+Java SDK
+++++++++
 
 
 *Prerequisites*
@@ -7,8 +7,8 @@ Getting Started with Java
 You must have registered `here <https://console.angus.ai/register>`__ to generate your API credentials.
 Angus Java SDK need Java7 runtime.
 
-1. Download Angus SDK library
-=============================
+1. Download the SDK library
+===========================
 
 You can download the library from github: `here <https://github.com/angus-ai/angus-sdk-java/releases/download/0.0.2/angus-sdk-java-0.0.2-jar-with-dependencies.jar>`__.
 
@@ -39,7 +39,6 @@ You could explore all options by typing:
 .. parsed-literal::
 
     $ java -jar angus-sdk-java-0.0.2-jar-with-dependencies.jar --help
-
 
 3. Access your sensor stream
 ============================
@@ -75,29 +74,3 @@ Check that your web cam video stream is correctly displayed on your screen. Make
   $ java -cp "angus-sdk-java-0.0.2-jar-with-dependencies.jar:webcam-capture-0.3.10.jar:libs/*:." DisplayCamera
 
 .. image:: gwenn_onwebcam.png
-
-4. Send this stream to Angus scene analysis API
-===============================================
-
-We can now extend this code to have Angus process this stream.
-
-Note that we use the method ``enable_session()`` and ``disable_session()`` to let the service know that the successive images received are from the same stream. This allows overall better performances as previous calls are used to refine the results.
-
-.. literalinclude:: StreamSceneAnalysis.java
-   :language: java
-
-
-You should see API output on standard output.
-
-5. Congratulations!
-===================
-
-You have made your first call to Angus.ai. The API can be used to infer age, emotion, counting people in field of view, etc...
-
-What to do next?
-
-* have a look at the full API documentation here : :ref:`scene_analysis`.
-* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`__.
-* or contact us at contact@angus.ai for any help or inquiry !
-
-Congratulations!

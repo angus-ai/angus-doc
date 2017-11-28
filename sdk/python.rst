@@ -1,5 +1,5 @@
-Getting Started with Python
-+++++++++++++++++++++++++++
+Python SDK
+++++++++++
 
 You must have registered `here <https://console.angus.ai/register>`__ to generate your API credentials.
 
@@ -7,8 +7,8 @@ The SDK is Python3 compatible but the documentation code snippets are only Pytho
 
 You might want to create a python virtual environnement with **virtualenv** in order to install the sdk in there. Please refer to the following `virtualenv guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
 
-1. Install the Angus SDK
-========================
+1. Install the SDK
+==================
 
 Open a terminal and install the angus python sdk with pip. If you do not use **virtualenv** you may need to be root, administrator or super user depending on your platform (use sudo on linux platform).
 
@@ -86,31 +86,3 @@ Then copy this code snippet in a file and run it.
 Check that your web cam video stream is correctly displayed on your screen.
 
 .. image:: gwenn_onwebcam.png
-
-4. Send this stream to Angus scene analysis API
-===============================================
-
-We can now extend this code to have Angus process this stream.
-
-Note that we use the method ``enable_session()`` and ``disable_session()`` to let the service know that the successive images received are from the same stream. This allows overall better performances as previous calls are used to refine the results.
-
-.. literalinclude:: sceneanalysis_fromwebcam.py
-   :emphasize-lines: 5-10,24-26,38-70,76
-
-
-You should see two green vectors showing what your are looking displayed on your screen:
-
-.. image:: gwenn_onwebcam_sceneanalysis.png
-
-6. Congratulations!
-===================
-
-You have made your first call to Angus.ai. The API is not limited to gaze estimation but can be used to infer age, emotion, counting people in field of view, etc...
-
-What to do next?
-
-* have a look at the full API documentation here : :ref:`scene_analysis`.
-* or you can find a first way to use the API on GitHub `here <https://github.com/angus-ai/angus-demos>`__.
-* or contact us at contact@angus.ai for any help or inquiry !
-
-Congratulations!

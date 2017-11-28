@@ -37,7 +37,8 @@ def main(stream_index):
 
         t = datetime.datetime.now(pytz.utc)
         job = service.process({"image": buff,
-                               "timestamp" : t.isoformat()
+                               "timestamp" : t.isoformat(),
+                               "store" : True
         })
         res = job.result
 

@@ -9,11 +9,10 @@ Angus.ai documentation
 .. toctree::
    :maxdepth: 2
 
-   getting-started/python
-   getting-started/java
-   sceneanalysis/sceneanalysis
-   services/index
+   audience-analytics/index.rst
+   building-blocks/index.rst
    sdk/index
-   data-api/index
-   lab/index
+   console/index
+   restful/index
+   advanced/index
    FAQ/index
