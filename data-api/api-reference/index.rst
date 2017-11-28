@@ -51,7 +51,16 @@ Api endpoint for fetching filtered aggregated data (called ``entities``)
 * **Success Response:**
 
   * **Code:** 200
-  * **Content:**
+  * **Json content:**
+
+    * ``entities=[json]``: the actual data returned by the api
+    * ``time=[str]``: the actual time bucket used to return data
+    * ``from_date=[iso-date]``: the date from which the search has been made
+    * ``to_date=[iso-date]``: the date to which the search has been made
+    * ``total_results=[integer]``: the total number of results for this search
+    * ``nb_of_pages=[integer]``: the total number of pages for paginated results
+    * ``page=[integer]``: the current retrieved page
+    * ``next_page=[str]``: the complete URL to call to get the results for the next page
 
   .. code:: json
 
@@ -70,7 +79,15 @@ Api endpoint for fetching filtered aggregated data (called ``entities``)
         ...
         ...
         ...
-      }
+      },
+      "from_date": "2017-09-03T05:45:00+02:00",
+      "to_date": "2017-09-14T16:53:11+02:00"
+      "time": "by_day",
+      "total_results": 63,
+      "nb_of_pages": 2,
+      "next_page": "https://data.angus.ai/api/1/........&page=2",
+      "page": 1,
+
     }
 
 * **Error Response:**
