@@ -68,6 +68,7 @@ The metrics
       }
 
   * **Description**: Population segmentation counts of all the "interested" people (see `above <2. Interested_>`_) for each category.
+  *Note: When no age or gender has been found about an interested person, it will not be included in any of these category.*
 
 6. Gender
 ---------
