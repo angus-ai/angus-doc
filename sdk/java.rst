@@ -1,11 +1,10 @@
 Java SDK
 ++++++++
 
+**Requirements**
 
-*Prerequisites*
-
-You must have registered `here <https://console.angus.ai/register>`__ to generate your API credentials.
-Angus Java SDK need Java7 runtime.
+- To go through the following steps you'll need to have created your personal camera credentials first as shown here: (:ref:`create-stream`).
+- Angus Java SDK need Java7 runtime.
 
 1. Download the SDK library
 ===========================

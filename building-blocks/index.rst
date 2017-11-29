@@ -1,3 +1,6 @@
+.. _buidling-blocks:
+
+
 Building Blocks
 +++++++++++++++
 

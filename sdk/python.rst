@@ -1,11 +1,13 @@
 Python SDK
 ++++++++++
 
-You must have registered `here <https://console.angus.ai/register>`__ to generate your API credentials.
+**Requirements**
 
-The SDK is Python3 compatible but the documentation code snippets are only Python2 compatible.
+- To go through the following steps you'll need to have created your personal camera credentials first as shown here: (:ref:`create-stream`).
+- The SDK is Python3 compatible but the documentation code snippets are only Python2 compatible.
 
-You might want to create a python virtual environnement with **virtualenv** in order to install the sdk in there. Please refer to the following `virtualenv guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
+Also, you might want (not mandatory) to create a python virtual environnement with **virtualenv** in order to install the sdk in there.
+To do so, please refer to the following `virtualenv guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
 
 1. Install the SDK
 ==================

@@ -1,3 +1,5 @@
+.. _http-api:
+
 RESTful API Reference
 =====================
 
@@ -352,7 +354,7 @@ In that case, the state is kept by the client and attached with each request in 
 
 In followed example, we generate a uuid session id with the ``uuidgen``
 linux tool and we loop 4 times over the same image that contains a
-face and send it to the face detection service. 
+face and send it to the face detection service.
 
 .. code-block:: console
 
