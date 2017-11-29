@@ -21,19 +21,19 @@ Api endpoint for fetching filtered aggregated data (called ``entities``)
 
   **Required:**
 
-  * ``metrics=[string]``: a list of desired information from the db (comma separated *WITHOUT WHITESPACES*)
+  * ``metrics=[string]``: a list of desired information from the db (*comma separated without whitespaces*)
 
     * Possible values: ``interested``, ``passing_by``, ``stop_time``, ``attention_time``, ``category``, ``gender``, ``satisfaction``
     * Default value: none
 
-  * ``from_date=[iso-date]``: the date to start the search from in **ISO FORMAT URLENCODED** (ex: 2017-09-03T05:45:00+0200 becomes 2017-09-03T05%3A45%3A00%2B0200)
+  * ``from_date=[iso-date]``: the date to start the search from in *iso format urlencoded* (ex: 2017-09-03T05:45:00+0200 becomes 2017-09-03T05%3A45%3A00%2B0200)
 
     * Default value: none
 
 
   **Optional:**
 
-  * ``to_date=[iso-date]``: the date to end the search to in **ISO FORMAT URLENCODED**
+  * ``to_date=[iso-date]``: the date to end the search to in *iso format urlencoded*
 
     * Default value: the current date
 
