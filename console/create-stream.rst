@@ -20,5 +20,7 @@ Press “Continue” at the bottom of the page and you will soon get the followi
 
 **What next?**
 
-- Download and install our SDK
-- Or go back on our step by step instruction
+The credentials that you have just created will be used to configure the Angus.ai SDK.
+Your are now ready to proceed to the next step:
+
+- Download and install our SDK (:ref:`sdk`)
