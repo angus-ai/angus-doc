@@ -1,7 +1,7 @@
 .. _create-stream:
 
-Create access credentials for your cameras
-==========================================
+Create new credentials
+======================
 
 After creating your personal account on https://console.angus.ai/, you will be asked to create a “stream”. This procedure will allow for a private “access_token” and “client_id” keys to be generated for you. This can be done by pressing the “Add a stream” button on the top right hand corner as shown below.
 
