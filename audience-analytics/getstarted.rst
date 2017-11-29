@@ -41,7 +41,7 @@ As you go through this tutorial, you will need:
 
 - a computer. Every operating system is ok provided that you can configure a Python or Java stack.
 - a camera (e.g. webcam) plugged into that computer. USB and IP cameras are supported, although IP cam can be more challenging to interface. If you need help doing so please contact us at support@angus.ai.
-- a working internet connection. An upload bandwidth of about 400ko/sec is advised. If this is a problem, we are able to provide an "local" version of our solution. please contact us at support@angus.ai.
+- a working internet connection. An upload bandwidth of about 400ko/sec is advised. If this is a problem, we are able to provide an "hybrid" version of our solution, where part of the CPU expensive computation is done locally, alleviating connection bandwidth requirements. Please contact us at support@angus.ai.
 
 Step by step instructions
 -------------------------
