@@ -1,29 +1,15 @@
-Get started
-===========
+Getting started
+===============
 
-This documentation is aimed at developers wanting to retrieve the data computed
-by Angus.ai anonymous audience analytics solution to build a custom app as shown
-in the figure below.
+This documentation is aimed at developers wanting to retrieve programmatically the data computed
+by Angus.ai audience analytics solution through our Data REST API (see diagram below).
 
-.. image:: data-angus.png
+.. image:: ../../archi.jpeg
 
+**Prerequisite**
 
-What data can be retrieved
---------------------------
-
-Angus.ai anonymous audience analytics solution computes (from each video stream) the following metrics:
-
-- The number of people passing by the camera/device,
-- The number of people interested in the camera/device
-- The time spent stopped in front of the camera/device
-- The time spent looking at the camera/device
-- The number of people interested by the camera/device, broken down by
-  demographics
-
-  - Age
-  - Gender
-
-For more information about the metrics, see the page dedicated to :ref:`the metrics <metrics>`.
+This procedure requires that you already have a properly configured audience analytics client application running on your device.
+If this is not the case, please follow our step by step instruction here: (:ref:`audience-tuto`).
 
 API Authentication
 ------------------
@@ -92,22 +78,22 @@ For this example, you will need to install ``requests`` and ``pytz`` modules
   import pytz
   import datetime
   import json
-  
-  
+
+
   def get_token():
     data = {
       "username": "test@example.com",
       "client_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "access_token": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     }
-  
+
     req = requests.post('https://console.angus.ai/api-token-authstream/', json=data)
     req.raise_for_status()
     req = req.json()
-  
+
     return req['token']
-  
-  
+
+
   def get(token, metrics, from_date, to_date, size):
     entities_url = 'https://data.angus.ai/api/1/entities'
     params = {
@@ -116,32 +102,32 @@ For this example, you will need to install ``requests`` and ``pytz`` modules
       "to_date": to_date.isoformat(),
       "time": size,
     }
-  
+
     headers = {
       "Authorization": "Bearer {}".format(token)
     }
-  
+
     req = requests.get(entities_url, params=params, headers=headers)
     req.raise_for_status()
     req = req.json()
-  
+
     return req
-  
-  
+
+
   def get_overall(token):
     to_date = datetime.datetime.now(pytz.UTC)
     from_date = to_date - datetime.timedelta(hours=24)
-  
+
     metrics = [
       "passing_by",
       "interested",
       "stop_time",
       "attention_time",
     ]
-  
+
     return get(token, metrics, from_date, to_date, "global")
-  
-  
+
+
   def main():
     token = get_token()
     overall = get_overall(token)
