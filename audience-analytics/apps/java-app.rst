@@ -1,5 +1,5 @@
-Audience Analytics Client (Java)
-================================
+Java client app
+===============
 
 We can now extend this code to have Angus process this stream.
 
