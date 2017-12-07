@@ -7,12 +7,8 @@ Angus.ai documentation
 ======================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   audience-analytics/index.rst
-   building-blocks/index.rst
-   sdk/index
-   console/index
+   audience-analytics/index
    restful/index
-   advanced/index
    FAQ/index

@@ -1,16 +1,32 @@
+.. _sdk:
+
 Python SDK
-++++++++++
+----------
+
+Our SDK are here to help you call Angus.ai http API easily, without drafting the appropriate HTTP request yourself.
+Installing and configuring one of our SDKs is needed to run:
+
+- the audience analytics client applications shown here (:ref:`apps`)
+- and/or the building blocks code samples documented here (:ref:`buidling-blocks`)
+
+**Don't want to use Python?**
+
+If the SDK in the language of your choice is not provided here, you can:
+
+- contact us at support@angus.ai.
+- or use our http API directly by referring to our full API reference (:ref:`http-api`)
+
+.. after-title
 
 **Requirements**
 
-- To go through the following steps you'll need to have created your personal camera credentials first as shown here: (:ref:`create-stream`).
 - The SDK is Python3 compatible but the documentation code snippets are only Python2 compatible.
 
-Also, you might want (not mandatory) to create a python virtual environnement with **virtualenv** in order to install the sdk in there.
+- Also, you might want (not mandatory) to create a python virtual environnement with **virtualenv** in order to install the sdk in there.
 To do so, please refer to the following `virtualenv guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
 
-1. Install the SDK
-==================
+Install the SDK
++++++++++++++++
 
 Open a terminal and install the angus python sdk with pip. If you do not use **virtualenv** you may need to be root, administrator or super user depending on your platform (use sudo on linux platform).
 
@@ -18,16 +34,13 @@ Open a terminal and install the angus python sdk with pip. If you do not use **v
 
         $ pip install angus-sdk-python
 
-2. Configure your SDK
-=====================
+Configure your SDK
+++++++++++++++++++
 
 You must configure your sdk with the keys you received by creating a stream `here <https://console.angus.ai/>`__.
 These keys are used to authenticate the requests you are about to send.
 
-Your API credentials can be retrieved by clicking on "Show details" on your console interface as shown below:
-
-.. figure:: console_cred.png
-  :align: center
+Your API credentials can be retrieved by clicking on "Show details" on the stream you just created.
 
 In a terminal, type:
 
@@ -56,8 +69,10 @@ You can do this by re-typing "angusme" in a command prompt.
 
 If you need help, contact us here : contact@angus.ai !
 
-3. Access your sensor stream
-============================
+.. stop-here
+
+Access your sensor stream
++++++++++++++++++++++++++
 
 Angus.ai API is specifically designed to process a video stream. This section will show you a way to access the stream of a webcam plugged to your computer by using OpenCV2.
 
