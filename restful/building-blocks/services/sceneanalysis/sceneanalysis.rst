@@ -47,7 +47,7 @@ The function ``process()`` takes a dictionary as input formatted as follows:
                         "focus_locked": 0.9,
                         "emotion_detected": 0.4,
                         "direction_estimated" : 0.8
-                     },      
+                     },
     }
 
 
@@ -78,9 +78,10 @@ Here is the list of the different presets that are available :
 
   The "ceiling" preset should be used in this situation
 
+.. _scene-analysis-api:
 
-Output
-------
+Output API
+----------
 
 Events will be pushed to your client following that format. Note that if nothing happened, the events list will be empty, but the timestamp will still be updated.
 
