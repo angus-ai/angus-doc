@@ -111,4 +111,4 @@ Api endpoint for fetching filtered aggregated data (called ``entities``)
 
   .. code:: bash
 
-    curl -X GET -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF1cmVsaWVuLm1vcmVhdUBhbmd1cy5haSIsIm9yaWdfaWFfta0IjoxNTA1Mzk4MDM4LCJleHAiOjE1MDU0MTYwMzgsImNsaWVudF9pZCI6IjNiZDk1ZjIwLWM2OWYtMTFlNS1hZWVjLTAyNDJhYzExMDAwMiIsInVzZXJfaWQiOjgyNiwiZW1haWwiOiJhdXJlbGllbi5tb3JlYXVAYW5ndXMuYWkifQ.K70YXQYMAcdeW7dfscFGxUhenoXXGBAQTiWhNv-9cVc' 'https://data.angus.ai/api/1/entities?metrics=satisfaction,gender,category,passing_by,interested&from_date=2017-09-03T05%3A45%3A00%2B0200&time=by_day
+    $ curl -X GET -H 'Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF1cmVsaWVuLm1vcmVhdUBhbmd1cy5haSIsIm9yaWdfaWFfta0IjoxNTA1Mzk4MDM4LCJleHAiOjE1MDU0MTYwMzgsImNsaWVudF9pZCI6IjNiZDk1ZjIwLWM2OWYtMTFlNS1hZWVjLTAyNDJhYzExMDAwMiIsInVzZXJfaWQiOjgyNiwiZW1haWwiOiJhdXJlbGllbi5tb3JlYXVAYW5ndXMuYWkifQ.K70YXQYMAcdeW7dfscFGxUhenoXXGBAQTiWhNv-9cVc' 'https://data.angus.ai/api/1/entities?metrics=satisfaction,gender,category,passing_by,interested&from_date=2017-09-03T05%3A45%3A00%2B0200&time=by_day

@@ -45,11 +45,11 @@ header in order to conform to Basic Authentication protocol.
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -s -o /dev/null -w "%{http_code}" \
-     https://gate.angus.ai/services
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -s -o /dev/null -w "%{http_code}" \
+      https://gate.angus.ai/services
 
-   > 200
+    200
 
 You just made your first call to angus.ai and got the
 response code ``200``. All communications were encrypted (because we
@@ -72,21 +72,21 @@ and removing the extra options:
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     https://gate.angus.ai/services
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      https://gate.angus.ai/services
 
-   > {
-        "services": {
-           "dummy": {
-              "url": "/services/dummy"
-           },
+    {
+      "services": {
+         "dummy": {
+            "url": "/services/dummy"
+         },
 
-          (...)
+        (...)
 
-           "face_detection": {
-              "url": "/services/face_detection"}
-           }
-      }
+         "face_detection": {
+            "url": "/services/face_detection"}
+         }
+    }
 
 This response body is a `JSON <https://en.wikipedia.org/wiki/JSON>`_ object,
 its content is not important right now, we will describe it in the next
@@ -108,62 +108,62 @@ of available services provided by angus.ai.
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     https://gate.angus.ai/services
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      https://gate.angus.ai/services
 
-   > {
-       "services": {
-           "face_expression_estimation": {
-              "url": "/services/face_expression_estimation"
-           },
-           "dummy": {
-              "url": "/services/dummy"
-           },
-           "gaze_analysis": {
-              "url": "/services/gaze_analysis"
-           },
-           "motion_detection": {
-              "url": "/services/motion_detection"
-           },
-           "age_and_gender_estimation": {
-              "url": "/services/age_and_gender_estimation"
-           },
-           "sound_localization": {
-              "url": "/services/sound_localization"
-           },
-           "face_detection": {
-              "url": "/services/face_detection"
-           }
-        }
+    {
+     "services": {
+         "face_expression_estimation": {
+            "url": "/services/face_expression_estimation"
+         },
+         "dummy": {
+            "url": "/services/dummy"
+         },
+         "gaze_analysis": {
+            "url": "/services/gaze_analysis"
+         },
+         "motion_detection": {
+            "url": "/services/motion_detection"
+         },
+         "age_and_gender_estimation": {
+            "url": "/services/age_and_gender_estimation"
+         },
+         "sound_localization": {
+            "url": "/services/sound_localization"
+         },
+         "face_detection": {
+            "url": "/services/face_detection"
+         }
       }
+    }
 
 This request reveals for example a service named ``dummy``.
 A service is a resource too, so let's ``get`` it:
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     https://gate.angus.ai/services/dummy
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      https://gate.angus.ai/services/dummy
 
-   > {
-        "versions": {
-           "1": {"url": "/services/dummy/1"}
-        }
-     }
+    {
+      "versions": {
+         "1": {"url": "/services/dummy/1"}
+      }
+    }
 
 The response shows that there is only one version of the dummy service. Let's continue and ``get`` the new given url:
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     https://gate.angus.ai/services/dummy/1
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      https://gate.angus.ai/services/dummy/1
 
-   > {
-        "url": "https://gate.angus.ai/services/dummy/1",
-        "version": 1,
-        "description": "\nA simple dummy service. You can send {\"echo\": \"Hello world\"} to get back the\nmessage \"Hello world\" as result. Moreover, the dummy service enables statefull\nfeatures",
-        "jobs": "https://gate.angus.ai/services/dummy/1/jobs",
-     }
+    {
+      "url": "https://gate.angus.ai/services/dummy/1",
+      "version": 1,
+      "description": "\nA simple dummy service. You can send {\"echo\": \"Hello world\"} to get back the\nmessage \"Hello world\" as result. Moreover, the dummy service enables statefull\nfeatures",
+      "jobs": "https://gate.angus.ai/services/dummy/1/jobs",
+    }
 
 We started at the entry endpoint of service directory and finaly got
 an endpoint on a "jobs" resource.
@@ -189,16 +189,16 @@ The new curl command is as follows:
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -H "Content-Type: application/json" \
-     -d '{ "echo": "Hello world!", "async": false}' \
-     https://gate.angus.ai/services/dummy/1/jobs
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -H "Content-Type: application/json" \
+      -d '{ "echo": "Hello world!", "async": false}' \
+      https://gate.angus.ai/services/dummy/1/jobs
 
-   > {
-       "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
-       "status": 201,
-       "echo": "Hello world!"
-     }
+    {
+      "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
+      "status": 201,
+      "echo": "Hello world!"
+    }
 
 The response contains an absolute url on the resource (the job), its status (201 : **CREATED**),
 and its result as a synchronous job has been requested.
@@ -207,14 +207,14 @@ Note that an new url is provided to get back later on the job (accessing its res
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca
 
-   > {
-        "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
-        "status": 201,
-        "echo": "Hello world!"
-     }
+    {
+      "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
+      "status": 201,
+      "echo": "Hello world!"
+    }
 
 Asynchronous call
 -----------------
@@ -224,51 +224,51 @@ set.
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -H "Content-Type: application/json" \
-     -d '{ "echo": "Hello world!"}' \
-     https://gate.angus.ai/services/dummy/1/jobs
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -H "Content-Type: application/json" \
+      -d '{ "echo": "Hello world!"}' \
+      https://gate.angus.ai/services/dummy/1/jobs
 
-   > {
-        "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
-        "status": 202,
-     }
+    {
+      "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
+      "status": 202,
+    }
 
 The response status is ``202`` for HTTP status code **ACCEPTED**, and the
 replied url allows to get back to the result in the future.
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca
 
-   > {
-        "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
-        "status": 200,
-        "echo": "Hello world!"
-     }
+    {
+      "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
+      "status": 200,
+      "echo": "Hello world!"
+    }
 
 If you want a synchronous job with the result, you must specify ``async`` as
 ``false``.
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -H "Content-Type: application/json" \
-     -d '{ "echo": "Hello world!", "async": false}' \
-     https://gate.angus.ai/services/dummy/1/jobs
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -H "Content-Type: application/json" \
+      -d '{ "echo": "Hello world!", "async": false}' \
+      https://gate.angus.ai/services/dummy/1/jobs
 
-   > {
-        "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
-        "status": 201,
-        "echo": "Hello world!"
-     }
+    {
+      "url": "https://gate.angus.ai/services/dummy/1/jobs/db77e78e-0dd8-11e5-a743-19d95545b6ca",
+      "status": 201,
+      "echo": "Hello world!"
+    }
 
 
 Binary attachment
 -----------------
 
-Most requesta to angus.ai will need you to attach binary files for sound, images,
+Most requests to Angus.ai will need you to attach binary files for sound, images,
 videos or other raw data from various sensors. Angus.ai provides two ways to
 upload them:
 
@@ -290,18 +290,18 @@ image as input. You can upload it as an attachment as follows:
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b  \
-     -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
-     -F 'meta={"async" : false, "image": "attachment://bar"};type=application/json' \
-     https://gate.angus.ai/services/face_detection/1/jobs
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b  \
+      -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
+      -F 'meta={"async" : false, "image": "attachment://bar"};type=application/json' \
+      https://gate.angus.ai/services/face_detection/1/jobs
 
-   > {
-        "url": "https://gate.angus.ai/services/face_detection/1/jobs/1944556c-baf8-11e5-85c3-0242ac110001",
-        "status": 201,
-        "input_size": [480, 640],
-        "nb_faces": 1,
-        "faces": [{"roi": [262, 76, 127, 127], "roi_confidence": 0.8440000414848328}]
-     }
+    {
+      "url": "https://gate.angus.ai/services/face_detection/1/jobs/1944556c-baf8-11e5-85c3-0242ac110001",
+      "status": 201,
+      "input_size": [480, 640],
+      "nb_faces": 1,
+      "faces": [{"roi": [262, 76, 127, 127], "roi_confidence": 0.8440000414848328}]
+    }
 
 
 Create a binary resource
@@ -315,32 +315,32 @@ The JSON body part needs to contain a key ``content`` whose value matches the at
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
-     -F 'meta={"async": false, "content": "attachment://bar"};type=application/json' \
-     https://gate.angus.ai/blobs
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
+      -F 'meta={"async": false, "content": "attachment://bar"};type=application/json' \
+      https://gate.angus.ai/blobs
 
-   > {
-        "status": 201,
-        "url": "https://gate.angus.ai/blobs/a5bca2da-baf6-11e5-ad97-0242ac110001"
-     }
+    {
+      "status": 201,
+      "url": "https://gate.angus.ai/blobs/a5bca2da-baf6-11e5-ad97-0242ac110001"
+    }
 
 The response contains the url of the new blob resource created.
 You can now use this (binary) resource it in all angus.ai services by referring to it in your requests:
 
 .. code-block:: console
 
-   > curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-     -F 'meta={"async": false, "image": "https://gate.angus.ai/blobs/a5bca2da-baf6-11e5-ad97-0242ac110001"};type=application/json' \
-     https://gate.angus.ai/services/face_detection/1/jobs
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -F 'meta={"async": false, "image": "https://gate.angus.ai/blobs/a5bca2da-baf6-11e5-ad97-0242ac110001"};type=application/json' \
+      https://gate.angus.ai/services/face_detection/1/jobs
 
-   > {
-        "url": "http://localhost/services/face_detection/1/jobs/1944556c-baf8-11e5-85c3-0242ac110001",
-        "status": 201,
-        "input_size": [480, 640],
-        "nb_faces": 1,
-        "faces": [{"roi": [262, 76, 127, 127], "roi_confidence": 0.8440000414848328}]
-     }
+    {
+      "url": "http://localhost/services/face_detection/1/jobs/1944556c-baf8-11e5-85c3-0242ac110001",
+      "status": 201,
+      "input_size": [480, 640],
+      "nb_faces": 1,
+      "faces": [{"roi": [262, 76, 127, 127], "roi_confidence": 0.8440000414848328}]
+    }
 
 Session / State
 ---------------
@@ -358,17 +358,18 @@ face and send it to the face detection service.
 
 .. code-block:: console
 
-   > export SESSION=`uuidgen`
-   > for i in `seq 1 4`; do
-   >   curl -su 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
-   >        -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
-   >        -F 'meta={"async" : false, "image": "attachment://bar", "state": { "session_id": "'$SESSION'"}};type=application/json' \
-   >        https://gate.angus.ai/services/face_detection/1/jobs | python -m json.tool | grep "nb_faces"
-   > done;
-       "nb_faces": 0,
-       "nb_faces": 0,
-       "nb_faces": 0,
-       "nb_faces": 1,
+    $ export SESSION=`uuidgen`
+    > for i in `seq 1 4`; do
+    >   curl -su 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+    >        -F "attachment://bar=@macgyver.jpg;type=image/jpg" \
+    >        -F 'meta={"async" : false, "image": "attachment://bar", "state": { "session_id": "'$SESSION'"}};type=application/json' \
+    >        https://gate.angus.ai/services/face_detection/1/jobs | python -m json.tool | grep "nb_faces"
+    > done;
+
+    "nb_faces": 0
+    "nb_faces": 0
+    "nb_faces": 0
+    "nb_faces": 1
 
 When a session is
 requested, the service try to track faces in sucessive images but

@@ -46,7 +46,7 @@ Example
 
    .. code:: bash
 
-     curl -X POST -H "Content-Type: application/json" -d '{"username": "aurelien.moreau@angus.ai", "client_id": "3bd15f50-c69f-11e5-ae3c-0242ad110002", "access_token": "543eb007-1bfe-89d7-b092-e127a78fe91c"}' https://console.angus.ai/api-token-authstream/
+     $ curl -X POST -H "Content-Type: application/json" -d '{"username": "aurelien.moreau@angus.ai", "client_id":      "3bd15f50-c69f-11e5-ae3c-0242ad110002", "access_token": "543eb007-1bfe-89d7-b092-e127a78fe91c"}'   https://console.angus.ai/api-token-authstream/
 
 
    *Response:*
