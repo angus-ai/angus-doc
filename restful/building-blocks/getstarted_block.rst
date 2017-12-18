@@ -1,7 +1,12 @@
 Tutorial
 ========
 
+Step 1 - Introduction
+*********************
+
 This documentation is meant at developers wanting to use Angus.ai building blocks API services.
+
+.. image:: ../../images/block.png
 
 What the difference with other AI building blocks providers?
 ------------------------------------------------------------
@@ -39,24 +44,37 @@ As you go through this tutorial, you will need:
 - a camera (e.g. webcam) plugged into that computer. USB and IP cameras are supported, although IP cam can be more challenging to interface. If you need help doing so please contact us at support@angus.ai.
 - a working internet connection.
 
-Step by step instructions
--------------------------
+Step 2 - Install our SDK
+************************
 
-We have done our best to help you through these steps.
-If you encounter any issues, please contact us at support@angus.ai, or just chat with us by clicking on the smiling face icon at the bottom right hand corner of this page.
 
-+------+---------------------------------------+----------------------------+
-|Steps                                         |Links                       |
-+------+---------------------------------------+----------------------------+
-|1     | Create an account                     |:ref:`create-account`       |
-+------+---------------------------------------+----------------------------+
-|2     | Get credentials for your camera       |:ref:`create-stream`        |
-+------+---------------------------------------+----------------------------+
-|3     | Download and configure the SDK        |:ref:`sdk`                  |
-+------+---------------------------------------+----------------------------+
-|4     | Pick your building block              |:ref:`services-doc`         |
-|      | and follow the instructions           |                            |
-+------+---------------------------------------+----------------------------+
+Create an account
+-----------------
+
+.. include:: ../../console/create-account.rst
+  :start-after: after-title
+
+Get credentials for your camera
+-------------------------------
+
+.. include:: ../../console/create-stream.rst
+  :start-after: after-title
+
+
+Download and configure the SDK
+------------------------------
+
+.. include:: ../../restful/sdk/python.rst
+  :start-after: after-title
+  :end-before: stop-here
+
+Step 3 - Pick your building block
+*********************************
+
+.. toctree::
+   :maxdepth: 2
+
+   services/index
 
 What next?
 ----------
