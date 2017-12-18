@@ -3,19 +3,24 @@
 Audience Analytics
 ==================
 
+Angus.ai Audience Analytics computes the traffic, interest and demographics metrics of a device
+(a screen, a kiosk, a specific shelf, etc...).
+
+This data is automatically stored on a secured database and can be visualised in realtime on an online dashboard and/or retrieved programmatically through our API.
+
+This documentation is meant at developers wanting to install, configure and launch Angus.ai audience analytics application on a screen player.
+
 |
 
 Step 1 - Introduction
 *********************
-
-This documentation is meant at developers wanting to install, configure and launch Angus.ai audience analytics application on a personal computer.
 
 What data can be retrieved
 --------------------------
 
 .. image:: ../images/intro.png
 
-Angus.ai anonymous audience analytics solution computes (from each video stream) the following metrics:
+Angus.ai anonymous audience analytics solution computes (from each camera stream) the following metrics:
 
 - The number of people passing by the camera/device,
 - The number of people interested in the camera/device
@@ -47,13 +52,13 @@ Requirements
 As you go through this tutorial, you will need:
 
 - a computer. Every operating system is ok provided that you can configure a proper Python stack.
-- a camera (e.g. webcam) plugged into that computer. USB and IP cameras are supported, although IP cam can be more challenging to interface. If you need help doing so please contact us at support@angus.ai.
+- a camera (e.g. webcam) plugged into that computer. USB and IP cameras are supported, although IP cam can be more challenging to interface.
 - a working internet connection. An upload bandwidth of about 400ko/sec is advised. If this is a problem, we are able to provide an "hybrid" version of our solution, where part of the CPU expensive computation is done locally, alleviating connection bandwidth requirements. Please contact us at support@angus.ai.
 
 |
 
-Step 2 - Configure your player
-******************************
+Step 2 - Set up your player
+***************************
 
 Create an account
 -----------------
@@ -283,7 +288,4 @@ What next?
 You have a running installation of Angus.ai audience analytics solution. Congratulations!
 
 - When time comes, you can plug more cameras by creating additional stream as shown here (:ref:`create-stream`).
-- If you need to deploy your system in a situation where internet bandwidth is a problem, please contact us at support@angus.ai.
-
-For any issues please contact Angus.ai team at: support@angus.ai, and if possible,
-please specify your operating system, python version, as well as the error backtrace if any. Thanks!
+- If you need to deploy your system in a situation where internet bandwidth is a problem, or for any issues please contact Angus.ai team at: support@angus.ai, and if possible, please specify your operating system, python version, as well as the error backtrace if any. Thanks!
