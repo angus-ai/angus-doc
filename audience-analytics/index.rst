@@ -3,13 +3,17 @@
 Audience Analytics
 ==================
 
-Introduction
-************
+|
+
+Step 1 - Introduction
+*********************
 
 This documentation is meant at developers wanting to install, configure and launch Angus.ai audience analytics application on a personal computer.
 
 What data can be retrieved
 --------------------------
+
+.. image:: ../images/intro.png
 
 Angus.ai anonymous audience analytics solution computes (from each video stream) the following metrics:
 
@@ -32,7 +36,7 @@ How it works
 Angus.ai audience analytics solution is based on a (lightweight) Client / Server architecture as seen on the figure below.
 All CPU expensive computation are made on our dedicated servers making it possible to run the solution from about any CPU board that can retrieve a camera stream and connect to a server (eg. Raspberry).
 
-.. image:: archi.jpeg
+.. image:: ../images/archi.jpeg
 
 Once properly installed and configured, this application will interact with Angus.ai cloud based algorithms to provide audience metrics that can be retrieve through a REST API.
 This tutorial will show how to do it.
@@ -46,8 +50,10 @@ As you go through this tutorial, you will need:
 - a camera (e.g. webcam) plugged into that computer. USB and IP cameras are supported, although IP cam can be more challenging to interface. If you need help doing so please contact us at support@angus.ai.
 - a working internet connection. An upload bandwidth of about 400ko/sec is advised. If this is a problem, we are able to provide an "hybrid" version of our solution, where part of the CPU expensive computation is done locally, alleviating connection bandwidth requirements. Please contact us at support@angus.ai.
 
-Configure your player
-*********************
+|
+
+Step 2 - Configure your player
+******************************
 
 Create an account
 -----------------
@@ -76,22 +82,23 @@ Download and launch the client application
 .. include:: python-app.rst
   :start-after: after-title
 
-Online Dashboard
-****************
+|
 
-Check that metrics are correctly collected server side
-------------------------------------------------------
+Step 3 - Online Dashboard
+*************************
 
 .. include:: dashboard.rst
   :start-after: after-title
 
-Retrieve your Data
-******************
+|
+
+Step 4 - Retrieve your Data
+***************************
 
 Here is a short section to help you get started in retrieving your audience data programmatically. Check our API reference for further details. (:ref:`data-api`)
 
 Getting your JWT Token
-++++++++++++++++++++++
+----------------------
 
 You need a JSON Web Token ("JWT") token in order to securely call the data
 api endpoint. Your personal JWT is provided by programmatically calling the
@@ -125,7 +132,7 @@ You should get a response as shown below, if this is not the case, contact us.
 Once you obtained your personal JWT, you can start retrieving your data by calling the API endpoints documented in the :ref:`api-reference` page.
 
 Example
-+++++++
+-------
 
 Here is an example of a request for all entities from 5:45 GMT+2, the 2017, September the 3rd until now, using a time bucket of “one day”.
 
@@ -271,7 +278,7 @@ Here is an example of a request for all entities from 5:45 GMT+2, the 2017, Sept
 
 
 What next?
-**********
+----------
 
 You have a running installation of Angus.ai audience analytics solution. Congratulations!
 

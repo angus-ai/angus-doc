@@ -8,7 +8,7 @@ The client app you just ran is now feeding a personal and secured database with 
 
 
 How to view your dashboard
-++++++++++++++++++++++++++
+--------------------------
 
 The collected data are meant to be collected programmatically through Angus.ai Data API (see :ref:`data-api`).
 But for demonstration purposes, we have put together a standard dashboard that allows for a simple visualization over your collected data.
@@ -25,10 +25,10 @@ To view your dashboard:
    (see the watch icon on the top right hand corner), your first collected data should appear (as shown on the screenshot below).
 4. If your don’t see data appear, please try to get out of the camera field of view and re-enter again.
 
-.. image:: dashboard.png
+.. image:: ../images/dashboard.png
 
 What are these metrics?
-+++++++++++++++++++++++
+-----------------------
 
 **People passing by**:
 Count of people who passed (not necessarily stopping or looking) in front of the camera for at least 1 second.

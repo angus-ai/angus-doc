@@ -44,3 +44,5 @@ To run this python app:
 You should see two green vectors showing what your are looking displayed on your screen:
 
 .. image:: gwenn_onwebcam_sceneanalysis.png
+
+The application displays by default a live view of your stream, with gaze vectors super-imposed. If you need it, it is also possible to display in real time, age, gender, emotion, etc... Please refers to the app real-time API here : (:ref:`scene-analysis-api`).
