@@ -67,7 +67,7 @@ You can check this setup went well by typing the following command and checking 
 If this command gives you an error, check that you enter the right "client_id" and "acccess_token".
 You can do this by re-typing "angusme" in a command prompt.
 
-If you need help, contact us here : contact@angus.ai !
+If you need help, contact us here : support@angus.ai !
 
 .. stop-here
 
@@ -78,7 +78,7 @@ Angus.ai API is specifically designed to process a video stream. This section wi
 
 Note that the following code sample can be adapted to process a video file instead.
 
-Note also that OpenCV2 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream. If you need assistance, please contact us at contact@angus.ai
+Note also that OpenCV2 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream. If you need assistance, please contact us at support@angus.ai
 
 *Prerequisite*
 

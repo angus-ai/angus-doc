@@ -26,7 +26,7 @@ On Debian-like platform, **OpenCV2** comes pre-installed, you just need to run
 
    $ sudo apt-get install python-opencv
 
-Note also that OpenCV2 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream. If you need assistance, please contact us at contact@angus.ai
+Note also that OpenCV2 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream. If you need assistance, please contact us at support@angus.ai
 
 **Client Application**
 
