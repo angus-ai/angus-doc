@@ -4,7 +4,7 @@ Blocks
 ++++++
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    sceneanalysis/sceneanalysis
    upperbodydetection/upperbodydetection
