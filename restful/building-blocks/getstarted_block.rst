@@ -85,4 +85,4 @@ Congratulations! You went through all the steps to use our building blocks.
 - If you need to deploy your system in a situation where internet bandwidth is a problem, please contact us at support@angus.ai.
 
 For any issues please contact Angus.ai team at: support@angus.ai, and if possible,
-please specify your operating system, python or java version, as well as the error backtrace if any. Thanks!
+please specify your operating system, Python version, as well as the error backtrace if any. Thanks!

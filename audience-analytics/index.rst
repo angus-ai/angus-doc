@@ -46,7 +46,7 @@ Requirements
 
 As you go through this tutorial, you will need:
 
-- a computer. Every operating system is ok provided that you can configure a Python or Java stack.
+- a computer. Every operating system is ok provided that you can configure a proper Python stack.
 - a camera (e.g. webcam) plugged into that computer. USB and IP cameras are supported, although IP cam can be more challenging to interface. If you need help doing so please contact us at support@angus.ai.
 - a working internet connection. An upload bandwidth of about 400ko/sec is advised. If this is a problem, we are able to provide an "hybrid" version of our solution, where part of the CPU expensive computation is done locally, alleviating connection bandwidth requirements. Please contact us at support@angus.ai.
 
@@ -286,4 +286,4 @@ You have a running installation of Angus.ai audience analytics solution. Congrat
 - If you need to deploy your system in a situation where internet bandwidth is a problem, please contact us at support@angus.ai.
 
 For any issues please contact Angus.ai team at: support@angus.ai, and if possible,
-please specify your operating system, python or java version, as well as the error backtrace if any. Thanks!
+please specify your operating system, python version, as well as the error backtrace if any. Thanks!
