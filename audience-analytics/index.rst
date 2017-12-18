@@ -104,13 +104,13 @@ You need a JSON Web Token ("JWT") token in order to securely call the data
 api endpoint. Your personal JWT is provided by programmatically calling the
 appropriate endpoint documented below.
 
-Please use your angus.ai:
+Please use your angus.ai in the command line below:
 
-- Angus.ai login (email adress)
-- Stream client_id
-- Stream acccess_token
+- account ``username`` (it should be your email address)
+- Stream ``client_id``
+- Stream ``access_token``
 
-in the command below:
+You can find these credentials on `http://console.angus.ai <http://console.angus.ai>`_.
 
 **Request:**
 
