@@ -14,7 +14,7 @@ After clicking, you will be asked to choose between a free developer stream and 
 
 For an non restricted enterprise stream, you will need to enter a valid credit card number.
 
-Press “Continue” at the bottom of the page and you will soon get the following page. Press “Show Details” and take note of your “client_id” and “access_token” keys as they will be needed later on.
+Press “Continue” at the bottom of the page and you will soon get the following page. Press “Show Details” and take note of your ``client_id`` (called Login on the interface) and ``access_token`` (called Password on the interface) as they will be needed later on.
 
 .. image:: ../images/create-stream-3.png
 
