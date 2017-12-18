@@ -103,3 +103,8 @@ Then copy this code snippet in a file and run it.
 Check that your web cam video stream is correctly displayed on your screen.
 
 .. image:: gwenn_onwebcam.png
+
+You are setup to start using Angus.ai services:
+
+- our plug and play audience analytics solution here (:ref:`audience-tuto`).
+- one of our building blocks here (:ref:`buidling-blocks`).
