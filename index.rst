@@ -1,13 +1,15 @@
-.. angus.ai documentation master file, created by
-   sphinx-quickstart on Fri Apr  3 10:50:35 2015.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. angus.ai
 
 Angus.ai documentation
 ======================
 
+This documentation is here to help you integrate our product / API.
+We are always happy to help, so feel free to contact us at support@angus.ai.
+
+.. image:: images/general.png
+
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    audience-analytics/index
    restful/index
