@@ -114,7 +114,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {'navigation_depth': 3}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []

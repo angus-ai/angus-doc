@@ -1,6 +1,0 @@
-{
- "access_token": "<password>",
- "default_root": "http://localhost:80",
- "ca_path": "/home/.../.angusdk/certificate.pem",
- "client_id": "admin"
-}
