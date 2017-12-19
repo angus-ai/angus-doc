@@ -8,7 +8,7 @@ Angus.ai Audience Analytics computes the traffic, interest and demographics metr
 
 This data is automatically stored on a secured database and can be visualised in realtime on an online dashboard and/or retrieved programmatically through our API.
 
-This documentation is meant at developers wanting to install, configure and launch Angus.ai audience analytics application on a screen player.
+This documentation is meant for developers wanting to install, configure and launch Angus.ai audience analytics application on a screen player.
 
 |
 
