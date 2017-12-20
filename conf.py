@@ -14,6 +14,7 @@
 
 import sys
 import os
+from shutil import copyfile
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -270,3 +271,27 @@ texinfo_documents = [
 
 scv_whitelist_branches = (u'master',)
 scv_greatest_tag = True
+
+redirect_files = ['getting-started/python.html',
+                  'getting-started/java.html',
+                  'services/index.html']
+
+
+def copy_legacy_redirects(app, docname): # Sphinx expects two arguments
+    if app.builder.name == 'html':
+        for html_src_path in redirect_files:
+            print html_src_path
+            target_path = app.outdir + '/' + html_src_path
+            src_path = app.srcdir + '/' + html_src_path
+            print src_path
+            print os.path.isfile(src_path)
+            if os.path.isfile(src_path):
+                print "copying"
+                print target_path
+                copyfile(src_path, target_path)
+            else:
+                print "not copying"
+
+
+def setup(app):
+    app.connect('build-finished', copy_legacy_redirects)
