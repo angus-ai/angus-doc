@@ -6,7 +6,7 @@ Step 1 - Introduction
 
 This documentation is meant at developers wanting to use Angus.ai building blocks API services.
 
-.. image:: ../../images/block.png
+.. image:: /images/block.png
 
 What the difference with other AI building blocks providers?
 ------------------------------------------------------------
@@ -51,20 +51,20 @@ Step 2 - Install our SDK
 Create an account
 -----------------
 
-.. include:: ../../console/create-account.rst
+.. include:: /console/create-account.rst
   :start-after: after-title
 
 Get credentials for your camera
 -------------------------------
 
-.. include:: ../../console/create-stream.rst
+.. include:: /console/create-stream.rst
   :start-after: after-title
 
 
 Download and configure the SDK
 ------------------------------
 
-.. include:: ../../restful/sdk/python.rst
+.. include:: /restful/sdk/python.rst
   :start-after: after-title
   :end-before: stop-here
 

@@ -5,7 +5,7 @@ API Authentication
 This documentation is aimed at developers wanting to retrieve programmatically the data computed
 by Angus.ai audience analytics solution through our Data REST API (see diagram below).
 
-.. image:: ../../images/archi.jpeg
+.. image:: /images/archi.jpeg
 
 **Prerequisite**
 
