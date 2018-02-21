@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'angus.ai'
-copyright = u'2015-2017, Gwennael Gate, Aurelien Moreau'
+copyright = u'2015-2018, Gwennael Gate, Aurelien Moreau'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
