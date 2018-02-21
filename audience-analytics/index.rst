@@ -18,7 +18,7 @@ Step 1 - Introduction
 What data can be retrieved
 --------------------------
 
-.. image:: ../images/intro.png
+.. image:: /images/intro.png
 
 Angus.ai anonymous audience analytics solution computes (from each camera stream) the following metrics:
 
@@ -41,7 +41,7 @@ How it works
 Angus.ai audience analytics solution is based on a (lightweight) Client / Server architecture as seen on the figure below.
 All CPU expensive computation are made on our dedicated servers making it possible to run the solution from about any CPU board that can retrieve a camera stream and connect to a server (eg. Raspberry).
 
-.. image:: ../images/archi.jpeg
+.. image:: /images/archi.jpeg
 
 Once properly installed and configured, this application will interact with Angus.ai cloud based algorithms to provide audience metrics that can be retrieve through a REST API.
 This tutorial will show how to do it.
@@ -63,20 +63,20 @@ Step 2 - Set up your player
 Create an account
 -----------------
 
-.. include:: ../console/create-account.rst
+.. include:: /console/create-account.rst
   :start-after: after-title
 
 Get credentials for your camera
 -------------------------------
 
-.. include:: ../console/create-stream.rst
+.. include:: /console/create-stream.rst
   :start-after: after-title
 
 
 Download and configure the SDK
 ------------------------------
 
-.. include:: ../restful/sdk/python.rst
+.. include:: /restful/sdk/python.rst
   :start-after: after-title
   :end-before: stop-here
 

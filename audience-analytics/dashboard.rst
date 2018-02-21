@@ -25,7 +25,7 @@ To view your dashboard:
    (see the watch icon on the top right hand corner), your first collected data should appear (as shown on the screenshot below).
 4. If your don’t see data appear, please try to get out of the camera field of view and re-enter again.
 
-.. image:: ../images/dashboard.png
+.. image:: /images/dashboard.png
 
 What are these metrics?
 -----------------------
