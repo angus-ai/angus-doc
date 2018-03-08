@@ -50,20 +50,24 @@ packaged into our SDK. We tend to use OpenCV a lot to do this (see other questio
 Is Python SDK Python 3 compatible?
 ++++++++++++++++++++++++++++++++++
 
-Yes, it is. But the documentation code snippets and OpenCV2 are only Python 2.
-Sorry for the inconvenience, the Python 3 documentation is in progress.
+Yes, it is. The documentation code snippets and OpenCV3 are also Python 3.
+In case you find any bug regarding compatibility, please contact us at support@angus.ai
 
-How to install OpenCV2 and its Python bindings on debian-like systems?
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to install OpenCV3 and its Python bindings on major systems (Linux, MacOS, Windows)?
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Please, use:
 
 .. code-block:: none
 
-   $ apt-get install python-opencv
+   $ pip install opencv-python
 
-How to install OpenCV2 on other systems?
-++++++++++++++++++++++++++++++++++++++++
+Note that those are unofficial Python bindings. In order to have the
+complete version of OpenCV3 please follow the official documentation
+`here <http://opencv.org/>`_.
+
+How to install OpenCV3 for other languages?
++++++++++++++++++++++++++++++++++++++++++++
 
 Please follow official documentation `here <http://opencv.org/>`_.
 For windows, check the complete guide on this FAQ.
@@ -78,14 +82,15 @@ Windows related questions
 How can I install Pip in Windows?
 +++++++++++++++++++++++++++++++++
 
-Pip is installed by default when you install Python ``2.7.x``, please use the latest Python 2.x version available.
+Pip is installed by default when you install Python ``2.7.x``, please use the latest Python 2.x version available
+or the latest Python 3.x version ``3.6.4``
 
 How can I run all python code snippets on Windows?
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Please use the latest Python 2.x version (with pip) ``2.7.12``.
-Windows installer puts Python in ``C:\Python27`` by default, if you choose an other directory,
-please replace "c:\Python27" by your chosen directory in the following instructions:
+Please use the latest Python 2.x version (with pip) ``2.7.14`` or the latest Python 3.x version ``3.6.4``
+Windows installer puts Python in ``C:\Python27`` (for Python 2) by default, if you choose another directory,
+please replace "C:\Python27" by your chosen directory in the following instructions:
 
 In a Command Prompt go to python ``\Scripts`` directory:
 
@@ -97,7 +102,7 @@ Install numpy and Angus Python SDK:
 
 .. code-block:: none
 
-   $ pip install numpy angus-sdk-python
+   $ pip install numpy angus-sdk-python opencv-python
 
 Configure Angus SDK:
 
