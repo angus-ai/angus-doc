@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import Queue
-import StringIO
+from six.moves import queue, input
+from io import BytesIO
 import wave
 import time
 import angus.client
@@ -55,7 +55,7 @@ def main(stream_index):
     service.enable_session()
 
     # Record Process
-    stream_queue = Queue.Queue()
+    stream_queue = queue.Queue()
     def chunk_callback(in_data, frame_count, time_info, status):
         in_data = prepare(in_data, channels, rate)
         stream_queue.put(in_data.tostring())
@@ -79,7 +79,7 @@ def main(stream_index):
             continue
 
         data = stream_queue.get()
-        buff = StringIO.StringIO()
+        buff = BytesIO()
 
         wf = wave.open(buff, 'wb')
         wf.setnchannels(1)
@@ -89,7 +89,7 @@ def main(stream_index):
         wf.close()
 
         job = service.process(
-            {'sound': StringIO.StringIO(buff.getvalue()), 'sensitivity': 0.2})
+            {'sound': BytesIO(buff.getvalue()), 'sensitivity': 0.2})
 
         res = job.result["voice_activity"]
 
@@ -108,7 +108,7 @@ def main(stream_index):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         list_inputs()
-        index = raw_input("Please select a device number:")
+        index = input("Please select a device number:")
     else:
         index = sys.argv[1]
 

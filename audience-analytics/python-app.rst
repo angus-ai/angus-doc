@@ -4,7 +4,7 @@ Client app
 ++++++++++
 .. after-title
 
-Our client app is a lightweight, open source Python script.
+Our client app is a lightweight, open source Python script. It works either with **Python 2** or **Python 3**
 
 It performs two basic tasks:
 

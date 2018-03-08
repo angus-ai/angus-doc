@@ -3,7 +3,7 @@
 import cv2
 
 import numpy as np
-import StringIO
+from io import BytesIO
 import datetime
 import pytz
 from math import cos, sin
@@ -33,7 +33,7 @@ def main(stream_index):
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         ret, buff = cv2.imencode(".jpg", gray,  [cv2.IMWRITE_JPEG_QUALITY, 80])
-        buff = StringIO.StringIO(np.array(buff).tostring())
+        buff = BytesIO(np.array(buff).tostring())
 
         t = datetime.datetime.now(pytz.utc)
         job = service.process({"image": buff,
@@ -46,7 +46,7 @@ def main(stream_index):
             print(res["error"])
         else:
             # This parses the entities data
-            for key, val in res["entities"].iteritems():
+            for key, val in res["entities"].items():
                 # display only gaze vectors
                 # retrieving eyes points
                 eyel, eyer = val["face_eye"]

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import Queue
-import StringIO
+from six.moves import queue, input
+from io import BytesIO
 import wave
 import time
 import sys
@@ -54,7 +54,7 @@ def main(stream_index):
     service.enable_session()
 
     # Record Process
-    stream_queue = Queue.Queue()
+    stream_queue = queue.Queue()
     def chunk_callback(in_data, frame_count, time_info, status):
         in_data = prepare(in_data, channels, rate)
         stream_queue.put(in_data)
@@ -80,7 +80,7 @@ def main(stream_index):
 
         data = stream_queue.get()
 
-        buff = StringIO.StringIO()
+        buff = BytesIO()
 
         wf = wave.open(buff, 'wb')
         wf.setnchannels(TARGET_CHANNELS)
@@ -90,7 +90,7 @@ def main(stream_index):
         wf.close()
 
         job = service.process(
-            {'sound': StringIO.StringIO(buff.getvalue()), 'sensitivity': 0.7})
+            {'sound': BytesIO(buff.getvalue()), 'sensitivity': 0.7})
         pprint(job.result)
 
     stream.stop_stream()
@@ -100,7 +100,7 @@ def main(stream_index):
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         list_inputs()
-        INDEX = raw_input("Please select a device number:")
+        INDEX = input("Please select a device number:")
     else:
         INDEX = sys.argv[1]
     try:
