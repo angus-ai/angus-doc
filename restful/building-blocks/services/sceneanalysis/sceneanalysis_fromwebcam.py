@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import StringIO
+from io import BytesIO
 
 import angus.client
 import cv2
@@ -9,9 +9,9 @@ import pytz
 
 def main(stream_index):
     camera = cv2.VideoCapture(stream_index)
-    camera.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 640)
-    camera.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 480)
-    camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
+    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    camera.set(cv2.CAP_PROP_FPS, 10)
 
     if not camera.isOpened():
         print("Cannot open stream of index {}".format(stream_index))
@@ -30,7 +30,7 @@ def main(stream_index):
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         ret, buff = cv2.imencode(".jpg", gray, [cv2.IMWRITE_JPEG_QUALITY, 80])
-        buff = StringIO.StringIO(np.array(buff).tostring())
+        buff = BytesIO(np.array(buff).tostring())
 
         t = datetime.datetime.now(pytz.utc)
         job = service.process({"image": buff,
@@ -60,7 +60,7 @@ def main(stream_index):
                                               value))
 
             # This parses the entities data
-            for key, val in res["entities"].iteritems():
+            for key, val in res["entities"].items():
                 x, y, dx, dy = map(int, val["face_roi"])
                 cv2.rectangle(frame, (x, y), (x+dx, y+dy), (0, 255, 0), 2)
 

@@ -4,7 +4,7 @@ Client app
 ++++++++++
 .. after-title
 
-Our client app is a lightweight, open source Python script.
+Our client app is a lightweight, open source Python script. It works either with **Python 2** or **Python 3**
 
 It performs two basic tasks:
 
@@ -18,15 +18,13 @@ If you need help to perform these optimizations, please contact us at support@an
 **Prerequisite**
 
 - you have a working webcam plugged into your PC
-- you have installed **OpenCV2** and **OpenCV2** python bindings. Please refer to `OpenCV documentation <http://opencv.org/>`_ to proceed, or check :ref:`faq` chapter.
-
-On Debian-like platform, **OpenCV2** comes pre-installed, you just need to run
+- you have installed **OpenCV3** python bindings and **pytz**. To do this, just run :
 
 .. parsed-literal::
 
-   $ sudo apt-get install python-opencv
+   $ pip install opencv-python pytz
 
-Note also that OpenCV2 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream.
+Note also that OpenCV3 is not an absolute pre-requisite, the following code sample can easily be adapted to be used with any other way of retrieving successive frames from a video stream.
 
 **Client App**
 

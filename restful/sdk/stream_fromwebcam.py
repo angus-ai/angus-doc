@@ -3,9 +3,9 @@ import cv2
 
 def main(stream_index):
     camera = cv2.VideoCapture(stream_index)
-    camera.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 640)
-    camera.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 480)
-    camera.set(cv2.cv.CV_CAP_PROP_FPS, 10)
+    camera.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    camera.set(cv2.CAP_PROP_FPS, 10)
 
     if not camera.isOpened():
         print("Cannot open stream of index {}".format(stream_index))

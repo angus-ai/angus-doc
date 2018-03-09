@@ -20,7 +20,7 @@ If the SDK in the language of your choice is not provided here, you can:
 
 **Requirements**
 
-- The SDK is Python3 compatible but the documentation code snippets are only Python2 compatible.
+- The SDK is Python3 compatible and all the documentation code snippets should also be Python3 compatible. If you find something not compatible, please contact us at support@angus.ai.
 
 - Also, you might want (not mandatory) to create a python virtual environnement with **virtualenv** in order to install the sdk in there.
 To do so, please refer to the following `virtualenv guide <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_ for more information.
