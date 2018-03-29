@@ -14,10 +14,10 @@ Blocks
    facerecognition/facerecognition
    gazeanalysis/gazeanalysis
    motiondetection/motiondetection
+   qrcode/index
+   dummy/dummy
    texttospeech/texttospeech
    sounddetection/sounddetection
    voicedetection/voicedetection
    soundlocalization/soundlocalization
-   qrcode/index
-   dummy/dummy
 ..   wordspotting/index

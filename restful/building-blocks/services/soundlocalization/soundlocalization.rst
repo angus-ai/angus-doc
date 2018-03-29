@@ -1,5 +1,11 @@
-Sound Localization (Beta)
-=========================
+Sound Localization (Deprecated)
+===============================
+
+.. warning::
+
+   Sound localization service will be stopped in a near future (2018/05/01).
+   Please contact the angus.ai team (contact@angus.ai) if you have questions.
+
 
 Where is the sound coming from?
 
