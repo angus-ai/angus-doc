@@ -1,5 +1,11 @@
-Text To Speech
-==============
+Text To Speech (Deprecated)
+===========================
+
+.. warning::
+
+   Text to speech service will be stopped in a near future (2018/05/01).
+   Please contact the angus.ai team (contact@angus.ai) if you have questions.
+
 
 This service generates a sound file (".wav") from a any given text in the following languages:
 
