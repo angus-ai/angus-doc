@@ -304,8 +304,8 @@ image as input. You can upload it as an attachment as follows:
     }
 
 
-Create a binary resource
-++++++++++++++++++++++++
+Create and delete a binary resource
++++++++++++++++++++++++++++++++++++
 
 Angus.ai provides a "blob storage" to upload a binary resource once and use it later for one or more
 services. This service is available at https://gate.angus.ai/blobs.
@@ -341,6 +341,14 @@ You can now use this (binary) resource it in all angus.ai services by referring 
       "nb_faces": 1,
       "faces": [{"roi": [262, 76, 127, 127], "roi_confidence": 0.8440000414848328}]
     }
+
+You can delete the resource by using the verb DELETE:
+
+.. code-block:: console
+
+    $ curl -u 7f5933d2-cd7c-11e4-9fe6-490467a5e114:db19c01e-18e5-4fc2-8b81-7b3d1f44533b \
+      -X "DELETE" \
+      https://gate.angus.ai/blobs/a5bca2da-baf6-11e5-ad97-0242ac110001
 
 Session / State
 ---------------
