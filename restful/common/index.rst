@@ -335,7 +335,7 @@ You can now use this (binary) resource it in all angus.ai services by referring 
       https://gate.angus.ai/services/face_detection/1/jobs
 
     {
-      "url": "http://localhost/services/face_detection/1/jobs/1944556c-baf8-11e5-85c3-0242ac110001",
+      "url": "https://gate.angus.ai/services/face_detection/1/jobs/1944556c-baf8-11e5-85c3-0242ac110001",
       "status": 201,
       "input_size": [480, 640],
       "nb_faces": 1,
