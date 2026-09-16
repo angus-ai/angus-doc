@@ -1,7 +1,12 @@
 .. _sound-detection-ref:
 
-Sound Detection
-===============
+Sound Detection (Deprecated)
+============================
+
+.. warning::
+
+   Sound detection service will be stopped in a near future (2018/05/01).
+   Please contact the angus.ai team (contact@angus.ai) if you have questions.
 
 Is there any noticeable sound?
 

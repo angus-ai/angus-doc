@@ -1,5 +1,10 @@
-Voice Detection (Beta)
-======================
+Voice Detection (Deprecated)
+============================
+
+.. warning::
+
+   Voice detection service will be stopped in a near future (2018/05/01).
+   Please contact the angus.ai team (contact@angus.ai) if you have questions.
 
 This service takes an audio stream as an input and tries to discriminate what is human voice and what is not.
 If detecting noise in general, and not specifically human voice, use :ref:`sound-detection-ref` instead.
